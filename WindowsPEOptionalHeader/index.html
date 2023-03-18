@@ -1,0 +1,1222 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://lmodel.github.io/uco-master/WindowsPEOptionalHeader/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
+<title>Class: WindowsPEOptionalHeader - uco-master</title>
+<link href="../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-windowspeoptionalheader">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="uco-master" class="md-header__button md-logo" data-md-component="logo" href=".." title="uco-master">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            uco-master
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: WindowsPEOptionalHeader
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lmodel/uco-master" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="uco-master" class="md-nav__button md-logo" data-md-component="logo" href=".." title="uco-master">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    uco-master
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lmodel/uco-master" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about.md">
+        About
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+    Slots
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usages">
+    Usages
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identifier-and-mapping-information">
+    Identifier and Mapping Information
+  </a>
+<nav aria-label="Identifier and Mapping Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-source">
+    Schema Source
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mappings">
+    Mappings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+    LinkML Source
+  </a>
+<nav aria-label="LinkML Source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct">
+    Direct
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#induced">
+    Induced
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="class-windowspeoptionalheader">Class: WindowsPEOptionalHeader</h1>
+<p><em>"A Windows PE optional header is a grouping of characteristics unique to the 'optionalHeader' of a Windows PE (Portable Executable) file, consisting of a collection of metadata about the executable code structure of the file."</em></p>
+<p>URI: <a href="https://w3id.org/lmodel/uco-master/WindowsPEOptionalHeader">master:WindowsPEOptionalHeader</a></p>
+<div class="mermaid"> classDiagram
+    class WindowsPEOptionalHeader
+      UcoInherentCharacterizationThing &lt;|-- WindowsPEOptionalHeader
+
+      WindowsPEOptionalHeader : addressOfEntryPoint
+
+      WindowsPEOptionalHeader : baseOfCode
+
+      WindowsPEOptionalHeader : checksum
+
+      WindowsPEOptionalHeader : dllCharacteristics
+
+      WindowsPEOptionalHeader : fileAlignment
+
+      WindowsPEOptionalHeader : imageBase
+
+      WindowsPEOptionalHeader : loaderFlags
+
+      WindowsPEOptionalHeader : magic
+
+      WindowsPEOptionalHeader : majorImageVersion
+
+      WindowsPEOptionalHeader : majorLinkerVersion
+
+      WindowsPEOptionalHeader : majorOSVersion
+
+      WindowsPEOptionalHeader : majorSubsystemVersion
+
+      WindowsPEOptionalHeader : minorImageVersion
+
+      WindowsPEOptionalHeader : minorLinkerVersion
+
+      WindowsPEOptionalHeader : minorOSVersion
+
+      WindowsPEOptionalHeader : minorSubsystemVersion
+
+      WindowsPEOptionalHeader : numberOfRVAAndSizes
+
+      WindowsPEOptionalHeader : sectionAlignment
+
+      WindowsPEOptionalHeader : sizeOfCode
+
+      WindowsPEOptionalHeader : sizeOfHeaders
+
+      WindowsPEOptionalHeader : sizeOfHeapCommit
+
+      WindowsPEOptionalHeader : sizeOfHeapReserve
+
+      WindowsPEOptionalHeader : sizeOfImage
+
+      WindowsPEOptionalHeader : sizeOfInitializedData
+
+      WindowsPEOptionalHeader : sizeOfStackCommit
+
+      WindowsPEOptionalHeader : sizeOfStackReserve
+
+      WindowsPEOptionalHeader : sizeOfUninitializedData
+
+      WindowsPEOptionalHeader : subsystem
+
+      WindowsPEOptionalHeader : win32VersionValue
+
+
+</div>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../UcoThing/">UcoThing</a><ul>
+<li><a href="../UcoInherentCharacterizationThing/">UcoInherentCharacterizationThing</a><ul>
+<li><strong>WindowsPEOptionalHeader</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../majorLinkerVersion/">majorLinkerVersion</a></td>
+<td>0..1 <br/> <a href="../ByteType/">ByteType</a></td>
+<td>"Specifies the linker major version number</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../minorLinkerVersion/">minorLinkerVersion</a></td>
+<td>0..1 <br/> <a href="../ByteType/">ByteType</a></td>
+<td>"Specifies the linker minor version number</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../addressOfEntryPoint/">addressOfEntryPoint</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the address of the entry point relative to the imageBase when the ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../baseOfCode/">baseOfCode</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the address that is relative to the imageBase of the beginning-of-...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../checksum/">checksum</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the checksum of the PE binary</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../fileAlignment/">fileAlignment</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the factor (in bytes) that is used to align the raw data of sectio...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../imageBase/">imageBase</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the address that is relative to the imageBase of the beginning-of-...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../loaderFlags/">loaderFlags</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the reserved loaderFlags"</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../numberOfRVAAndSizes/">numberOfRVAAndSizes</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the number of data-directory entries in the remainder of the optio...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sectionAlignment/">sectionAlignment</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the alignment (in bytes) of PE sections when they are loaded into ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sizeOfCode/">sizeOfCode</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the size of the code (text) section</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sizeOfHeaders/">sizeOfHeaders</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the combined size of the MS-DOS, PE header, and section headers, r...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sizeOfHeapCommit/">sizeOfHeapCommit</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the size of the local heap space to commit</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sizeOfHeapReserve/">sizeOfHeapReserve</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the size of the local heap space to reserve</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sizeOfImage/">sizeOfImage</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the size, in bytes, of the image, including all headers, as the im...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sizeOfInitializedData/">sizeOfInitializedData</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the size of the initialized data section</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sizeOfStackCommit/">sizeOfStackCommit</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the size of the stack to commit</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sizeOfStackReserve/">sizeOfStackReserve</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the size of the stack to reserve</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sizeOfUninitializedData/">sizeOfUninitializedData</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the size of the uninitialized data section</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../win32VersionValue/">win32VersionValue</a></td>
+<td>0..1 <br/> <a href="../UnsignedIntegerType/">UnsignedIntegerType</a></td>
+<td>"Specifies the reserved win32VersionValue</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dllCharacteristics/">dllCharacteristics</a></td>
+<td>0..1 <br/> <a href="../UnsignedShortType/">UnsignedShortType</a></td>
+<td>"Specifies the flags that characterize the PE binary</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../magic/">magic</a></td>
+<td>0..1 <br/> <a href="../UnsignedShortType/">UnsignedShortType</a></td>
+<td>"Specifies the value that indicates the type of the PE binary</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../majorImageVersion/">majorImageVersion</a></td>
+<td>0..1 <br/> <a href="../UnsignedShortType/">UnsignedShortType</a></td>
+<td>"Specifies the major version number of the image</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../majorOSVersion/">majorOSVersion</a></td>
+<td>0..1 <br/> <a href="../UnsignedShortType/">UnsignedShortType</a></td>
+<td>"Specifies the major version number of the required operating system</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../majorSubsystemVersion/">majorSubsystemVersion</a></td>
+<td>0..1 <br/> <a href="../UnsignedShortType/">UnsignedShortType</a></td>
+<td>"Specifies the major version number of the subsystem</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../minorImageVersion/">minorImageVersion</a></td>
+<td>0..1 <br/> <a href="../UnsignedShortType/">UnsignedShortType</a></td>
+<td>"Specifies the minor version number of the image</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../minorOSVersion/">minorOSVersion</a></td>
+<td>0..1 <br/> <a href="../UnsignedShortType/">UnsignedShortType</a></td>
+<td>"Specifies the minor version number of the required operating system</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../minorSubsystemVersion/">minorSubsystemVersion</a></td>
+<td>0..1 <br/> <a href="../UnsignedShortType/">UnsignedShortType</a></td>
+<td>"Specifies the minor version number of the subsystem</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../subsystem/">subsystem</a></td>
+<td>0..1 <br/> <a href="../UnsignedShortType/">UnsignedShortType</a></td>
+<td>"Specifies the subsystem (e</td>
+<td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../WindowsPEBinaryFileFacet/">WindowsPEBinaryFileFacet</a></td>
+<td><a href="../optionalHeader/">optionalHeader</a></td>
+<td>range</td>
+<td><a href="./">WindowsPEOptionalHeader</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/linkmodel/uco-master</li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>master:WindowsPEOptionalHeader</td>
+</tr>
+<tr>
+<td>native</td>
+<td>master:WindowsPEOptionalHeader</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<h3 id="direct">Direct</h3>
+<details>
+<pre><code class="language-yaml">name: WindowsPEOptionalHeader
+description: '"A Windows PE optional header is a grouping of characteristics unique
+  to the ''optionalHeader'' of a Windows PE (Portable Executable) file, consisting
+  of a collection of metadata about the executable code structure of the file."'
+in_subset:
+- microsoft
+from_schema: https://w3id.org/linkmodel/uco-master
+rank: 1000
+is_a: UcoInherentCharacterizationThing
+slots:
+- majorLinkerVersion
+- minorLinkerVersion
+- addressOfEntryPoint
+- baseOfCode
+- checksum
+- fileAlignment
+- imageBase
+- loaderFlags
+- numberOfRVAAndSizes
+- sectionAlignment
+- sizeOfCode
+- sizeOfHeaders
+- sizeOfHeapCommit
+- sizeOfHeapReserve
+- sizeOfImage
+- sizeOfInitializedData
+- sizeOfStackCommit
+- sizeOfStackReserve
+- sizeOfUninitializedData
+- win32VersionValue
+- dllCharacteristics
+- magic
+- majorImageVersion
+- majorOSVersion
+- majorSubsystemVersion
+- minorImageVersion
+- minorOSVersion
+- minorSubsystemVersion
+- subsystem
+slot_usage:
+  majorLinkerVersion:
+    name: majorLinkerVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  minorLinkerVersion:
+    name: minorLinkerVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  addressOfEntryPoint:
+    name: addressOfEntryPoint
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  baseOfCode:
+    name: baseOfCode
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  checksum:
+    name: checksum
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  fileAlignment:
+    name: fileAlignment
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  imageBase:
+    name: imageBase
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  loaderFlags:
+    name: loaderFlags
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  numberOfRVAAndSizes:
+    name: numberOfRVAAndSizes
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sectionAlignment:
+    name: sectionAlignment
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfCode:
+    name: sizeOfCode
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfHeaders:
+    name: sizeOfHeaders
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfHeapCommit:
+    name: sizeOfHeapCommit
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfHeapReserve:
+    name: sizeOfHeapReserve
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfImage:
+    name: sizeOfImage
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfInitializedData:
+    name: sizeOfInitializedData
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfStackCommit:
+    name: sizeOfStackCommit
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfStackReserve:
+    name: sizeOfStackReserve
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfUninitializedData:
+    name: sizeOfUninitializedData
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  win32VersionValue:
+    name: win32VersionValue
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  dllCharacteristics:
+    name: dllCharacteristics
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  magic:
+    name: magic
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  majorImageVersion:
+    name: majorImageVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  majorOSVersion:
+    name: majorOSVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  majorSubsystemVersion:
+    name: majorSubsystemVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  minorImageVersion:
+    name: minorImageVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  minorOSVersion:
+    name: minorOSVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  minorSubsystemVersion:
+    name: minorSubsystemVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  subsystem:
+    name: subsystem
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+
+</code></pre>
+</details>
+<h3 id="induced">Induced</h3>
+<details>
+<pre><code class="language-yaml">name: WindowsPEOptionalHeader
+description: '"A Windows PE optional header is a grouping of characteristics unique
+  to the ''optionalHeader'' of a Windows PE (Portable Executable) file, consisting
+  of a collection of metadata about the executable code structure of the file."'
+in_subset:
+- microsoft
+from_schema: https://w3id.org/linkmodel/uco-master
+rank: 1000
+is_a: UcoInherentCharacterizationThing
+slot_usage:
+  majorLinkerVersion:
+    name: majorLinkerVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  minorLinkerVersion:
+    name: minorLinkerVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  addressOfEntryPoint:
+    name: addressOfEntryPoint
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  baseOfCode:
+    name: baseOfCode
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  checksum:
+    name: checksum
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  fileAlignment:
+    name: fileAlignment
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  imageBase:
+    name: imageBase
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  loaderFlags:
+    name: loaderFlags
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  numberOfRVAAndSizes:
+    name: numberOfRVAAndSizes
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sectionAlignment:
+    name: sectionAlignment
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfCode:
+    name: sizeOfCode
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfHeaders:
+    name: sizeOfHeaders
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfHeapCommit:
+    name: sizeOfHeapCommit
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfHeapReserve:
+    name: sizeOfHeapReserve
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfImage:
+    name: sizeOfImage
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfInitializedData:
+    name: sizeOfInitializedData
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfStackCommit:
+    name: sizeOfStackCommit
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfStackReserve:
+    name: sizeOfStackReserve
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  sizeOfUninitializedData:
+    name: sizeOfUninitializedData
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  win32VersionValue:
+    name: win32VersionValue
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  dllCharacteristics:
+    name: dllCharacteristics
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  magic:
+    name: magic
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  majorImageVersion:
+    name: majorImageVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  majorOSVersion:
+    name: majorOSVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  majorSubsystemVersion:
+    name: majorSubsystemVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  minorImageVersion:
+    name: minorImageVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  minorOSVersion:
+    name: minorOSVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  minorSubsystemVersion:
+    name: minorSubsystemVersion
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+  subsystem:
+    name: subsystem
+    multivalued: true
+    domain_of:
+    - WindowsPEOptionalHeader
+attributes:
+  majorLinkerVersion:
+    name: majorLinkerVersion
+    description: '"Specifies the linker major version number."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: majorLinkerVersion
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: byte type
+  minorLinkerVersion:
+    name: minorLinkerVersion
+    description: '"Specifies the linker minor version number."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: minorLinkerVersion
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: byte type
+  addressOfEntryPoint:
+    name: addressOfEntryPoint
+    description: '"Specifies the address of the entry point relative to the imageBase
+      when the executable is loaded into memory."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: addressOfEntryPoint
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  baseOfCode:
+    name: baseOfCode
+    description: '"Specifies the address that is relative to the imageBase of the
+      beginning-of-code section when it is loaded into memory."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: baseOfCode
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  checksum:
+    name: checksum
+    description: '"Specifies the checksum of the PE binary."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: checksum
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  fileAlignment:
+    name: fileAlignment
+    description: '"Specifies the factor (in bytes) that is used to align the raw data
+      of sections in the image file."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: fileAlignment
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  imageBase:
+    name: imageBase
+    description: '"Specifies the address that is relative to the imageBase of the
+      beginning-of-data section when it is loaded into memory."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: imageBase
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  loaderFlags:
+    name: loaderFlags
+    description: '"Specifies the reserved loaderFlags"'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: loaderFlags
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  numberOfRVAAndSizes:
+    name: numberOfRVAAndSizes
+    description: '"Specifies the number of data-directory entries in the remainder
+      of the optionalHeader."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: numberOfRVAAndSizes
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  sectionAlignment:
+    name: sectionAlignment
+    description: '"Specifies the alignment (in bytes) of PE sections when they are
+      loaded into memory."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: sectionAlignment
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  sizeOfCode:
+    name: sizeOfCode
+    description: '"Specifies the size of the code (text) section. If there are multiple
+      such sections, this refers to the sum of the sizes of each section."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: sizeOfCode
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  sizeOfHeaders:
+    name: sizeOfHeaders
+    description: '"Specifies the combined size of the MS-DOS, PE header, and section
+      headers, rounded up a multiple of the value specified in the file_alignment
+      header."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: sizeOfHeaders
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  sizeOfHeapCommit:
+    name: sizeOfHeapCommit
+    description: '"Specifies the size of the local heap space to commit."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: sizeOfHeapCommit
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  sizeOfHeapReserve:
+    name: sizeOfHeapReserve
+    description: '"Specifies the size of the local heap space to reserve."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: sizeOfHeapReserve
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  sizeOfImage:
+    name: sizeOfImage
+    description: '"Specifies the size, in bytes, of the image, including all headers,
+      as the image is loaded in memory."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: sizeOfImage
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  sizeOfInitializedData:
+    name: sizeOfInitializedData
+    description: '"Specifies the size of the initialized data section. If there are
+      multiple such sections, this refers to the sum of the sizes of each section."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: sizeOfInitializedData
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  sizeOfStackCommit:
+    name: sizeOfStackCommit
+    description: '"Specifies the size of the stack to commit."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: sizeOfStackCommit
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  sizeOfStackReserve:
+    name: sizeOfStackReserve
+    description: '"Specifies the size of the stack to reserve."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: sizeOfStackReserve
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  sizeOfUninitializedData:
+    name: sizeOfUninitializedData
+    description: '"Specifies the size of the uninitialized data section. If there
+      are multiple such sections, this refers to the sum of the sizes of each section."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: sizeOfUninitializedData
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  win32VersionValue:
+    name: win32VersionValue
+    description: '"Specifies the reserved win32VersionValue."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: win32VersionValue
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned integer type
+  dllCharacteristics:
+    name: dllCharacteristics
+    description: '"Specifies the flags that characterize the PE binary."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: dllCharacteristics
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned short type
+  magic:
+    name: magic
+    description: '"Specifies the value that indicates the type of the PE binary."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: magic
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned short type
+  majorImageVersion:
+    name: majorImageVersion
+    description: '"Specifies the major version number of the image."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: majorImageVersion
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned short type
+  majorOSVersion:
+    name: majorOSVersion
+    description: '"Specifies the major version number of the required operating system."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: majorOSVersion
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned short type
+  majorSubsystemVersion:
+    name: majorSubsystemVersion
+    description: '"Specifies the major version number of the subsystem."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: majorSubsystemVersion
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned short type
+  minorImageVersion:
+    name: minorImageVersion
+    description: '"Specifies the minor version number of the image."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: minorImageVersion
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned short type
+  minorOSVersion:
+    name: minorOSVersion
+    description: '"Specifies the minor version number of the required operating system."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: minorOSVersion
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned short type
+  minorSubsystemVersion:
+    name: minorSubsystemVersion
+    description: '"Specifies the minor version number of the subsystem."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: minorSubsystemVersion
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned short type
+  subsystem:
+    name: subsystem
+    description: '"Specifies the subsystem (e.g., GUI, device driver, etc.) that is
+      required to run this image."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: subsystem
+    owner: WindowsPEOptionalHeader
+    domain_of:
+    - WindowsPEOptionalHeader
+    range: unsigned short type
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
+<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</html>

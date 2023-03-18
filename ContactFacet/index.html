@@ -1,0 +1,967 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://lmodel.github.io/uco-master/ContactFacet/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
+<title>Class: ContactFacet - uco-master</title>
+<link href="../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-contactfacet">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="uco-master" class="md-header__button md-logo" data-md-component="logo" href=".." title="uco-master">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            uco-master
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: ContactFacet
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lmodel/uco-master" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="uco-master" class="md-nav__button md-logo" data-md-component="logo" href=".." title="uco-master">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    uco-master
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lmodel/uco-master" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about.md">
+        About
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+    Slots
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identifier-and-mapping-information">
+    Identifier and Mapping Information
+  </a>
+<nav aria-label="Identifier and Mapping Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-source">
+    Schema Source
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mappings">
+    Mappings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+    LinkML Source
+  </a>
+<nav aria-label="LinkML Source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct">
+    Direct
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#induced">
+    Induced
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="class-contactfacet">Class: ContactFacet</h1>
+<p><em>"A contact facet is a grouping of characteristics unique to a set of identification and communication related details for a single entity."</em></p>
+<p>URI: <a href="https://w3id.org/lmodel/uco-master/ContactFacet">master:ContactFacet</a></p>
+<div class="mermaid"> classDiagram
+    class ContactFacet
+      Facet &lt;|-- ContactFacet
+
+
+      ContactFacet &lt;|-- WhoisContactFacet
+
+
+      ContactFacet : birthdate
+
+      ContactFacet : contactAddress
+
+          ContactFacet ..&gt; ContactAddress : contactAddress
+
+      ContactFacet : contactAffiliation
+
+          ContactFacet ..&gt; ContactAffiliation : contactAffiliation
+
+      ContactFacet : contactEmail
+
+          ContactFacet ..&gt; ContactEmail : contactEmail
+
+      ContactFacet : contactGroup
+
+      ContactFacet : contactID
+
+      ContactFacet : contactMessaging
+
+          ContactFacet ..&gt; ContactMessaging : contactMessaging
+
+      ContactFacet : contactNote
+
+      ContactFacet : contactPhone
+
+          ContactFacet ..&gt; ContactPhone : contactPhone
+
+      ContactFacet : contactProfile
+
+          ContactFacet ..&gt; ContactProfile : contactProfile
+
+      ContactFacet : contactSIP
+
+          ContactFacet ..&gt; ContactSIP : contactSIP
+
+      ContactFacet : contactURL
+
+          ContactFacet ..&gt; ContactURL : contactURL
+
+      ContactFacet : displayName
+
+      ContactFacet : firstName
+
+      ContactFacet : lastName
+
+      ContactFacet : lastTimeContacted
+
+      ContactFacet : middleName
+
+      ContactFacet : namePhonetic
+
+      ContactFacet : namePrefix
+
+      ContactFacet : nameSuffix
+
+      ContactFacet : nickname
+
+      ContactFacet : numberTimesContacted
+
+      ContactFacet : sourceApplication
+
+          ContactFacet ..&gt; ObservableObject : sourceApplication
+
+
+</div>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../UcoThing/">UcoThing</a><ul>
+<li><a href="../UcoInherentCharacterizationThing/">UcoInherentCharacterizationThing</a><ul>
+<li><a href="../Facet/">Facet</a><ul>
+<li><strong>ContactFacet</strong><ul>
+<li><a href="../WhoisContactFacet/">WhoisContactFacet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../contactAddress/">contactAddress</a></td>
+<td>0..1 <br/> <a href="../ContactAddress/">ContactAddress</a></td>
+<td>"contactAddress specifies information characterizing a geolocation address of...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contactAffiliation/">contactAffiliation</a></td>
+<td>0..1 <br/> <a href="../ContactAffiliation/">ContactAffiliation</a></td>
+<td>"contactAffiliation specifies information characterizing details of an organi...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contactEmail/">contactEmail</a></td>
+<td>0..1 <br/> <a href="../ContactEmail/">ContactEmail</a></td>
+<td>"contactEmail specifies information characterizing details for contacting a c...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contactMessaging/">contactMessaging</a></td>
+<td>0..1 <br/> <a href="../ContactMessaging/">ContactMessaging</a></td>
+<td>"contactMessaging specifies information characterizing details for contacting...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contactPhone/">contactPhone</a></td>
+<td>0..1 <br/> <a href="../ContactPhone/">ContactPhone</a></td>
+<td>"contactPhone specifies information characterizing details for contacting a c...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contactProfile/">contactProfile</a></td>
+<td>0..1 <br/> <a href="../ContactProfile/">ContactProfile</a></td>
+<td>"contactProfile specifies information characterizing details for contacting a...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contactSIP/">contactSIP</a></td>
+<td>0..1 <br/> <a href="../ContactSIP/">ContactSIP</a></td>
+<td>"contactSIP specifies information characterizing details for contacting a con...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contactURL/">contactURL</a></td>
+<td>0..1 <br/> <a href="../ContactURL/">ContactURL</a></td>
+<td>"contactURL specifies information characterizing details for contacting a con...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sourceApplication/">sourceApplication</a></td>
+<td>0..1 <br/> <a href="../ObservableObject/">ObservableObject</a></td>
+<td>"Source application specifies the software application that a particular cont...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../birthdate/">birthdate</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../lastTimeContacted/">lastTimeContacted</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>"Last time contacted specifies the date and time that a particular contact wa...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../numberTimesContacted/">numberTimesContacted</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>"Number times contacted specifies the number of times a particular contact ha...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contactID/">contactID</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"Specifies an ID for the contact</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../displayName/">displayName</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"Display name specifies the name to display for some entity within a user int...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../firstName/">firstName</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"The firstName of a person</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../lastName/">lastName</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"The lastName of a person</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../middleName/">middleName</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"The middleName of a person</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../namePhonetic/">namePhonetic</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"Name phonetic specifies the phonetic pronunciation of the name of a person</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../namePrefix/">namePrefix</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"Name prefix specifies an honorific prefix (coming ordinally before first/giv...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../nameSuffix/">nameSuffix</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"Name suffix specifies an suffix (coming ordinally after last/family name) fo...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contactGroup/">contactGroup</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"contactGroup specifies the name/tag of a particular named/tagged grouping of...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contactNote/">contactNote</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"contactNote specifies a comment/note associated with a given contact</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../nickname/">nickname</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"Nickname specifies an alternate, unofficial and typically informal name for ...</td>
+<td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/linkmodel/uco-master</li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>master:ContactFacet</td>
+</tr>
+<tr>
+<td>native</td>
+<td>master:ContactFacet</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<h3 id="direct">Direct</h3>
+<details>
+<pre><code class="language-yaml">name: ContactFacet
+description: '"A contact facet is a grouping of characteristics unique to a set of
+  identification and communication related details for a single entity."'
+from_schema: https://w3id.org/linkmodel/uco-master
+rank: 1000
+is_a: Facet
+slots:
+- contactAddress
+- contactAffiliation
+- contactEmail
+- contactMessaging
+- contactPhone
+- contactProfile
+- contactSIP
+- contactURL
+- sourceApplication
+- birthdate
+- lastTimeContacted
+- numberTimesContacted
+- contactID
+- displayName
+- firstName
+- lastName
+- middleName
+- namePhonetic
+- namePrefix
+- nameSuffix
+- contactGroup
+- contactNote
+- nickname
+slot_usage:
+  contactAddress:
+    name: contactAddress
+    domain_of:
+    - ContactFacet
+    - ProfileFacet
+    minimum_cardinality: 0
+  contactAffiliation:
+    name: contactAffiliation
+    domain_of:
+    - ContactFacet
+    minimum_cardinality: 0
+  contactEmail:
+    name: contactEmail
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    - ProfileFacet
+    minimum_cardinality: 0
+  contactMessaging:
+    name: contactMessaging
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    - ProfileFacet
+    minimum_cardinality: 0
+  contactPhone:
+    name: contactPhone
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    - ProfileFacet
+    minimum_cardinality: 0
+  contactProfile:
+    name: contactProfile
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    minimum_cardinality: 0
+  contactSIP:
+    name: contactSIP
+    domain_of:
+    - ContactFacet
+    minimum_cardinality: 0
+  contactURL:
+    name: contactURL
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    - ProfileFacet
+    minimum_cardinality: 0
+  contactGroup:
+    name: contactGroup
+    domain_of:
+    - ContactFacet
+    minimum_cardinality: 0
+  contactNote:
+    name: contactNote
+    domain_of:
+    - ContactFacet
+    minimum_cardinality: 0
+  nickname:
+    name: nickname
+    domain_of:
+    - ContactFacet
+    minimum_cardinality: 0
+
+</code></pre>
+</details>
+<h3 id="induced">Induced</h3>
+<details>
+<pre><code class="language-yaml">name: ContactFacet
+description: '"A contact facet is a grouping of characteristics unique to a set of
+  identification and communication related details for a single entity."'
+from_schema: https://w3id.org/linkmodel/uco-master
+rank: 1000
+is_a: Facet
+slot_usage:
+  contactAddress:
+    name: contactAddress
+    domain_of:
+    - ContactFacet
+    - ProfileFacet
+    minimum_cardinality: 0
+  contactAffiliation:
+    name: contactAffiliation
+    domain_of:
+    - ContactFacet
+    minimum_cardinality: 0
+  contactEmail:
+    name: contactEmail
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    - ProfileFacet
+    minimum_cardinality: 0
+  contactMessaging:
+    name: contactMessaging
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    - ProfileFacet
+    minimum_cardinality: 0
+  contactPhone:
+    name: contactPhone
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    - ProfileFacet
+    minimum_cardinality: 0
+  contactProfile:
+    name: contactProfile
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    minimum_cardinality: 0
+  contactSIP:
+    name: contactSIP
+    domain_of:
+    - ContactFacet
+    minimum_cardinality: 0
+  contactURL:
+    name: contactURL
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    - ProfileFacet
+    minimum_cardinality: 0
+  contactGroup:
+    name: contactGroup
+    domain_of:
+    - ContactFacet
+    minimum_cardinality: 0
+  contactNote:
+    name: contactNote
+    domain_of:
+    - ContactFacet
+    minimum_cardinality: 0
+  nickname:
+    name: nickname
+    domain_of:
+    - ContactFacet
+    minimum_cardinality: 0
+attributes:
+  contactAddress:
+    name: contactAddress
+    description: '"contactAddress specifies information characterizing a geolocation
+      address of a contact entity."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: contactAddress
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    - ProfileFacet
+    range: ContactAddress
+    minimum_cardinality: 0
+  contactAffiliation:
+    name: contactAffiliation
+    description: '"contactAffiliation specifies information characterizing details
+      of an organizational affiliation for a single contact entity."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: contactAffiliation
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: ContactAffiliation
+    minimum_cardinality: 0
+  contactEmail:
+    name: contactEmail
+    description: '"contactEmail specifies information characterizing details for contacting
+      a contact entity by email."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: contactEmail
+    owner: ContactFacet
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    - ProfileFacet
+    range: ContactEmail
+    minimum_cardinality: 0
+  contactMessaging:
+    name: contactMessaging
+    description: '"contactMessaging specifies information characterizing details for
+      contacting a contact entity by digital messaging."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: contactMessaging
+    owner: ContactFacet
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    - ProfileFacet
+    range: ContactMessaging
+    minimum_cardinality: 0
+  contactPhone:
+    name: contactPhone
+    description: '"contactPhone specifies information characterizing details for contacting
+      a contact entity by telephone."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: contactPhone
+    owner: ContactFacet
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    - ProfileFacet
+    range: ContactPhone
+    minimum_cardinality: 0
+  contactProfile:
+    name: contactProfile
+    description: '"contactProfile specifies information characterizing details for
+      contacting a contact entity by online service."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: contactProfile
+    owner: ContactFacet
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    range: ContactProfile
+    minimum_cardinality: 0
+  contactSIP:
+    name: contactSIP
+    description: '"contactSIP specifies information characterizing details for contacting
+      a contact entity by Session Initiation Protocol (SIP)."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: contactSIP
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: ContactSIP
+    minimum_cardinality: 0
+  contactURL:
+    name: contactURL
+    description: '"contactURL specifies information characterizing details for contacting
+      a contact entity by Uniform Resource Locator (URL)."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: contactURL
+    owner: ContactFacet
+    domain_of:
+    - ContactAffiliation
+    - ContactFacet
+    - ProfileFacet
+    range: ContactURL
+    minimum_cardinality: 0
+  sourceApplication:
+    name: sourceApplication
+    description: '"Source application specifies the software application that a particular
+      contact or contact list is associated with."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: sourceApplication
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    - ContactListFacet
+    range: ObservableObject
+  birthdate:
+    name: birthdate
+    description: ''
+    from_schema: https://w3id.org/linkmodel/uco-master
+    exact_mappings:
+    - wikidata.property:P569
+    rank: 1000
+    alias: birthdate
+    owner: ContactFacet
+    domain_of:
+    - BirthInformationFacet
+    - ContactFacet
+    range: datetime
+  lastTimeContacted:
+    name: lastTimeContacted
+    description: '"Last time contacted specifies the date and time that a particular
+      contact was last contacted."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: lastTimeContacted
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: datetime
+  numberTimesContacted:
+    name: numberTimesContacted
+    description: '"Number times contacted specifies the number of times a particular
+      contact has been contacted."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: numberTimesContacted
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: integer
+  contactID:
+    name: contactID
+    description: '"Specifies an ID for the contact."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: contactID
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: string
+  displayName:
+    name: displayName
+    description: '"Display name specifies the name to display for some entity within
+      a user interface."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    broad_mappings:
+    - NCIT:C70896
+    rank: 1000
+    alias: displayName
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    - DigitalAccountFacet
+    - DigitalAddressFacet
+    - ProfileFacet
+    - WindowsServiceFacet
+    range: string
+  firstName:
+    name: firstName
+    description: '"The firstName of a person."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    exact_mappings:
+    - NCIT:C40974
+    - wikidata:Q202444
+    rank: 1000
+    alias: firstName
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: string
+  lastName:
+    name: lastName
+    description: '"The lastName of a person."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    exact_mappings:
+    - wikidata:Q101352
+    - wikidata:Q4116295
+    rank: 1000
+    alias: lastName
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: string
+  middleName:
+    name: middleName
+    description: '"The middleName of a person."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    exact_mappings:
+    - NCIT:C188268
+    - SIO:001317
+    - wikidata:Q245025
+    rank: 1000
+    alias: middleName
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: string
+  namePhonetic:
+    name: namePhonetic
+    description: '"Name phonetic specifies the phonetic pronunciation of the name
+      of a person."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: namePhonetic
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: string
+  namePrefix:
+    name: namePrefix
+    description: '"Name prefix specifies an honorific prefix (coming ordinally before
+      first/given name) for the name of a person."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    exact_mappings:
+    - wikidata:Q115859699
+    - wikidata:Q108376599
+    rank: 1000
+    alias: namePrefix
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: string
+  nameSuffix:
+    name: nameSuffix
+    description: '"Name suffix specifies an suffix (coming ordinally after last/family
+      name) for the name of a person."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    exact_mappings:
+    - wikidata:Q1964223
+    rank: 1000
+    alias: nameSuffix
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: string
+  contactGroup:
+    name: contactGroup
+    description: '"contactGroup specifies the name/tag of a particular named/tagged
+      grouping of contacts."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: contactGroup
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: string
+    minimum_cardinality: 0
+  contactNote:
+    name: contactNote
+    description: '"contactNote specifies a comment/note associated with a given contact."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: contactNote
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: string
+    minimum_cardinality: 0
+  nickname:
+    name: nickname
+    description: '"Nickname specifies an alternate, unofficial and typically informal
+      name for a person independent of their official name."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: nickname
+    owner: ContactFacet
+    domain_of:
+    - ContactFacet
+    range: string
+    minimum_cardinality: 0
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
+<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</html>

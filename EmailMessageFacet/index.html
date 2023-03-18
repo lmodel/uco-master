@@ -1,0 +1,1038 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://lmodel.github.io/uco-master/EmailMessageFacet/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
+<title>Class: EmailMessageFacet - uco-master</title>
+<link href="../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-emailmessagefacet">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="uco-master" class="md-header__button md-logo" data-md-component="logo" href=".." title="uco-master">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            uco-master
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: EmailMessageFacet
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lmodel/uco-master" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="uco-master" class="md-nav__button md-logo" data-md-component="logo" href=".." title="uco-master">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    uco-master
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lmodel/uco-master" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about.md">
+        About
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+    Slots
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identifier-and-mapping-information">
+    Identifier and Mapping Information
+  </a>
+<nav aria-label="Identifier and Mapping Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-source">
+    Schema Source
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mappings">
+    Mappings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+    LinkML Source
+  </a>
+<nav aria-label="LinkML Source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct">
+    Direct
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#induced">
+    Induced
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="class-emailmessagefacet">Class: EmailMessageFacet</h1>
+<p><em>"An email message facet is a grouping of characteristics unique to a message that is an instance of an electronic mail correspondence conformant to the internet message format described in RFC 5322 and related RFCs."</em></p>
+<p>URI: <a href="https://w3id.org/lmodel/uco-master/EmailMessageFacet">master:EmailMessageFacet</a></p>
+<div class="mermaid"> classDiagram
+    class EmailMessageFacet
+      Facet &lt;|-- EmailMessageFacet
+
+      EmailMessageFacet : application
+
+          EmailMessageFacet ..&gt; ObservableObject : application
+
+      EmailMessageFacet : bcc
+
+          EmailMessageFacet ..&gt; ObservableObject : bcc
+
+      EmailMessageFacet : body
+
+      EmailMessageFacet : bodyMultipart
+
+          EmailMessageFacet ..&gt; MimePartType : bodyMultipart
+
+      EmailMessageFacet : bodyRaw
+
+          EmailMessageFacet ..&gt; ObservableObject : bodyRaw
+
+      EmailMessageFacet : categories
+
+      EmailMessageFacet : cc
+
+          EmailMessageFacet ..&gt; ObservableObject : cc
+
+      EmailMessageFacet : contentDisposition
+
+      EmailMessageFacet : contentType
+
+      EmailMessageFacet : from
+
+          EmailMessageFacet ..&gt; ObservableObject : from
+
+      EmailMessageFacet : headerRaw
+
+          EmailMessageFacet ..&gt; ObservableObject : headerRaw
+
+      EmailMessageFacet : inReplyTo
+
+      EmailMessageFacet : isMimeEncoded
+
+      EmailMessageFacet : isMultipart
+
+      EmailMessageFacet : isRead
+
+      EmailMessageFacet : labels
+
+      EmailMessageFacet : messageID
+
+      EmailMessageFacet : modifiedTime
+
+      EmailMessageFacet : otherHeaders
+
+          EmailMessageFacet ..&gt; Dictionary : otherHeaders
+
+      EmailMessageFacet : priority
+
+      EmailMessageFacet : receivedLines
+
+      EmailMessageFacet : receivedTime
+
+      EmailMessageFacet : references
+
+          EmailMessageFacet ..&gt; ObservableObject : references
+
+      EmailMessageFacet : sender
+
+          EmailMessageFacet ..&gt; ObservableObject : sender
+
+      EmailMessageFacet : sentTime
+
+      EmailMessageFacet : subject
+
+      EmailMessageFacet : to
+
+          EmailMessageFacet ..&gt; ObservableObject : to
+
+      EmailMessageFacet : xMailer
+
+      EmailMessageFacet : xOriginatingIP
+
+          EmailMessageFacet ..&gt; ObservableObject : xOriginatingIP
+
+
+</div>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../UcoThing/">UcoThing</a><ul>
+<li><a href="../UcoInherentCharacterizationThing/">UcoInherentCharacterizationThing</a><ul>
+<li><a href="../Facet/">Facet</a><ul>
+<li><strong>EmailMessageFacet</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../bodyMultipart/">bodyMultipart</a></td>
+<td>0..1 <br/> <a href="../MimePartType/">MimePartType</a></td>
+<td>"A list of the MIME parts that make up the email body</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../application/">application</a></td>
+<td>0..1 <br/> <a href="../ObservableObject/">ObservableObject</a></td>
+<td>"The application associated with this object</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../bodyRaw/">bodyRaw</a></td>
+<td>0..1 <br/> <a href="../ObservableObject/">ObservableObject</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../from/">from</a></td>
+<td>0..1 <br/> <a href="../ObservableObject/">ObservableObject</a></td>
+<td>"The phone number of the initiating party</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../headerRaw/">headerRaw</a></td>
+<td>0..1 <br/> <a href="../ObservableObject/">ObservableObject</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sender/">sender</a></td>
+<td>0..1 <br/> <a href="../ObservableObject/">ObservableObject</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../xOriginatingIP/">xOriginatingIP</a></td>
+<td>0..1 <br/> <a href="../ObservableObject/">ObservableObject</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../bcc/">bcc</a></td>
+<td>0..1 <br/> <a href="../ObservableObject/">ObservableObject</a></td>
+<td>"Allows the sender of a message to conceal the person entered in the BCC fiel...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../cc/">cc</a></td>
+<td>0..1 <br/> <a href="../ObservableObject/">ObservableObject</a></td>
+<td>"Carbon copy: technique of producing one or more copies simultaneously</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../references/">references</a></td>
+<td>0..1 <br/> <a href="../ObservableObject/">ObservableObject</a></td>
+<td>"A list of email message identifiers this email relates to</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../to/">to</a></td>
+<td>0..1 <br/> <a href="../ObservableObject/">ObservableObject</a></td>
+<td>"The receiver's phone number</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../otherHeaders/">otherHeaders</a></td>
+<td>0..1 <br/> <a href="../Dictionary/">Dictionary</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../isMimeEncoded/">isMimeEncoded</a></td>
+<td>0..1 <br/> <a href="../BooleanType/">BooleanType</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../isMultipart/">isMultipart</a></td>
+<td>0..1 <br/> <a href="../BooleanType/">BooleanType</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../isRead/">isRead</a></td>
+<td>0..1 <br/> <a href="../BooleanType/">BooleanType</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../modifiedTime/">modifiedTime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>Specifies the time that this particular version of the object was modified</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../receivedTime/">receivedTime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>"The date and time at which the message received</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sentTime/">sentTime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>"The date and time at which the message sent</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../body/">body</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"Text forming the main content of a printed or digital work (as opposed to ad...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contentDisposition/">contentDisposition</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contentType/">contentType</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../inReplyTo/">inReplyTo</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"One of more unique identifiers for identifying the email(s) this email is a ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../messageID/">messageID</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"An unique identifier for the message</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../priority/">priority</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"The priority of the email</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../subject/">subject</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"The subject of the email</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../xMailer/">xMailer</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../categories/">categories</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"Categories applied to the object</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../labels/">labels</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>"Named and colored label</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../receivedLines/">receivedLines</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/linkmodel/uco-master</li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>master:EmailMessageFacet</td>
+</tr>
+<tr>
+<td>native</td>
+<td>master:EmailMessageFacet</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<h3 id="direct">Direct</h3>
+<details>
+<pre><code class="language-yaml">name: EmailMessageFacet
+description: '"An email message facet is a grouping of characteristics unique to a
+  message that is an instance of an electronic mail correspondence conformant to the
+  internet message format described in RFC 5322 and related RFCs."'
+from_schema: https://w3id.org/linkmodel/uco-master
+rank: 1000
+is_a: Facet
+slots:
+- bodyMultipart
+- application
+- bodyRaw
+- from
+- headerRaw
+- sender
+- xOriginatingIP
+- bcc
+- cc
+- references
+- to
+- otherHeaders
+- isMimeEncoded
+- isMultipart
+- isRead
+- modifiedTime
+- receivedTime
+- sentTime
+- body
+- contentDisposition
+- contentType
+- inReplyTo
+- messageID
+- priority
+- subject
+- xMailer
+- categories
+- labels
+- receivedLines
+slot_usage:
+  bodyMultipart:
+    name: bodyMultipart
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+  bcc:
+    name: bcc
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+  cc:
+    name: cc
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+  references:
+    name: references
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+  to:
+    name: to
+    multivalued: true
+    domain_of:
+    - CallFacet
+    - EmailMessageFacet
+    - MessageFacet
+  categories:
+    name: categories
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+  labels:
+    name: labels
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+  receivedLines:
+    name: receivedLines
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+
+</code></pre>
+</details>
+<h3 id="induced">Induced</h3>
+<details>
+<pre><code class="language-yaml">name: EmailMessageFacet
+description: '"An email message facet is a grouping of characteristics unique to a
+  message that is an instance of an electronic mail correspondence conformant to the
+  internet message format described in RFC 5322 and related RFCs."'
+from_schema: https://w3id.org/linkmodel/uco-master
+rank: 1000
+is_a: Facet
+slot_usage:
+  bodyMultipart:
+    name: bodyMultipart
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+  bcc:
+    name: bcc
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+  cc:
+    name: cc
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+  references:
+    name: references
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+  to:
+    name: to
+    multivalued: true
+    domain_of:
+    - CallFacet
+    - EmailMessageFacet
+    - MessageFacet
+  categories:
+    name: categories
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+  labels:
+    name: labels
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+  receivedLines:
+    name: receivedLines
+    multivalued: true
+    domain_of:
+    - EmailMessageFacet
+attributes:
+  bodyMultipart:
+    name: bodyMultipart
+    description: '"A list of the MIME parts that make up the email body. This field
+      MAY only be used if isMultipart is true."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: bodyMultipart
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: MimePartType
+  application:
+    name: application
+    description: '"The application associated with this object."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: application
+    owner: EmailMessageFacet
+    domain_of:
+    - ApplicationAccountFacet
+    - BrowserBookmarkFacet
+    - BrowserCookieFacet
+    - CalendarEntryFacet
+    - CalendarFacet
+    - CallFacet
+    - EmailMessageFacet
+    - EventRecordFacet
+    - GeoLocationEntryFacet
+    - GeoLocationLogFacet
+    - GeoLocationTrackFacet
+    - MessageFacet
+    - NoteFacet
+    - WindowsTaskFacet
+    range: ObservableObject
+  bodyRaw:
+    name: bodyRaw
+    description: ''
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: bodyRaw
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    - MimePartType
+    range: ObservableObject
+  from:
+    name: from
+    description: '"The phone number of the initiating party."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    broad_mappings:
+    - sumo:phoneNumber
+    - wikidata:Q214995
+    rank: 1000
+    alias: from
+    owner: EmailMessageFacet
+    domain_of:
+    - CallFacet
+    - EmailMessageFacet
+    - MessageFacet
+    range: ObservableObject
+  headerRaw:
+    name: headerRaw
+    description: ''
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: headerRaw
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: ObservableObject
+  sender:
+    name: sender
+    description: ''
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: sender
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: ObservableObject
+  xOriginatingIP:
+    name: xOriginatingIP
+    description: ''
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: xOriginatingIP
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: ObservableObject
+  bcc:
+    name: bcc
+    description: '"Allows the sender of a message to conceal the person entered in
+      the BCC field from the other recipients"'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: bcc
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: ObservableObject
+  cc:
+    name: cc
+    description: '"Carbon copy: technique of producing one or more copies simultaneously."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: cc
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: ObservableObject
+  references:
+    name: references
+    description: '"A list of email message identifiers this email relates to."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: references
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: ObservableObject
+  to:
+    name: to
+    description: '"The receiver''s phone number."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: to
+    owner: EmailMessageFacet
+    domain_of:
+    - CallFacet
+    - EmailMessageFacet
+    - MessageFacet
+    range: ObservableObject
+  otherHeaders:
+    name: otherHeaders
+    description: ''
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: otherHeaders
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: Dictionary
+  isMimeEncoded:
+    name: isMimeEncoded
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: isMimeEncoded
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: boolean type
+  isMultipart:
+    name: isMultipart
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: isMultipart
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: boolean type
+  isRead:
+    name: isRead
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: isRead
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    - SMSMessageFacet
+    range: boolean type
+  modifiedTime:
+    name: modifiedTime
+    description: Specifies the time that this particular version of the object was
+      modified. The object creator can use the time it deems most appropriate as the
+      time this version of the object was modified. The value of the modified property
+      for a given object version MUST be later than or equal to the value of the created
+      property. Object creators MUST update the modified property when creating a
+      new version of an object. The modified timestamp MUST be precise to the nearest
+      millisecond (exactly three digits after the decimal place in seconds).
+    from_schema: https://w3id.org/linkmodel/uco-master
+    broad_mappings:
+    - sumo:TimePoint
+    rank: 1000
+    alias: modifiedTime
+    owner: EmailMessageFacet
+    domain_of:
+    - UcoObject
+    - AccountFacet
+    - BrowserBookmarkFacet
+    - CalendarEntryFacet
+    - EmailMessageFacet
+    - FileFacet
+    - NoteFacet
+    - WindowsRegistrykeyFacet
+    range: datetime
+  receivedTime:
+    name: receivedTime
+    description: '"The date and time at which the message received."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: receivedTime
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: datetime
+  sentTime:
+    name: sentTime
+    description: '"The date and time at which the message sent."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: sentTime
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    - MessageFacet
+    range: datetime
+  body:
+    name: body
+    description: '"Text forming the main content of a printed or digital work (as
+      opposed to additional elements such as headlines, images, charts, footnotes)"'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    exact_mappings:
+    - wikidata:Q1378314
+    rank: 1000
+    alias: body
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    - MimePartType
+    range: string
+  contentDisposition:
+    name: contentDisposition
+    from_schema: https://w3id.org/linkmodel/uco-master
+    broad_mappings:
+    - wikidata:Q1149305
+    rank: 1000
+    alias: contentDisposition
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    - MimePartType
+    range: string
+  contentType:
+    name: contentType
+    from_schema: https://w3id.org/linkmodel/uco-master
+    close_mappings:
+    - wikidata:P1163
+    narrow_mappings:
+    - NCIT:C114549
+    rank: 1000
+    alias: contentType
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    - MimePartType
+    range: string
+  inReplyTo:
+    name: inReplyTo
+    description: '"One of more unique identifiers for identifying the email(s) this
+      email is a reply to."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: inReplyTo
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: string
+  messageID:
+    name: messageID
+    description: '"An unique identifier for the message."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: messageID
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    - MessageFacet
+    range: string
+  priority:
+    name: priority
+    description: '"The priority of the email."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: priority
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    - WindowsProcessFacet
+    - WindowsTaskFacet
+    - WindowsThreadFacet
+    union_of:
+    - '{''range'': ''TaskPriorityVocab''}'
+    - '{''range'': ''integer''}'
+    - '{''range'': ''string type''}'
+    range: string
+  subject:
+    name: subject
+    description: '"The subject of the email."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: subject
+    owner: EmailMessageFacet
+    domain_of:
+    - CalendarEntryFacet
+    - EmailMessageFacet
+    - X509CertificateFacet
+    range: string
+  xMailer:
+    name: xMailer
+    description: ''
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    alias: xMailer
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: string
+  categories:
+    name: categories
+    description: '"Categories applied to the object."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: categories
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: string
+  labels:
+    name: labels
+    description: '"Named and colored label."'
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: labels
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: string
+  receivedLines:
+    name: receivedLines
+    from_schema: https://w3id.org/linkmodel/uco-master
+    rank: 1000
+    multivalued: true
+    alias: receivedLines
+    owner: EmailMessageFacet
+    domain_of:
+    - EmailMessageFacet
+    range: string
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
+<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</html>
