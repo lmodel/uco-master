@@ -273,6 +273,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    Aliases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
@@ -319,7 +333,7 @@
 
 <h1 id="slot-name">Slot: name</h1>
 <p><em>The name of a particular concept characterization.</em></p>
-<p>URI: <a href="https://w3id.org/lmodel/uco-master/name">master:name</a></p>
+<p>URI: <a href="rdfs:label">rdfs:label</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -1221,6 +1235,17 @@
 <ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
+<h2 id="aliases">Aliases</h2>
+<ul>
+<li>label</li>
+<li>display name</li>
+<li>title</li>
+<li>alt label</li>
+</ul>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>This annotation is typically used to describe an artifact such as a controlled vocabulary, document, ontology, or other similar resource.</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -1231,10 +1256,26 @@
 
 <pre><code class="language-yaml">name: name
 description: The name of a particular concept characterization.
+comments:
+- This annotation is typically used to describe an artifact such as a controlled vocabulary,
+  document, ontology, or other similar resource.
 from_schema: https://w3id.org/linkmodel/uco-master
+aliases:
+- label
+- display name
+- title
+- alt label
 exact_mappings:
+- CSO:named_entity
+- gr:name
 - lm_core:name
+- om:name
+- REPR:name
+- schema:name
+broad_mappings:
+- CSO:named_entity
 rank: 1000
+slot_uri: rdfs:label
 alias: name
 domain_of:
 - UcoObject

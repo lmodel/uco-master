@@ -298,7 +298,7 @@
 <tr>
 <td><a href="../network/">network</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>"???</td>
+<td>Network allowing computers to share resources and communicate with each other</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -447,8 +447,14 @@ attributes:
     range: string
   network:
     name: network
-    description: '"???."'
+    description: Network allowing computers to share resources and communicate with
+      each other
     from_schema: https://w3id.org/linkmodel/uco-master
+    aliases:
+    - net
+    - network_mode
+    exact_mappings:
+    - wikidata:Q1301371
     rank: 1000
     alias: network
     owner: MobileDeviceFacet

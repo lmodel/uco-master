@@ -273,6 +273,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    Aliases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
@@ -318,7 +325,7 @@
 
 
 <h1 id="slot-network">Slot: network</h1>
-<p><em>"???."</em></p>
+<p><em>Network allowing computers to share resources and communicate with each other</em></p>
 <p>URI: <a href="https://w3id.org/lmodel/uco-master/network">master:network</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -341,6 +348,11 @@
 <ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
+<h2 id="aliases">Aliases</h2>
+<ul>
+<li>net</li>
+<li>network_mode</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -350,8 +362,14 @@
 <details>
 
 <pre><code class="language-yaml">name: network
-description: '&quot;???.&quot;'
+description: Network allowing computers to share resources and communicate with each
+  other
 from_schema: https://w3id.org/linkmodel/uco-master
+aliases:
+- net
+- network_mode
+exact_mappings:
+- wikidata:Q1301371
 rank: 1000
 alias: network
 domain_of:

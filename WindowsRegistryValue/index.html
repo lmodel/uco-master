@@ -246,7 +246,7 @@
 <tr>
 <td><a href="../data/">data</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>Information arranged for automatic processing</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -337,10 +337,26 @@ attributes:
   name:
     name: name
     description: The name of a particular concept characterization.
+    comments:
+    - This annotation is typically used to describe an artifact such as a controlled
+      vocabulary, document, ontology, or other similar resource.
     from_schema: https://w3id.org/linkmodel/uco-master
+    aliases:
+    - label
+    - display name
+    - title
+    - alt label
     exact_mappings:
+    - CSO:named_entity
+    - gr:name
     - lm_core:name
+    - om:name
+    - REPR:name
+    - schema:name
+    broad_mappings:
+    - CSO:named_entity
     rank: 1000
+    slot_uri: rdfs:label
     alias: name
     owner: WindowsRegistryValue
     domain_of:
@@ -354,10 +370,12 @@ attributes:
     range: string
   data:
     name: data
+    description: Information arranged for automatic processing
     from_schema: https://w3id.org/linkmodel/uco-master
     exact_mappings:
     - lm_core:Dataset
     - sumo:DigitalData
+    - WIKIDATA:Q42848
     rank: 1000
     alias: data
     owner: WindowsRegistryValue

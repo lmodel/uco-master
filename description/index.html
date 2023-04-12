@@ -273,6 +273,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    Aliases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
@@ -318,8 +325,8 @@
 
 
 <h1 id="slot-description">Slot: description</h1>
-<p><em>A description of a particular concept characterization.</em></p>
-<p>URI: <a href="https://w3id.org/lmodel/uco-master/description">master:description</a></p>
+<p><em>A human-readable description of an entity</em></p>
+<p>URI: <a href="http://purl.org/dc/terms/description">dcterms:description</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -1197,6 +1204,10 @@
 <ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
+<h2 id="aliases">Aliases</h2>
+<ul>
+<li>definition</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -1206,11 +1217,28 @@
 <details>
 
 <pre><code class="language-yaml">name: description
-description: A description of a particular concept characterization.
+description: A human-readable description of an entity
 from_schema: https://w3id.org/linkmodel/uco-master
+aliases:
+- definition
 exact_mappings:
+- dcterms:description
+- IAO:0000115
 - lm_core:description
+- schema:description
+- skos:definitions
+- sumo:NarrativeText
+- WIKIDATA:Q1200750
+close_mappings:
+- sumo:Descriptor
+narrow_mappings:
+- csrc:architecture_description
+- CSO:architecture_description
+- CSO:concept_description
+- CSO:shape_description
+- om:longcomment
 rank: 1000
+slot_uri: dcterms:description
 alias: description
 domain_of:
 - UcoObject

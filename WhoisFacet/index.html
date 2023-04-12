@@ -550,8 +550,21 @@ attributes:
     name: creationDate
     description: '"Specifies the date in which the registered domain was created."'
     from_schema: https://w3id.org/linkmodel/uco-master
+    aliases:
+    - publication date
     exact_mappings:
+    - dcterms:createdOn
     - lm_core:CreationDate
+    - schema:dateCreated
+    - schema:datePublished
+    - sumo:dateEstablished
+    - WIKIDATA_PROPERTY:P577
+    narrow_mappings:
+    - dwc:eventDate
+    - dwc:verbatimEventDate
+    - dwc:relationshipEstablishedDate
+    broad_mappings:
+    - sumo:date
     rank: 1000
     alias: creationDate
     owner: WhoisFacet

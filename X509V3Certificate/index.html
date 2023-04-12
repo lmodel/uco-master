@@ -268,7 +268,7 @@
 <tr>
 <td><a href="../state/">state</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>the particular condition that someone or something is in at a specific time</td>
 <td><a href="../ObservableObject/">ObservableObject</a></td>
 </tr>
 <tr>
@@ -286,7 +286,7 @@
 <tr>
 <td><a href="../description/">description</a></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
-<td>A description of a particular concept characterization</td>
+<td>A human-readable description of an entity</td>
 <td><a href="../UcoObject/">UcoObject</a></td>
 </tr>
 <tr>
@@ -404,7 +404,11 @@ attributes:
     range: boolean type
   state:
     name: state
+    description: the particular condition that someone or something is in at a specific
+      time.
     from_schema: https://w3id.org/linkmodel/uco-master
+    exact_mappings:
+    - NCIT:C2568
     rank: 1000
     alias: state
     owner: X509V3Certificate
@@ -441,9 +445,10 @@ attributes:
     maximum_cardinality: 0
   description:
     name: description
-    description: A description of a particular concept characterization.
+    description: A human-readable description of an entity
     from_schema: https://w3id.org/linkmodel/uco-master
     rank: 1000
+    slot_uri: dcterms:description
     multivalued: true
     alias: description
     owner: X509V3Certificate
@@ -507,6 +512,7 @@ attributes:
     description: The name of a particular concept characterization.
     from_schema: https://w3id.org/linkmodel/uco-master
     rank: 1000
+    slot_uri: rdfs:label
     alias: name
     owner: X509V3Certificate
     domain_of:
