@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "uco_master"
+version = "1.1.0"
+description = "Linkml schema characterizing Mastere in Unified Cyber Ontology 1.1.0"
+authors = ["Noel McLoughlin <noel.mcloughlin@gmail.com>"]
+license = "Apache Software License 2.0"
+readme = "README.md"
+include = ["README.md", "src/uco_master/schema", "project"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+linkml-runtime = "^1.4.9"
+linkml-owl = "^0.2"
+schema-automator = "^0.2.11"
+linkml-transformer = "^0.1.2"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "pep440"
+
+[tool.poetry.dev-dependencies]
+cruft = "^2.12"
+linkml = "^1.4.8"
+mkdocs-material = "^9.0"
+mkdocs-mermaid2-plugin = "^0.6"
+schemasheets = "^0.1"
+
+[build-system]
+requires = ["poetry-core>=1.5.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+[tool.poetry.extras]
+docs = ["linkml", "mkdocs-material"]

@@ -1,0 +1,58 @@
+---
+id: https://w3id.org/linkmodel/uco-master
+name: uco-master
+title: Uco Master
+description: >-
+  Unified Cyber Ontology
+license: https://www.apache.org/licenses/LICENSE-2.0
+
+version: 1.1.0  # sync with primary git repo release tag
+
+prefixes:
+  linkml: 'https://w3id.org/linkml/'
+
+  master: 'https://w3id.org/lmodel/uco-master/'
+  schema_uco_action: 'https://w3id.org/lmodel/uco-action/schema/'
+  schema_uco_analysis: 'https://w3id.org/lmodel/uco-analysis/schema/'
+  schema_uco_configuration: 'https://w3id.org/lmodel/uco-configuration/schema/'
+  schema_uco_core: 'https://w3id.org/lmodel/uco-core/schema/'
+  schema_uco_identity: 'https://w3id.org/lmodel/uco-identity/schema/'
+  schema_uco_location: 'https://w3id.org/lmodel/uco-location/schema/'
+  schema_uco_marking: 'https://w3id.org/lmodel/uco-marking/schema/'
+  schema_uco_observable: 'https://w3id.org/lmodel/uco-observable/schema/'
+  schema_uco_pattern: 'https://w3id.org/lmodel/uco-pattern/schema/'
+  schema_uco_role: 'https://w3id.org/lmodel/uco-role/schema/'
+  schema_uco_time: 'https://w3id.org/lmodel/uco-time/schema/'
+  schema_uco_tool: 'https://w3id.org/lmodel/uco-tool/schema/'
+  schema_uco_types: 'https://w3id.org/lmodel/uco-types/schema/'
+  schema_uco_victim: 'https://w3id.org/lmodel/uco-victim/schema/'
+  schema_uco_vocabulary: 'https://w3id.org/lmodel/uco-vocabulary/schema/'
+
+  schema_collections: 'https://w3id.org/lmodel/collections/schema/'
+
+default_prefix: master
+default_range: string
+
+## ------------
+## TYPES
+## ------------
+imports:
+  - linkml:types
+  - schema_uco_action:uco_action
+  - schema_uco_analysis:uco_analysis
+  - schema_uco_configuration:uco_configuration
+  - schema_uco_core:uco_core
+  - schema_uco_identity:uco_identity
+  - schema_uco_location:uco_location
+  - schema_uco_marking:uco_marking
+  - schema_uco_observable:uco_observable
+  - schema_uco_pattern:uco_pattern
+  - schema_uco_role:uco_role
+  - schema_uco_time:uco_time
+  - schema_uco_tool:uco_tool
+  - schema_uco_types:uco_types
+  - schema_uco_victim:uco_victim
+  - schema_uco_vocabulary:uco_vocabulary
+  - schema_collections:collections
+
+...

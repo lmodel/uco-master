@@ -1,0 +1,1369 @@
+{
+   "AFC": "http://purl.allotrope.org/ontologies/common#AFC_",
+   "BFO": "http://purl.obolibrary.org/obo/BFO_",
+   "CSO": "https://cso.kmi.open.ac.uk/topics/",
+   "EFO": "http://identifiers.org/efo/",
+   "ERO": "http://purl.obolibrary.org/obo/ERO_",
+   "GSSO": "http://purl.obolibrary.org/obo/GSSO_",
+   "IAO": "http://purl.obolibrary.org/obo/IAO_",
+   "INO": "http://purl.obolibrary.org/obo/INO_",
+   "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
+   "OM": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+   "REPR": "https://w3id.org/reproduceme#",
+   "SAN": "https://www.irit.fr/recherches/MELODI/ontologies/SAN.html#",
+   "SEPIO": "http://purl.obolibrary.org/obo/SEPIO_",
+   "SIO": "http://identifiers.org/sio/",
+   "SWO": "http://purl.obolibrary.org/obo/SWO_",
+   "WIKIDATA": "http://identifiers.org/wikidata/",
+   "WIKIDATA_PROPERTY": "https://www.wikidata.org/wiki/Property:",
+   "action": "https://w3id.org/lmodel/uco-action/",
+   "analysis": "https://w3id.org/lmodel/uco-analysis/",
+   "co": "http://purl.org/co/",
+   "collections": "https://w3id.org/lmodel/collections/",
+   "configuration": "https://w3id.org/lmodel/uco-configuration/",
+   "core": "https://w3id.org/lmodel/uco-core/",
+   "csrc": "https://csrc.nist.gov/glossary/term/",
+   "dcid": "https://datacommons.org/browser/",
+   "dcterms": "http://purl.org/dc/terms/",
+   "dwc": "https://dwc.tdwg.org/terms/#dc:",
+   "edam.data": "http://edamontology.org/data_",
+   "edam.format": "http://edamontology.org/format_",
+   "gr": "http://purl.org/goodrelations/v1#",
+   "identity": "https://w3id.org/lmodel/uco-identity/",
+   "linkml": "https://w3id.org/linkml/",
+   "lm_core": "https://w3id.org/lmodel/core/",
+   "location": "https://w3id.org/lmodel/uco-location/",
+   "marking": "https://w3id.org/lmodel/uco-marking/",
+   "master": "https://w3id.org/lmodel/uco-master/",
+   "metasat": "https://schema.space/metasat/",
+   "observable": "https://w3id.org/lmodel/uco-observable/",
+   "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+   "owl": "http://www.w3.org/2002/07/owl#",
+   "pattern": "https://w3id.org/lmodel/uco-pattern/",
+   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+   "role": "https://w3id.org/lmodel/uco-role/",
+   "schema": "http://schema.org/",
+   "schema_collections": "https://w3id.org/lmodel/collections/schema/",
+   "schema_uco_action": "https://w3id.org/lmodel/uco-action/schema/",
+   "schema_uco_analysis": "https://w3id.org/lmodel/uco-analysis/schema/",
+   "schema_uco_configuration": "https://w3id.org/lmodel/uco-configuration/schema/",
+   "schema_uco_core": "https://w3id.org/lmodel/uco-core/schema/",
+   "schema_uco_identity": "https://w3id.org/lmodel/uco-identity/schema/",
+   "schema_uco_location": "https://w3id.org/lmodel/uco-location/schema/",
+   "schema_uco_marking": "https://w3id.org/lmodel/uco-marking/schema/",
+   "schema_uco_observable": "https://w3id.org/lmodel/uco-observable/schema/",
+   "schema_uco_pattern": "https://w3id.org/lmodel/uco-pattern/schema/",
+   "schema_uco_role": "https://w3id.org/lmodel/uco-role/schema/",
+   "schema_uco_time": "https://w3id.org/lmodel/uco-time/schema/",
+   "schema_uco_tool": "https://w3id.org/lmodel/uco-tool/schema/",
+   "schema_uco_types": "https://w3id.org/lmodel/uco-types/schema/",
+   "schema_uco_victim": "https://w3id.org/lmodel/uco-victim/schema/",
+   "schema_uco_vocabulary": "https://w3id.org/lmodel/uco-vocabulary/schema/",
+   "skos": "http://www.w3.org/2004/02/skos/core#",
+   "sosa": "http://www.w3.org/ns/sosa/",
+   "ssn": "http://www.w3.org/ns/ssn/",
+   "sumo": "https://w3id.org/sumo/kb/",
+   "time": "https://w3id.org/lmodel/uco-time/",
+   "tool": "https://w3id.org/lmodel/uco-tool/",
+   "types": "https://w3id.org/lmodel/uco-types/",
+   "victim": "https://w3id.org/lmodel/uco-victim/",
+   "vocabulary": "https://w3id.org/lmodel/uco-vocabulary/",
+   "wIKIDATA": "http://identifiers.org/wikidata/",
+   "wikidata": "http://identifiers.org/wikidata/",
+   "wikidata.property": "https://www.wikidata.org/wiki/Property:",
+   "wikidata_PROPERTY": "https://www.wikidata.org/wiki/Property:",
+   "wikidata_property": "https://www.wikidata.org/wiki/Property:",
+   "Account": {
+      "@id": "observable:Account"
+   },
+   "AccountAuthenticationFacet": {
+      "@id": "observable:AccountAuthenticationFacet"
+   },
+   "AccountFacet": {
+      "@id": "observable:AccountFacet"
+   },
+   "Action": {
+      "@id": "action:Action"
+   },
+   "ActionArgumentFacet": {
+      "@id": "action:ActionArgumentFacet"
+   },
+   "ActionEstimationFacet": {
+      "@id": "action:ActionEstimationFacet"
+   },
+   "ActionFrequencyFacet": {
+      "@id": "action:ActionFrequencyFacet"
+   },
+   "ActionLifecycle": {
+      "@id": "action:ActionLifecycle"
+   },
+   "ActionPattern": {
+      "@id": "action:ActionPattern"
+   },
+   "Adaptor": {
+      "@id": "observable:Adaptor"
+   },
+   "Address": {
+      "@id": "observable:Address"
+   },
+   "AddressFacet": {
+      "@id": "identity:AddressFacet"
+   },
+   "AffiliationFacet": {
+      "@id": "identity:AffiliationFacet"
+   },
+   "AlternateDataStream": {
+      "@id": "observable:AlternateDataStream"
+   },
+   "AlternateDataStreamFacet": {
+      "@id": "observable:AlternateDataStreamFacet"
+   },
+   "Analysis": {
+      "@id": "analysis:Analysis"
+   },
+   "AnalyticResult": {
+      "@id": "analysis:AnalyticResult"
+   },
+   "AnalyticResultFacet": {
+      "@id": "analysis:AnalyticResultFacet"
+   },
+   "AnalyticTool": {
+      "@id": "tool:AnalyticTool"
+   },
+   "AndroidDevice": {
+      "@id": "observable:AndroidDevice"
+   },
+   "AndroidDeviceFacet": {
+      "@id": "observable:AndroidDeviceFacet"
+   },
+   "AndroidPhone": {
+      "@id": "observable:AndroidPhone"
+   },
+   "Annotation": {
+      "@id": "core:Annotation"
+   },
+   "AntennaFacet": {
+      "@id": "observable:AntennaFacet"
+   },
+   "API": {
+      "@id": "observable:API"
+   },
+   "AppleDevice": {
+      "@id": "observable:AppleDevice"
+   },
+   "Appliance": {
+      "@id": "observable:Appliance"
+   },
+   "Application": {
+      "@id": "observable:Application"
+   },
+   "ApplicationAccount": {
+      "@id": "observable:ApplicationAccount"
+   },
+   "ApplicationAccountFacet": {
+      "@id": "observable:ApplicationAccountFacet"
+   },
+   "ApplicationFacet": {
+      "@id": "observable:ApplicationFacet"
+   },
+   "ApplicationVersion": {
+      "@id": "observable:ApplicationVersion"
+   },
+   "ArchiveFile": {
+      "@id": "observable:ArchiveFile"
+   },
+   "ArchiveFileFacet": {
+      "@id": "observable:ArchiveFileFacet"
+   },
+   "ARPCache": {
+      "@id": "observable:ARPCache"
+   },
+   "ARPCacheEntry": {
+      "@id": "observable:ARPCacheEntry"
+   },
+   "ArrayOfAction": {
+      "@id": "action:ArrayOfAction"
+   },
+   "ArtifactClassification": {
+      "@id": "analysis:ArtifactClassification"
+   },
+   "ArtifactClassificationResultFacet": {
+      "@id": "analysis:ArtifactClassificationResultFacet"
+   },
+   "Assertion": {
+      "@id": "core:Assertion"
+   },
+   "AttributedName": {
+      "@id": "core:AttributedName"
+   },
+   "Audio": {
+      "@id": "observable:Audio"
+   },
+   "AudioFacet": {
+      "@id": "observable:AudioFacet"
+   },
+   "AutonomousSystem": {
+      "@id": "observable:AutonomousSystem"
+   },
+   "AutonomousSystemFacet": {
+      "@id": "observable:AutonomousSystemFacet"
+   },
+   "Bag": {
+      "@id": "collections:Bag"
+   },
+   "BenevolentRole": {
+      "@id": "role:BenevolentRole"
+   },
+   "BirthInformationFacet": {
+      "@id": "identity:BirthInformationFacet"
+   },
+   "BlackBerryPhone": {
+      "@id": "observable:BlackBerryPhone"
+   },
+   "BlockDeviceNode": {
+      "@id": "observable:BlockDeviceNode"
+   },
+   "BluetoothAddress": {
+      "@id": "observable:BluetoothAddress"
+   },
+   "BluetoothAddressFacet": {
+      "@id": "observable:BluetoothAddressFacet"
+   },
+   "BotConfiguration": {
+      "@id": "observable:BotConfiguration"
+   },
+   "BrowserBookmark": {
+      "@id": "observable:BrowserBookmark"
+   },
+   "BrowserBookmarkFacet": {
+      "@id": "observable:BrowserBookmarkFacet"
+   },
+   "BrowserCookie": {
+      "@id": "observable:BrowserCookie"
+   },
+   "BrowserCookieFacet": {
+      "@id": "observable:BrowserCookieFacet"
+   },
+   "BuildFacet": {
+      "@id": "tool:BuildFacet"
+   },
+   "BuildInformationType": {
+      "@id": "tool:BuildInformationType"
+   },
+   "BuildUtilityType": {
+      "@id": "tool:BuildUtilityType"
+   },
+   "Bundle": {
+      "@id": "core:Bundle"
+   },
+   "Calendar": {
+      "@id": "observable:Calendar"
+   },
+   "CalendarEntry": {
+      "@id": "observable:CalendarEntry"
+   },
+   "CalendarEntryFacet": {
+      "@id": "observable:CalendarEntryFacet"
+   },
+   "CalendarFacet": {
+      "@id": "observable:CalendarFacet"
+   },
+   "Call": {
+      "@id": "observable:Call"
+   },
+   "CallFacet": {
+      "@id": "observable:CallFacet"
+   },
+   "CapturedTelecommunicationsInformation": {
+      "@id": "observable:CapturedTelecommunicationsInformation"
+   },
+   "CapturedTelecommunicationsInformationFacet": {
+      "@id": "observable:CapturedTelecommunicationsInformationFacet"
+   },
+   "CellSite": {
+      "@id": "observable:CellSite"
+   },
+   "CellSiteFacet": {
+      "@id": "observable:CellSiteFacet"
+   },
+   "CharacterDeviceNode": {
+      "@id": "observable:CharacterDeviceNode"
+   },
+   "Code": {
+      "@id": "observable:Code"
+   },
+   "CoItem": {
+      "@id": "collections:CoItem"
+   },
+   "Collection": {
+      "@id": "collections:Collection"
+   },
+   "Compilation": {
+      "@id": "core:Compilation"
+   },
+   "CompilerType": {
+      "@id": "tool:CompilerType"
+   },
+   "CompressedStreamFacet": {
+      "@id": "observable:CompressedStreamFacet"
+   },
+   "Computer": {
+      "@id": "observable:Computer"
+   },
+   "ComputerSpecification": {
+      "@id": "observable:ComputerSpecification"
+   },
+   "ComputerSpecificationFacet": {
+      "@id": "observable:ComputerSpecificationFacet"
+   },
+   "ConfidenceFacet": {
+      "@id": "core:ConfidenceFacet"
+   },
+   "Configuration": {
+      "@id": "configuration:Configuration"
+   },
+   "ConfigurationEntry": {
+      "@id": "configuration:ConfigurationEntry"
+   },
+   "ConfiguredSoftware": {
+      "@id": "observable:ConfiguredSoftware"
+   },
+   "ConfiguredTool": {
+      "@id": "tool:ConfiguredTool"
+   },
+   "Contact": {
+      "@id": "observable:Contact"
+   },
+   "ContactAddress": {
+      "@id": "observable:ContactAddress"
+   },
+   "ContactAffiliation": {
+      "@id": "observable:ContactAffiliation"
+   },
+   "ContactEmail": {
+      "@id": "observable:ContactEmail"
+   },
+   "ContactFacet": {
+      "@id": "observable:ContactFacet"
+   },
+   "ContactList": {
+      "@id": "observable:ContactList"
+   },
+   "ContactListFacet": {
+      "@id": "observable:ContactListFacet"
+   },
+   "ContactMessaging": {
+      "@id": "observable:ContactMessaging"
+   },
+   "ContactPhone": {
+      "@id": "observable:ContactPhone"
+   },
+   "ContactProfile": {
+      "@id": "observable:ContactProfile"
+   },
+   "ContactSIP": {
+      "@id": "observable:ContactSIP"
+   },
+   "ContactURL": {
+      "@id": "observable:ContactURL"
+   },
+   "ContentData": {
+      "@id": "observable:ContentData"
+   },
+   "ContentDataFacet": {
+      "@id": "observable:ContentDataFacet"
+   },
+   "ContextualCompilation": {
+      "@id": "core:ContextualCompilation"
+   },
+   "ControlledDictionary": {
+      "@id": "types:ControlledDictionary"
+   },
+   "ControlledDictionaryEntry": {
+      "@id": "types:ControlledDictionaryEntry"
+   },
+   "ControlledVocabulary": {
+      "@id": "core:ControlledVocabulary"
+   },
+   "CookieHistory": {
+      "@id": "observable:CookieHistory"
+   },
+   "CountryOfResidenceFacet": {
+      "@id": "identity:CountryOfResidenceFacet"
+   },
+   "Credential": {
+      "@id": "observable:Credential"
+   },
+   "CredentialDump": {
+      "@id": "observable:CredentialDump"
+   },
+   "DataRangeFacet": {
+      "@id": "observable:DataRangeFacet"
+   },
+   "DefensiveTool": {
+      "@id": "tool:DefensiveTool"
+   },
+   "DefinedEffectFacet": {
+      "@id": "observable:DefinedEffectFacet"
+   },
+   "Dependency": {
+      "@id": "configuration:Dependency"
+   },
+   "Device": {
+      "@id": "observable:Device"
+   },
+   "DeviceFacet": {
+      "@id": "observable:DeviceFacet"
+   },
+   "Dictionary": {
+      "@id": "types:Dictionary"
+   },
+   "DictionaryEntry": {
+      "@id": "types:DictionaryEntry"
+   },
+   "DigitalAccount": {
+      "@id": "observable:DigitalAccount"
+   },
+   "DigitalAccountFacet": {
+      "@id": "observable:DigitalAccountFacet"
+   },
+   "DigitalAddress": {
+      "@id": "observable:DigitalAddress"
+   },
+   "DigitalAddressFacet": {
+      "@id": "observable:DigitalAddressFacet"
+   },
+   "DigitalCamera": {
+      "@id": "observable:DigitalCamera"
+   },
+   "DigitalSignatureInfo": {
+      "@id": "observable:DigitalSignatureInfo"
+   },
+   "DigitalSignatureInfoFacet": {
+      "@id": "observable:DigitalSignatureInfoFacet"
+   },
+   "Directory": {
+      "@id": "observable:Directory"
+   },
+   "Disk": {
+      "@id": "observable:Disk"
+   },
+   "DiskFacet": {
+      "@id": "observable:DiskFacet"
+   },
+   "DiskPartition": {
+      "@id": "observable:DiskPartition"
+   },
+   "DiskPartitionFacet": {
+      "@id": "observable:DiskPartitionFacet"
+   },
+   "DNSCache": {
+      "@id": "observable:DNSCache"
+   },
+   "DNSRecord": {
+      "@id": "observable:DNSRecord"
+   },
+   "DomainName": {
+      "@id": "observable:DomainName"
+   },
+   "DomainNameFacet": {
+      "@id": "observable:DomainNameFacet"
+   },
+   "Drone": {
+      "@id": "observable:Drone"
+   },
+   "EmailAccount": {
+      "@id": "observable:EmailAccount"
+   },
+   "EmailAccountFacet": {
+      "@id": "observable:EmailAccountFacet"
+   },
+   "EmailAddress": {
+      "@id": "observable:EmailAddress"
+   },
+   "EmailAddressFacet": {
+      "@id": "observable:EmailAddressFacet"
+   },
+   "EmailMessage": {
+      "@id": "observable:EmailMessage"
+   },
+   "EmailMessageFacet": {
+      "@id": "observable:EmailMessageFacet"
+   },
+   "EmbeddedDevice": {
+      "@id": "observable:EmbeddedDevice"
+   },
+   "EnclosingCompilation": {
+      "@id": "core:EnclosingCompilation"
+   },
+   "EncodedStreamFacet": {
+      "@id": "observable:EncodedStreamFacet"
+   },
+   "EncryptedStreamFacet": {
+      "@id": "observable:EncryptedStreamFacet"
+   },
+   "EnvironmentVariable": {
+      "@id": "observable:EnvironmentVariable"
+   },
+   "EventLog": {
+      "@id": "observable:EventLog"
+   },
+   "EventRecord": {
+      "@id": "observable:EventRecord"
+   },
+   "EventRecordFacet": {
+      "@id": "observable:EventRecordFacet"
+   },
+   "EventsFacet": {
+      "@id": "identity:EventsFacet"
+   },
+   "EXIFFacet": {
+      "@id": "observable:EXIFFacet"
+   },
+   "ExternalReference": {
+      "@id": "core:ExternalReference"
+   },
+   "ExtInodeFacet": {
+      "@id": "observable:ExtInodeFacet"
+   },
+   "ExtractedString": {
+      "@id": "observable:ExtractedString"
+   },
+   "ExtractedStringsFacet": {
+      "@id": "observable:ExtractedStringsFacet"
+   },
+   "Facet": {
+      "@id": "core:Facet"
+   },
+   "File": {
+      "@id": "observable:File"
+   },
+   "FileFacet": {
+      "@id": "observable:FileFacet"
+   },
+   "FilePermissionsFacet": {
+      "@id": "observable:FilePermissionsFacet"
+   },
+   "FileSystem": {
+      "@id": "observable:FileSystem"
+   },
+   "FileSystemFacet": {
+      "@id": "observable:FileSystemFacet"
+   },
+   "FileSystemObject": {
+      "@id": "observable:FileSystemObject"
+   },
+   "ForumPost": {
+      "@id": "observable:ForumPost"
+   },
+   "ForumPrivateMessage": {
+      "@id": "observable:ForumPrivateMessage"
+   },
+   "FragmentFacet": {
+      "@id": "observable:FragmentFacet"
+   },
+   "GamingConsole": {
+      "@id": "observable:GamingConsole"
+   },
+   "GenericObservableObject": {
+      "@id": "observable:GenericObservableObject"
+   },
+   "GeoLocationEntry": {
+      "@id": "observable:GeoLocationEntry"
+   },
+   "GeoLocationEntryFacet": {
+      "@id": "observable:GeoLocationEntryFacet"
+   },
+   "GeoLocationLog": {
+      "@id": "observable:GeoLocationLog"
+   },
+   "GeoLocationLogFacet": {
+      "@id": "observable:GeoLocationLogFacet"
+   },
+   "GeoLocationTrack": {
+      "@id": "observable:GeoLocationTrack"
+   },
+   "GeoLocationTrackFacet": {
+      "@id": "observable:GeoLocationTrackFacet"
+   },
+   "GlobalFlagType": {
+      "@id": "observable:GlobalFlagType"
+   },
+   "GPSCoordinatesFacet": {
+      "@id": "location:GPSCoordinatesFacet"
+   },
+   "GranularMarking": {
+      "@id": "marking:GranularMarking"
+   },
+   "Grouping": {
+      "@id": "core:Grouping"
+   },
+   "GUI": {
+      "@id": "observable:GUI"
+   },
+   "Hash": {
+      "@id": "types:Hash"
+   },
+   "Hostname": {
+      "@id": "observable:Hostname"
+   },
+   "HTTPConnection": {
+      "@id": "observable:HTTPConnection"
+   },
+   "HTTPConnectionFacet": {
+      "@id": "observable:HTTPConnectionFacet"
+   },
+   "ICMPConnection": {
+      "@id": "observable:ICMPConnection"
+   },
+   "ICMPConnectionFacet": {
+      "@id": "observable:ICMPConnectionFacet"
+   },
+   "IComHandlerActionType": {
+      "@id": "observable:IComHandlerActionType"
+   },
+   "IdentifierFacet": {
+      "@id": "identity:IdentifierFacet"
+   },
+   "Identity": {
+      "@id": "identity:Identity"
+   },
+   "IdentityAbstraction": {
+      "@id": "core:IdentityAbstraction"
+   },
+   "IdentityFacet": {
+      "@id": "identity:IdentityFacet"
+   },
+   "IExecActionType": {
+      "@id": "observable:IExecActionType"
+   },
+   "Image": {
+      "@id": "observable:Image"
+   },
+   "ImageFacet": {
+      "@id": "observable:ImageFacet"
+   },
+   "InstantMessagingAddress": {
+      "@id": "observable:InstantMessagingAddress"
+   },
+   "InstantMessagingAddressFacet": {
+      "@id": "observable:InstantMessagingAddressFacet"
+   },
+   "IPAddress": {
+      "@id": "observable:IPAddress"
+   },
+   "IPAddressFacet": {
+      "@id": "observable:IPAddressFacet"
+   },
+   "IPhone": {
+      "@id": "observable:IPhone"
+   },
+   "IPNetmask": {
+      "@id": "observable:IPNetmask"
+   },
+   "IPv4Address": {
+      "@id": "observable:IPv4Address"
+   },
+   "IPv4AddressFacet": {
+      "@id": "observable:IPv4AddressFacet"
+   },
+   "IPv6Address": {
+      "@id": "observable:IPv6Address"
+   },
+   "IPv6AddressFacet": {
+      "@id": "observable:IPv6AddressFacet"
+   },
+   "IShowMessageActionType": {
+      "@id": "observable:IShowMessageActionType"
+   },
+   "Item": {
+      "@id": "core:Item"
+   },
+   "Junction": {
+      "@id": "observable:Junction"
+   },
+   "LanguagesFacet": {
+      "@id": "identity:LanguagesFacet"
+   },
+   "Laptop": {
+      "@id": "observable:Laptop"
+   },
+   "LatLongCoordinatesFacet": {
+      "@id": "location:LatLongCoordinatesFacet"
+   },
+   "Library": {
+      "@id": "observable:Library"
+   },
+   "LibraryFacet": {
+      "@id": "observable:LibraryFacet"
+   },
+   "LibraryType": {
+      "@id": "tool:LibraryType"
+   },
+   "LicenseMarking": {
+      "@id": "marking:LicenseMarking"
+   },
+   "List": {
+      "@id": "collections:List"
+   },
+   "ListItem": {
+      "@id": "collections:ListItem"
+   },
+   "Location": {
+      "@id": "location:Location"
+   },
+   "LogicalPattern": {
+      "@id": "pattern:LogicalPattern"
+   },
+   "MACAddress": {
+      "@id": "observable:MACAddress"
+   },
+   "MACAddressFacet": {
+      "@id": "observable:MACAddressFacet"
+   },
+   "MaliciousRole": {
+      "@id": "role:MaliciousRole"
+   },
+   "MaliciousTool": {
+      "@id": "tool:MaliciousTool"
+   },
+   "MarkingDefinition": {
+      "@id": "marking:MarkingDefinition"
+   },
+   "MarkingDefinitionAbstraction": {
+      "@id": "core:MarkingDefinitionAbstraction"
+   },
+   "MarkingModel": {
+      "@id": "marking:MarkingModel"
+   },
+   "Memory": {
+      "@id": "observable:Memory"
+   },
+   "MemoryFacet": {
+      "@id": "observable:MemoryFacet"
+   },
+   "Message": {
+      "@id": "observable:Message"
+   },
+   "MessageFacet": {
+      "@id": "observable:MessageFacet"
+   },
+   "MessageThreadFacet": {
+      "@id": "observable:MessageThreadFacet"
+   },
+   "MftRecordFacet": {
+      "@id": "observable:MftRecordFacet"
+   },
+   "MimePartType": {
+      "@id": "observable:MimePartType"
+   },
+   "MobileAccount": {
+      "@id": "observable:MobileAccount"
+   },
+   "MobileAccountFacet": {
+      "@id": "observable:MobileAccountFacet"
+   },
+   "MobileDevice": {
+      "@id": "observable:MobileDevice"
+   },
+   "MobileDeviceFacet": {
+      "@id": "observable:MobileDeviceFacet"
+   },
+   "MobilePhone": {
+      "@id": "observable:MobilePhone"
+   },
+   "ModusOperandi": {
+      "@id": "core:ModusOperandi"
+   },
+   "Mutex": {
+      "@id": "observable:Mutex"
+   },
+   "MutexFacet": {
+      "@id": "observable:MutexFacet"
+   },
+   "NamedPipe": {
+      "@id": "observable:NamedPipe"
+   },
+   "NationalityFacet": {
+      "@id": "identity:NationalityFacet"
+   },
+   "NetworkAppliance": {
+      "@id": "observable:NetworkAppliance"
+   },
+   "NetworkConnection": {
+      "@id": "observable:NetworkConnection"
+   },
+   "NetworkConnectionFacet": {
+      "@id": "observable:NetworkConnectionFacet"
+   },
+   "NetworkFlow": {
+      "@id": "observable:NetworkFlow"
+   },
+   "NetworkFlowFacet": {
+      "@id": "observable:NetworkFlowFacet"
+   },
+   "NetworkInterface": {
+      "@id": "observable:NetworkInterface"
+   },
+   "NetworkInterfaceFacet": {
+      "@id": "observable:NetworkInterfaceFacet"
+   },
+   "NetworkProtocol": {
+      "@id": "observable:NetworkProtocol"
+   },
+   "NetworkRoute": {
+      "@id": "observable:NetworkRoute"
+   },
+   "NetworkSocketAddressFamily": {
+      "@id": "observable:NetworkSocketAddressFamily"
+   },
+   "NetworkSocketProtocolFamily": {
+      "@id": "observable:NetworkSocketProtocolFamily"
+   },
+   "NetworkSocketType": {
+      "@id": "observable:NetworkSocketType"
+   },
+   "NetworkSubnet": {
+      "@id": "observable:NetworkSubnet"
+   },
+   "NeutralRole": {
+      "@id": "role:NeutralRole"
+   },
+   "Note": {
+      "@id": "observable:Note"
+   },
+   "NoteFacet": {
+      "@id": "observable:NoteFacet"
+   },
+   "NTFSFile": {
+      "@id": "observable:NTFSFile"
+   },
+   "NTFSFileFacet": {
+      "@id": "observable:NTFSFileFacet"
+   },
+   "NTFSFilePermissionsFacet": {
+      "@id": "observable:NTFSFilePermissionsFacet"
+   },
+   "Observable": {
+      "@id": "observable:Observable"
+   },
+   "ObservableAction": {
+      "@id": "observable:ObservableAction"
+   },
+   "ObservableObject": {
+      "@id": "observable:ObservableObject"
+   },
+   "ObservablePattern": {
+      "@id": "observable:ObservablePattern"
+   },
+   "ObservableRelationship": {
+      "@id": "observable:ObservableRelationship"
+   },
+   "Observation": {
+      "@id": "observable:Observation"
+   },
+   "OccupationFacet": {
+      "@id": "identity:OccupationFacet"
+   },
+   "OnlineService": {
+      "@id": "observable:OnlineService"
+   },
+   "OnlineServiceFacet": {
+      "@id": "observable:OnlineServiceFacet"
+   },
+   "OperatingSystem": {
+      "@id": "observable:OperatingSystem"
+   },
+   "OperatingSystemFacet": {
+      "@id": "observable:OperatingSystemFacet"
+   },
+   "Organization": {
+      "@id": "identity:Organization"
+   },
+   "OrganizationDetailsFacet": {
+      "@id": "identity:OrganizationDetailsFacet"
+   },
+   "PathRelationFacet": {
+      "@id": "observable:PathRelationFacet"
+   },
+   "Pattern": {
+      "@id": "pattern:Pattern"
+   },
+   "PatternExpression": {
+      "@id": "pattern:PatternExpression"
+   },
+   "PaymentCard": {
+      "@id": "observable:PaymentCard"
+   },
+   "PDFFile": {
+      "@id": "observable:PDFFile"
+   },
+   "PDFFileFacet": {
+      "@id": "observable:PDFFileFacet"
+   },
+   "Person": {
+      "@id": "identity:Person"
+   },
+   "PersonalDetailsFacet": {
+      "@id": "identity:PersonalDetailsFacet"
+   },
+   "PhoneAccount": {
+      "@id": "observable:PhoneAccount"
+   },
+   "PhoneAccountFacet": {
+      "@id": "observable:PhoneAccountFacet"
+   },
+   "PhysicalInfoFacet": {
+      "@id": "identity:PhysicalInfoFacet"
+   },
+   "Pipe": {
+      "@id": "observable:Pipe"
+   },
+   "Post": {
+      "@id": "observable:Post"
+   },
+   "Process": {
+      "@id": "observable:Process"
+   },
+   "ProcessFacet": {
+      "@id": "observable:ProcessFacet"
+   },
+   "ProcessThread": {
+      "@id": "observable:ProcessThread"
+   },
+   "Profile": {
+      "@id": "observable:Profile"
+   },
+   "ProfileFacet": {
+      "@id": "observable:ProfileFacet"
+   },
+   "PropertiesEnumeratedEffectFacet": {
+      "@id": "observable:PropertiesEnumeratedEffectFacet"
+   },
+   "PropertyReadEffectFacet": {
+      "@id": "observable:PropertyReadEffectFacet"
+   },
+   "ProtocolConverter": {
+      "@id": "observable:ProtocolConverter"
+   },
+   "QualificationFacet": {
+      "@id": "identity:QualificationFacet"
+   },
+   "RasterPicture": {
+      "@id": "observable:RasterPicture"
+   },
+   "RasterPictureFacet": {
+      "@id": "observable:RasterPictureFacet"
+   },
+   "RecoveredObject": {
+      "@id": "observable:RecoveredObject"
+   },
+   "RecoveredObjectFacet": {
+      "@id": "observable:RecoveredObjectFacet"
+   },
+   "RegistryDatatype": {
+      "@id": "observable:RegistryDatatype"
+   },
+   "RelatedIdentityFacet": {
+      "@id": "identity:RelatedIdentityFacet"
+   },
+   "Relationship": {
+      "@id": "core:Relationship"
+   },
+   "ReleaseToMarking": {
+      "@id": "marking:ReleaseToMarking"
+   },
+   "ReparsePoint": {
+      "@id": "observable:ReparsePoint"
+   },
+   "Role": {
+      "@id": "role:Role"
+   },
+   "SecurityAppliance": {
+      "@id": "observable:SecurityAppliance"
+   },
+   "Semaphore": {
+      "@id": "observable:Semaphore"
+   },
+   "SendControlCodeEffectFacet": {
+      "@id": "observable:SendControlCodeEffectFacet"
+   },
+   "Server": {
+      "@id": "observable:Server"
+   },
+   "Set": {
+      "@id": "collections:Set"
+   },
+   "ShopListing": {
+      "@id": "observable:ShopListing"
+   },
+   "SIMCard": {
+      "@id": "observable:SIMCard"
+   },
+   "SIMCardFacet": {
+      "@id": "observable:SIMCardFacet"
+   },
+   "SimpleAddressFacet": {
+      "@id": "location:SimpleAddressFacet"
+   },
+   "SimpleNameFacet": {
+      "@id": "identity:SimpleNameFacet"
+   },
+   "SIPAaddress": {
+      "@id": "observable:SIPAaddress"
+   },
+   "SIPAddressFacet": {
+      "@id": "observable:SIPAddressFacet"
+   },
+   "SmartDevice": {
+      "@id": "observable:SmartDevice"
+   },
+   "SmartPhone": {
+      "@id": "observable:SmartPhone"
+   },
+   "SMSMessage": {
+      "@id": "observable:SMSMessage"
+   },
+   "SMSMessageFacet": {
+      "@id": "observable:SMSMessageFacet"
+   },
+   "Snapshot": {
+      "@id": "observable:Snapshot"
+   },
+   "Socket": {
+      "@id": "observable:Socket"
+   },
+   "SocketAddress": {
+      "@id": "observable:SocketAddress"
+   },
+   "Software": {
+      "@id": "observable:Software"
+   },
+   "SoftwareFacet": {
+      "@id": "observable:SoftwareFacet"
+   },
+   "SQLiteBlob": {
+      "@id": "observable:SQLiteBlob"
+   },
+   "SQLiteBlobFacet": {
+      "@id": "observable:SQLiteBlobFacet"
+   },
+   "StateChangeEffectFacet": {
+      "@id": "observable:StateChangeEffectFacet"
+   },
+   "StatementMarking": {
+      "@id": "marking:StatementMarking"
+   },
+   "StorageMedium": {
+      "@id": "observable:StorageMedium"
+   },
+   "SymbolicLink": {
+      "@id": "observable:SymbolicLink"
+   },
+   "SymbolicLinkFacet": {
+      "@id": "observable:SymbolicLinkFacet"
+   },
+   "TableField": {
+      "@id": "observable:TableField"
+   },
+   "TableFieldFacet": {
+      "@id": "observable:TableFieldFacet"
+   },
+   "Tablet": {
+      "@id": "observable:Tablet"
+   },
+   "TaskActionType": {
+      "@id": "observable:TaskActionType"
+   },
+   "TCPConnection": {
+      "@id": "observable:TCPConnection"
+   },
+   "TCPConnectionFacet": {
+      "@id": "observable:TCPConnectionFacet"
+   },
+   "TermsOfUseMarking": {
+      "@id": "marking:TermsOfUseMarking"
+   },
+   "Thing": {
+      "@id": "collections:Thing"
+   },
+   "Thread": {
+      "@id": "types:Thread"
+   },
+   "ThreadItem": {
+      "@id": "collections:CoItem"
+   },
+   "Time": {
+      "@id": "time:Time"
+   },
+   "TimeRange": {
+      "@id": "time:TimeRange"
+   },
+   "TimeStamp": {
+      "@id": "time:TimeStamp"
+   },
+   "Tool": {
+      "@id": "tool:Tool"
+   },
+   "TriggerType": {
+      "@id": "observable:TriggerType"
+   },
+   "Tweet": {
+      "@id": "observable:Tweet"
+   },
+   "TwitterProfileFacet": {
+      "@id": "observable:TwitterProfileFacet"
+   },
+   "UcoInherentCharacterizationThing": {
+      "@id": "core:UcoInherentCharacterizationThing"
+   },
+   "UcoObject": {
+      "@id": "core:UcoObject"
+   },
+   "UcoThing": {
+      "@id": "core:UcoThing"
+   },
+   "UNIXAccount": {
+      "@id": "observable:UNIXAccount"
+   },
+   "UNIXAccountFacet": {
+      "@id": "observable:UNIXAccountFacet"
+   },
+   "UNIXFile": {
+      "@id": "observable:UNIXFile"
+   },
+   "UNIXFilePermissionsFacet": {
+      "@id": "observable:UNIXFilePermissionsFacet"
+   },
+   "UNIXProcess": {
+      "@id": "observable:UNIXProcess"
+   },
+   "UNIXProcessFacet": {
+      "@id": "observable:UNIXProcessFacet"
+   },
+   "UNIXVolumeFacet": {
+      "@id": "observable:UNIXVolumeFacet"
+   },
+   "URL": {
+      "@id": "observable:URL"
+   },
+   "URLFacet": {
+      "@id": "observable:URLFacet"
+   },
+   "URLHistory": {
+      "@id": "observable:URLHistory"
+   },
+   "URLHistoryEntry": {
+      "@id": "observable:URLHistoryEntry"
+   },
+   "URLHistoryFacet": {
+      "@id": "observable:URLHistoryFacet"
+   },
+   "URLVisit": {
+      "@id": "observable:URLVisit"
+   },
+   "URLVisitFacet": {
+      "@id": "observable:URLVisitFacet"
+   },
+   "UserAccount": {
+      "@id": "observable:UserAccount"
+   },
+   "UserAccountFacet": {
+      "@id": "observable:UserAccountFacet"
+   },
+   "UserSession": {
+      "@id": "observable:UserSession"
+   },
+   "UserSessionFacet": {
+      "@id": "observable:UserSessionFacet"
+   },
+   "ValuesEnumeratedEffectFacet": {
+      "@id": "observable:ValuesEnumeratedEffectFacet"
+   },
+   "Victim": {
+      "@id": "victim:Victim"
+   },
+   "VictimTargeting": {
+      "@id": "victim:VictimTargeting"
+   },
+   "VisaFacet": {
+      "@id": "identity:VisaFacet"
+   },
+   "Volume": {
+      "@id": "observable:Volume"
+   },
+   "VolumeFacet": {
+      "@id": "observable:VolumeFacet"
+   },
+   "WearableDevice": {
+      "@id": "observable:WearableDevice"
+   },
+   "WebPage": {
+      "@id": "observable:WebPage"
+   },
+   "Whois": {
+      "@id": "observable:Whois"
+   },
+   "WhoisContactFacet": {
+      "@id": "observable:WhoisContactFacet"
+   },
+   "WhoisFacet": {
+      "@id": "observable:WhoisFacet"
+   },
+   "WhoisRegistrarInfoType": {
+      "@id": "observable:WhoisRegistrarInfoType"
+   },
+   "WifiAddress": {
+      "@id": "observable:WifiAddress"
+   },
+   "WifiAddressFacet": {
+      "@id": "observable:WifiAddressFacet"
+   },
+   "Wiki": {
+      "@id": "observable:Wiki"
+   },
+   "WikiArticle": {
+      "@id": "observable:WikiArticle"
+   },
+   "WindowsAccount": {
+      "@id": "observable:WindowsAccount"
+   },
+   "WindowsAccountFacet": {
+      "@id": "observable:WindowsAccountFacet"
+   },
+   "WindowsActiveDirectoryAccount": {
+      "@id": "observable:WindowsActiveDirectoryAccount"
+   },
+   "WindowsActiveDirectoryAccountFacet": {
+      "@id": "observable:WindowsActiveDirectoryAccountFacet"
+   },
+   "WindowsComputerSpecification": {
+      "@id": "observable:WindowsComputerSpecification"
+   },
+   "WindowsComputerSpecificationFacet": {
+      "@id": "observable:WindowsComputerSpecificationFacet"
+   },
+   "WindowsCriticalSection": {
+      "@id": "observable:WindowsCriticalSection"
+   },
+   "WindowsEvent": {
+      "@id": "observable:WindowsEvent"
+   },
+   "WindowsFileMapping": {
+      "@id": "observable:WindowsFileMapping"
+   },
+   "WindowsHandle": {
+      "@id": "observable:WindowsHandle"
+   },
+   "WindowsHook": {
+      "@id": "observable:WindowsHook"
+   },
+   "WindowsMailSlot": {
+      "@id": "observable:WindowsMailSlot"
+   },
+   "WindowsNetworkShare": {
+      "@id": "observable:WindowsNetworkShare"
+   },
+   "WindowsPEBinaryFile": {
+      "@id": "observable:WindowsPEBinaryFile"
+   },
+   "WindowsPEBinaryFileFacet": {
+      "@id": "observable:WindowsPEBinaryFileFacet"
+   },
+   "WindowsPEBinaryType": {
+      "@id": "observable:WindowsPEBinaryType"
+   },
+   "WindowsPEFileHheader": {
+      "@id": "observable:WindowsPEFileHheader"
+   },
+   "WindowsPEOptionalHeader": {
+      "@id": "observable:WindowsPEOptionalHeader"
+   },
+   "WindowsPESection": {
+      "@id": "observable:WindowsPESection"
+   },
+   "WindowsPrefetch": {
+      "@id": "observable:WindowsPrefetch"
+   },
+   "WindowsPrefetchFacet": {
+      "@id": "observable:WindowsPrefetchFacet"
+   },
+   "WindowsProcess": {
+      "@id": "observable:WindowsProcess"
+   },
+   "WindowsProcessFacet": {
+      "@id": "observable:WindowsProcessFacet"
+   },
+   "WindowsRegistryHive": {
+      "@id": "observable:WindowsRegistryHive"
+   },
+   "WindowsRegistryHiveFacet": {
+      "@id": "observable:WindowsRegistryHiveFacet"
+   },
+   "WindowsRegistryKey": {
+      "@id": "observable:WindowsRegistryKey"
+   },
+   "WindowsRegistrykeyFacet": {
+      "@id": "observable:WindowsRegistrykeyFacet"
+   },
+   "WindowsRegistryValue": {
+      "@id": "observable:WindowsRegistryValue"
+   },
+   "WindowsService": {
+      "@id": "observable:WindowsService"
+   },
+   "WindowsServiceFacet": {
+      "@id": "observable:WindowsServiceFacet"
+   },
+   "WindowsServiceStartType": {
+      "@id": "observable:WindowsServiceStartType"
+   },
+   "WindowsServiceStatus": {
+      "@id": "observable:WindowsServiceStatus"
+   },
+   "WindowsServiceType": {
+      "@id": "observable:WindowsServiceType"
+   },
+   "WindowsSystemRestore": {
+      "@id": "observable:WindowsSystemRestore"
+   },
+   "WindowsTask": {
+      "@id": "observable:WindowsTask"
+   },
+   "WindowsTaskFacet": {
+      "@id": "observable:WindowsTaskFacet"
+   },
+   "WindowsThread": {
+      "@id": "observable:WindowsThread"
+   },
+   "WindowsThreadFacet": {
+      "@id": "observable:WindowsThreadFacet"
+   },
+   "WindowsVolumeFacet": {
+      "@id": "observable:WindowsVolumeFacet"
+   },
+   "WindowsWaitableTime": {
+      "@id": "observable:WindowsWaitableTime"
+   },
+   "WirelessNetworkConnection": {
+      "@id": "observable:WirelessNetworkConnection"
+   },
+   "WirelessNetworkConnectionFacet": {
+      "@id": "observable:WirelessNetworkConnectionFacet"
+   },
+   "WriteBlocker": {
+      "@id": "observable:WriteBlocker"
+   },
+   "X509Certificate": {
+      "@id": "observable:X509Certificate"
+   },
+   "X509CertificateFacet": {
+      "@id": "observable:X509CertificateFacet"
+   },
+   "X509V3Certificate": {
+      "@id": "observable:X509V3Certificate"
+   },
+   "X509V3ExtensionsFacet": {
+      "@id": "observable:X509V3ExtensionsFacet"
+   }
+}

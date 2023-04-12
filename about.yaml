@@ -1,0 +1,6 @@
+name: uco_master
+author: Noel McLoughlin <noel.mcloughlin@gmail.com>
+description: Classes and Properties in Unified Cyber Ontology
+source_schema_path: src/uco_master/schema/uco_master.yaml
+google_sheet_id: 1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ
+google_sheet_tabs: UcoThing enums

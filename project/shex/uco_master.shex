@@ -1,0 +1,4647 @@
+BASE <https://w3id.org/lmodel/uco-master/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX action: <https://w3id.org/lmodel/uco-action/>
+PREFIX analysis: <https://w3id.org/lmodel/uco-analysis/>
+PREFIX configuration: <https://w3id.org/lmodel/uco-configuration/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX core: <https://w3id.org/lmodel/uco-core/>
+PREFIX identity: <https://w3id.org/lmodel/uco-identity/>
+PREFIX location: <https://w3id.org/lmodel/uco-location/>
+PREFIX marking: <https://w3id.org/lmodel/uco-marking/>
+PREFIX observable: <https://w3id.org/lmodel/uco-observable/>
+PREFIX pattern: <https://w3id.org/lmodel/uco-pattern/>
+PREFIX role: <https://w3id.org/lmodel/uco-role/>
+PREFIX time: <https://w3id.org/lmodel/uco-time/>
+PREFIX tool: <https://w3id.org/lmodel/uco-tool/>
+PREFIX types: <https://w3id.org/lmodel/uco-types/>
+PREFIX victim: <https://w3id.org/lmodel/uco-victim/>
+PREFIX vocabulary: <https://w3id.org/lmodel/uco-vocabulary/>
+PREFIX collections: <https://w3id.org/lmodel/collections/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:dateTime
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Curie xsd:string
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+core:StringType xsd:string
+
+core:LiteralType rdf:literal
+
+core:NonNegativeIntegerType xsd:nonNegativeInteger
+
+core:StatementType xsd:string
+
+core:IriType IRI
+
+core:BooleanType xsd:boolean
+
+core:HexBinaryType xsd:hexBinary
+
+location:DecimalType xsd:decimal
+
+observable:Base64BinaryType xsd:base64Binary
+
+observable:ByteType xsd:byte
+
+observable:PositiveIntegerType xsd:positiveInteger
+
+observable:UnsignedIntegerType xsd:unsignedInt
+
+observable:UnsignedShortType xsd:unsignedShort
+
+observable:DurationType xsd:duration
+
+collections:PositiveInteger xsd:positiveInteger
+
+observable:Account  (
+    CLOSED {
+       (  $observable:Account_tes (  &observable:ObservableObject_tes ;
+             rdf:type [ observable:ObservableObject ] ?
+          ) ;
+          rdf:type [ observable:Account ] ?
+       )
+    } OR @observable:DigitalAccount
+)
+
+observable:AccountAuthenticationFacet CLOSED {
+    (  $observable:AccountAuthenticationFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:passwordLastChanged @linkml:Datetime ? ;
+          observable:password @linkml:String ? ;
+          observable:passwordType @linkml:String ?
+       ) ;
+       rdf:type [ observable:AccountAuthenticationFacet ] ?
+    )
+}
+
+observable:AccountFacet CLOSED {
+    (  $observable:AccountFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:accountIssuer @core:UcoObject ? ;
+          observable:owner @core:UcoObject ? ;
+          observable:isActive @core:BooleanType ? ;
+          observable:expirationDate @linkml:Datetime ? ;
+          core:modifiedTime @linkml:Datetime ? ;
+          observable:observableCreatedTime @linkml:Datetime ? ;
+          observable:accountIdentifier @linkml:String ? ;
+          observable:accountType @linkml:String ?
+       ) ;
+       rdf:type [ observable:AccountFacet ] ?
+    )
+}
+
+action:Action  (
+    CLOSED {
+       (  $action:Action_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ? ;
+             action:subaction @action:Action * ;
+             action:environment @core:UcoObject ? ;
+             action:performer @core:UcoObject ? ;
+             action:error @core:UcoObject * ;
+             action:instrument @core:UcoObject * ;
+             core:object @core:UcoObject * ;
+             action:participant @core:UcoObject * ;
+             action:result @core:UcoObject * ;
+             action:location @location:Location * ;
+             core:endTime @linkml:Datetime ? ;
+             core:startTime @linkml:Datetime ? ;
+             action:actionCount @core:NonNegativeIntegerType ? ;
+             action:actionStatus @vocabulary:ActionStatusTypeEnum ?
+          ) ;
+          rdf:type [ action:Action ] ?
+       )
+    } OR @action:ActionLifecycle OR @action:ActionPattern OR @analysis:Analysis OR @observable:ObservableAction OR
+    @observable:Observation
+)
+
+action:ActionArgumentFacet CLOSED {
+    (  $action:ActionArgumentFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          action:argumentName @linkml:String ;
+          core:value @linkml:String
+       ) ;
+       rdf:type [ action:ActionArgumentFacet ] ?
+    )
+}
+
+action:ActionEstimationFacet CLOSED {
+    (  $action:ActionEstimationFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          action:estimatedCost @linkml:String ? ;
+          action:estimatedEfficacy @linkml:String ? ;
+          action:estimatedImpact @linkml:String ? ;
+          action:objective @linkml:String ?
+       ) ;
+       rdf:type [ action:ActionEstimationFacet ] ?
+    )
+}
+
+action:ActionFrequencyFacet CLOSED {
+    (  $action:ActionFrequencyFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          action:rate @location:DecimalType ;
+          action:scale @linkml:String ;
+          action:units @linkml:String ;
+          action:trend @vocabulary:TrendEnum
+       ) ;
+       rdf:type [ action:ActionFrequencyFacet ] ?
+    )
+}
+
+action:ActionLifecycle CLOSED {
+    (  $action:ActionLifecycle_tes (  &action:Action_tes ;
+          rdf:type [ action:Action ] ? ;
+          action:phase @action:ArrayOfAction ;
+          action:error @core:UcoObject ? ;
+          core:endTime @linkml:Datetime ? ;
+          core:startTime @linkml:Datetime ? ;
+          action:actionCount @core:NonNegativeIntegerType ? ;
+          action:actionStatus @vocabulary:ActionStatusTypeEnum ?
+       ) ;
+       rdf:type [ action:ActionLifecycle ] ?
+    )
+}
+
+action:ActionPattern CLOSED {
+    (  $action:ActionPattern_tes (  &action:Action_tes ;
+          rdf:type [ action:Action ] ? ;
+          &pattern:Pattern_tes ;
+          rdf:type [ pattern:Pattern ] ?
+       ) ;
+       rdf:type [ action:ActionPattern ] ?
+    )
+}
+
+observable:Adaptor CLOSED {
+    (  $observable:Adaptor_tes (  &observable:Device_tes ;
+          rdf:type [ observable:Device ] ?
+       ) ;
+       rdf:type [ observable:Adaptor ] ?
+    )
+}
+
+observable:Address  (
+    CLOSED {
+       (  $observable:Address_tes (  &observable:ObservableObject_tes ;
+             rdf:type [ observable:ObservableObject ] ?
+          ) ;
+          rdf:type [ observable:Address ] ?
+       )
+    } OR @observable:DigitalAddress OR @observable:SocketAddress
+)
+
+identity:AddressFacet CLOSED {
+    (  $identity:AddressFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ? ;
+          identity:address @location:Location ?
+       ) ;
+       rdf:type [ identity:AddressFacet ] ?
+    )
+}
+
+identity:AffiliationFacet CLOSED {
+    (  $identity:AffiliationFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:AffiliationFacet ] ?
+    )
+}
+
+observable:AlternateDataStream CLOSED {
+    (  $observable:AlternateDataStream_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:AlternateDataStream ] ?
+    )
+}
+
+observable:AlternateDataStreamFacet CLOSED {
+    (  $observable:AlternateDataStreamFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:hashes @types:Hash ? ;
+          rdfs:label @linkml:String ? ;
+          collections:size @collections:PositiveInteger ?
+       ) ;
+       rdf:type [ observable:AlternateDataStreamFacet ] ?
+    )
+}
+
+analysis:Analysis CLOSED {
+    (  $analysis:Analysis_tes (  &action:Action_tes ;
+          rdf:type [ action:Action ] ?
+       ) ;
+       rdf:type [ analysis:Analysis ] ?
+    )
+}
+
+analysis:AnalyticResult CLOSED {
+    (  $analysis:AnalyticResult_tes (  &core:Assertion_tes ;
+          rdf:type [ core:Assertion ] ? ;
+          analysis:originatingAnalysis @analysis:Analysis ? ;
+          analysis:resultContent @core:UcoObject *
+       ) ;
+       rdf:type [ analysis:AnalyticResult ] ?
+    )
+}
+
+analysis:AnalyticResultFacet  (
+    CLOSED {
+       (  $analysis:AnalyticResultFacet_tes (  &core:Facet_tes ;
+             rdf:type [ core:Facet ] ?
+          ) ;
+          rdf:type [ analysis:AnalyticResultFacet ] ?
+       )
+    } OR @analysis:ArtifactClassificationResultFacet
+)
+
+tool:AnalyticTool CLOSED {
+    (  $tool:AnalyticTool_tes (  &tool:Tool_tes ;
+          rdf:type [ tool:Tool ] ?
+       ) ;
+       rdf:type [ tool:AnalyticTool ] ?
+    )
+}
+
+observable:AndroidDevice  (
+    CLOSED {
+       (  $observable:AndroidDevice_tes (  &observable:Device_tes ;
+             rdf:type [ observable:Device ] ?
+          ) ;
+          rdf:type [ observable:AndroidDevice ] ?
+       )
+    } OR @observable:AndroidPhone
+)
+
+observable:AndroidDeviceFacet CLOSED {
+    (  $observable:AndroidDeviceFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:androidFingerprint @linkml:String ? ;
+          observable:androidVersion @linkml:String ? ;
+          observable:androidID @core:HexBinaryType ? ;
+          observable:isADBRootEnabled @core:BooleanType ? ;
+          observable:isSURootEnabled @core:BooleanType ?
+       ) ;
+       rdf:type [ observable:AndroidDeviceFacet ] ?
+    )
+}
+
+observable:AndroidPhone CLOSED {
+    (  $observable:AndroidPhone_tes (  &observable:AndroidDevice_tes ;
+          rdf:type [ observable:AndroidDevice ] ? ;
+          &observable:SmartPhone_tes ;
+          rdf:type [ observable:SmartPhone ] ?
+       ) ;
+       rdf:type [ observable:AndroidPhone ] ?
+    )
+}
+
+core:Annotation CLOSED {
+    (  $core:Annotation_tes (  &core:Assertion_tes ;
+          rdf:type [ core:Assertion ] ? ;
+          core:object @core:UcoObject +
+       ) ;
+       rdf:type [ core:Annotation ] ?
+    )
+}
+
+observable:AntennaFacet CLOSED {
+    (  $observable:AntennaFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:antennaHeight @location:DecimalType ? ;
+          observable:azimuth @location:DecimalType ? ;
+          observable:elevation @location:DecimalType ? ;
+          observable:horizontalBeamWidth @location:DecimalType ? ;
+          observable:signalStrength @location:DecimalType ? ;
+          observable:skew @location:DecimalType ?
+       ) ;
+       rdf:type [ observable:AntennaFacet ] ?
+    )
+}
+
+observable:API CLOSED {
+    (  $observable:API_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:API ] ?
+    )
+}
+
+observable:AppleDevice  (
+    CLOSED {
+       (  $observable:AppleDevice_tes (  &observable:Device_tes ;
+             rdf:type [ observable:Device ] ?
+          ) ;
+          rdf:type [ observable:AppleDevice ] ?
+       )
+    } OR @observable:IPhone
+)
+
+observable:Appliance  (
+    CLOSED {
+       (  $observable:Appliance_tes (  &observable:Device_tes ;
+             rdf:type [ observable:Device ] ?
+          ) ;
+          rdf:type [ observable:Appliance ] ?
+       )
+    } OR @observable:NetworkAppliance OR @observable:SecurityAppliance
+)
+
+observable:Application CLOSED {
+    (  $observable:Application_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Application ] ?
+    )
+}
+
+observable:ApplicationAccount CLOSED {
+    (  $observable:ApplicationAccount_tes (  &observable:DigitalAccount_tes ;
+          rdf:type [ observable:DigitalAccount ] ?
+       ) ;
+       rdf:type [ observable:ApplicationAccount ] ?
+    )
+}
+
+observable:ApplicationAccountFacet CLOSED {
+    (  $observable:ApplicationAccountFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:application @observable:ObservableObject ?
+       ) ;
+       rdf:type [ observable:ApplicationAccountFacet ] ?
+    )
+}
+
+observable:ApplicationFacet CLOSED {
+    (  $observable:ApplicationFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:numberOfLaunches @linkml:Integer ? ;
+          observable:applicationIdentifier @linkml:String ? ;
+          observable:installedVersionHistory @observable:ApplicationVersion * ;
+          observable:operatingSystem @observable:ObservableObject ? ;
+          observable:version @linkml:String ?
+       ) ;
+       rdf:type [ observable:ApplicationFacet ] ?
+    )
+}
+
+observable:ApplicationVersion CLOSED {
+    (  $observable:ApplicationVersion_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:installDate @linkml:Datetime ? ;
+          observable:uninstallDate @linkml:Datetime ? ;
+          observable:version @linkml:String ?
+       ) ;
+       rdf:type [ observable:ApplicationVersion ] ?
+    )
+}
+
+observable:ArchiveFile CLOSED {
+    (  $observable:ArchiveFile_tes (  &observable:File_tes ;
+          rdf:type [ observable:File ] ?
+       ) ;
+       rdf:type [ observable:ArchiveFile ] ?
+    )
+}
+
+observable:ArchiveFileFacet CLOSED {
+    (  $observable:ArchiveFileFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:archiveType @linkml:String ? ;
+          observable:comment @linkml:String ? ;
+          observable:version @linkml:String ?
+       ) ;
+       rdf:type [ observable:ArchiveFileFacet ] ?
+    )
+}
+
+observable:ARPCache CLOSED {
+    (  $observable:ARPCache_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:ARPCache ] ?
+    )
+}
+
+observable:ARPCacheEntry CLOSED {
+    (  $observable:ARPCacheEntry_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:ARPCacheEntry ] ?
+    )
+}
+
+action:ArrayOfAction CLOSED {
+    (  $action:ArrayOfAction_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          action:action @action:Action ?
+       ) ;
+       rdf:type [ action:ArrayOfAction ] ?
+    )
+}
+
+analysis:ArtifactClassification CLOSED {
+    (  $analysis:ArtifactClassification_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          analysis:classificationConfidence @location:DecimalType ? ;
+          analysis:class @linkml:String ?
+       ) ;
+       rdf:type [ analysis:ArtifactClassification ] ?
+    )
+}
+
+analysis:ArtifactClassificationResultFacet CLOSED {
+    (  $analysis:ArtifactClassificationResultFacet_tes (  &analysis:AnalyticResultFacet_tes ;
+          rdf:type [ analysis:AnalyticResultFacet ] ? ;
+          analysis:classification @analysis:ArtifactClassification *
+       ) ;
+       rdf:type [ analysis:ArtifactClassificationResultFacet ] ?
+    )
+}
+
+core:Assertion  (
+    CLOSED {
+       (  $core:Assertion_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ? ;
+             core:statement @linkml:String *
+          ) ;
+          rdf:type [ core:Assertion ] ?
+       )
+    } OR @analysis:AnalyticResult OR @core:Annotation
+)
+
+core:AttributedName CLOSED {
+    (  $core:AttributedName_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ? ;
+          core:namingAuthority @linkml:String ?
+       ) ;
+       rdf:type [ core:AttributedName ] ?
+    )
+}
+
+observable:Audio CLOSED {
+    (  $observable:Audio_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Audio ] ?
+    )
+}
+
+observable:AudioFacet CLOSED {
+    (  $observable:AudioFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:bitRate @linkml:Integer ? ;
+          observable:duration @linkml:Integer ? ;
+          observable:audioType @linkml:String ? ;
+          observable:format @linkml:String ?
+       ) ;
+       rdf:type [ observable:AudioFacet ] ?
+    )
+}
+
+observable:AutonomousSystem CLOSED {
+    (  $observable:AutonomousSystem_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:AutonomousSystem ] ?
+    )
+}
+
+observable:AutonomousSystemFacet CLOSED {
+    (  $observable:AutonomousSystemFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:number @linkml:Integer ? ;
+          observable:asHandle @linkml:String ? ;
+          observable:regionalInternetRegistry @linkml:String ?
+       ) ;
+       rdf:type [ observable:AutonomousSystemFacet ] ?
+    )
+}
+
+collections:Bag  (
+    CLOSED {
+       (  $collections:Bag_tes (  &collections:Collection_tes ;
+             rdf:type [ collections:Collection ] ?
+          ) ;
+          rdf:type [ collections:Bag ] ?
+       )
+    } OR @collections:List OR @types:Thread
+)
+
+role:BenevolentRole CLOSED {
+    (  $role:BenevolentRole_tes (  &role:Role_tes ;
+          rdf:type [ role:Role ] ?
+       ) ;
+       rdf:type [ role:BenevolentRole ] ?
+    )
+}
+
+identity:BirthInformationFacet CLOSED {
+    (  $identity:BirthInformationFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ? ;
+          identity:birthdate @linkml:Datetime ?
+       ) ;
+       rdf:type [ identity:BirthInformationFacet ] ?
+    )
+}
+
+observable:BlackBerryPhone CLOSED {
+    (  $observable:BlackBerryPhone_tes (  &observable:SmartPhone_tes ;
+          rdf:type [ observable:SmartPhone ] ?
+       ) ;
+       rdf:type [ observable:BlackBerryPhone ] ?
+    )
+}
+
+observable:BlockDeviceNode CLOSED {
+    (  $observable:BlockDeviceNode_tes (  &observable:FileSystemObject_tes ;
+          rdf:type [ observable:FileSystemObject ] ?
+       ) ;
+       rdf:type [ observable:BlockDeviceNode ] ?
+    )
+}
+
+observable:BluetoothAddress CLOSED {
+    (  $observable:BluetoothAddress_tes (  &observable:MACAddress_tes ;
+          rdf:type [ observable:MACAddress ] ?
+       ) ;
+       rdf:type [ observable:BluetoothAddress ] ?
+    )
+}
+
+observable:BluetoothAddressFacet CLOSED {
+    (  $observable:BluetoothAddressFacet_tes (  &observable:MACAddressFacet_tes ;
+          rdf:type [ observable:MACAddressFacet ] ?
+       ) ;
+       rdf:type [ observable:BluetoothAddressFacet ] ?
+    )
+}
+
+observable:BotConfiguration CLOSED {
+    (  $observable:BotConfiguration_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:BotConfiguration ] ?
+    )
+}
+
+observable:BrowserBookmark CLOSED {
+    (  $observable:BrowserBookmark_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:BrowserBookmark ] ?
+    )
+}
+
+observable:BrowserBookmarkFacet CLOSED {
+    (  $observable:BrowserBookmarkFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:application @observable:ObservableObject ? ;
+          observable:accessedTime @linkml:Datetime ? ;
+          core:modifiedTime @linkml:Datetime ? ;
+          observable:observableCreatedTime @linkml:Datetime ? ;
+          observable:urlTargeted @core:IriType * ;
+          observable:visitCount @linkml:Integer ? ;
+          observable:bookmarkPath @linkml:String ?
+       ) ;
+       rdf:type [ observable:BrowserBookmarkFacet ] ?
+    )
+}
+
+observable:BrowserCookie CLOSED {
+    (  $observable:BrowserCookie_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:BrowserCookie ] ?
+    )
+}
+
+observable:BrowserCookieFacet CLOSED {
+    (  $observable:BrowserCookieFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:accessedTime @linkml:Datetime ? ;
+          observable:application @observable:ObservableObject ? ;
+          observable:cookieDomain @observable:ObservableObject ? ;
+          observable:cookieName @linkml:String ? ;
+          observable:cookiePath @linkml:String ? ;
+          observable:expirationTime @linkml:Datetime ? ;
+          observable:isSecure @core:BooleanType ? ;
+          observable:observableCreatedTime @linkml:Datetime ?
+       ) ;
+       rdf:type [ observable:BrowserCookieFacet ] ?
+    )
+}
+
+tool:BuildFacet CLOSED {
+    (  $tool:BuildFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          tool:buildInformation @tool:BuildInformationType ?
+       ) ;
+       rdf:type [ tool:BuildFacet ] ?
+    )
+}
+
+tool:BuildInformationType CLOSED {
+    (  $tool:BuildInformationType_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          tool:buildConfiguration @configuration:Configuration ? ;
+          tool:buildUtility @tool:BuildUtilityType ? ;
+          tool:compilers @tool:CompilerType * ;
+          tool:libraries @tool:LibraryType * ;
+          tool:compilationDate @linkml:Datetime ? ;
+          tool:buildID @linkml:String ? ;
+          tool:buildLabel @linkml:String ? ;
+          tool:buildOutputLog @linkml:String ? ;
+          tool:buildProject @linkml:String ? ;
+          tool:buildScript @linkml:String ? ;
+          tool:buildVersion @linkml:String ?
+       ) ;
+       rdf:type [ tool:BuildInformationType ] ?
+    )
+}
+
+tool:BuildUtilityType CLOSED {
+    (  $tool:BuildUtilityType_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          tool:buildUtilityName @linkml:String ? ;
+          tool:_cpeid @linkml:String ? ;
+          tool:_swid @linkml:String ?
+       ) ;
+       rdf:type [ tool:BuildUtilityType ] ?
+    )
+}
+
+core:Bundle CLOSED {
+    (  $core:Bundle_tes (  &core:EnclosingCompilation_tes ;
+          rdf:type [ core:EnclosingCompilation ] ?
+       ) ;
+       rdf:type [ core:Bundle ] ?
+    )
+}
+
+observable:Calendar CLOSED {
+    (  $observable:Calendar_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Calendar ] ?
+    )
+}
+
+observable:CalendarEntry CLOSED {
+    (  $observable:CalendarEntry_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:CalendarEntry ] ?
+    )
+}
+
+observable:CalendarEntryFacet CLOSED {
+    (  $observable:CalendarEntryFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:application @observable:ObservableObject ? ;
+          observable:attendant @identity:Identity * ;
+          observable:isPrivate @core:BooleanType ? ;
+          core:endTime @linkml:Datetime ? ;
+          action:location @location:Location ? ;
+          core:modifiedTime @linkml:Datetime ? ;
+          observable:observableCreatedTime @linkml:Datetime ? ;
+          observable:owner @core:UcoObject ? ;
+          observable:remindTime @linkml:Datetime ? ;
+          core:startTime @linkml:Datetime ? ;
+          observable:duration @linkml:Integer ? ;
+          observable:eventStatus @linkml:String ? ;
+          observable:eventType @linkml:String ? ;
+          observable:recurrence @linkml:String ? ;
+          observable:subject @linkml:String ?
+       ) ;
+       rdf:type [ observable:CalendarEntryFacet ] ?
+    )
+}
+
+observable:CalendarFacet CLOSED {
+    (  $observable:CalendarFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:owner @core:UcoObject ? ;
+          observable:application @observable:ObservableObject ?
+       ) ;
+       rdf:type [ observable:CalendarFacet ] ?
+    )
+}
+
+observable:Call CLOSED {
+    (  $observable:Call_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Call ] ?
+    )
+}
+
+observable:CallFacet CLOSED {
+    (  $observable:CallFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:application @observable:ObservableObject ? ;
+          core:endTime @linkml:Datetime ? ;
+          core:startTime @linkml:Datetime ? ;
+          observable:duration @linkml:Integer ? ;
+          action:participant @observable:ObservableObject * ;
+          observable:callType @linkml:String ? ;
+          observable:from @observable:ObservableObject ? ;
+          observable:to @observable:ObservableObject *
+       ) ;
+       rdf:type [ observable:CallFacet ] ?
+    )
+}
+
+observable:CapturedTelecommunicationsInformation CLOSED {
+    (  $observable:CapturedTelecommunicationsInformation_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:CapturedTelecommunicationsInformation ] ?
+    )
+}
+
+observable:CapturedTelecommunicationsInformationFacet CLOSED {
+    (  $observable:CapturedTelecommunicationsInformationFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:captureCellSite @observable:CellSite ;
+          core:startTime @linkml:Datetime ? ;
+          core:endTime @linkml:Datetime ? ;
+          observable:interceptedCallState @linkml:String ?
+       ) ;
+       rdf:type [ observable:CapturedTelecommunicationsInformationFacet ] ?
+    )
+}
+
+observable:CellSite CLOSED {
+    (  $observable:CellSite_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:CellSite ] ?
+    )
+}
+
+observable:CellSiteFacet CLOSED {
+    (  $observable:CellSiteFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:cellSiteCountryCode @linkml:String ? ;
+          observable:cellSiteIdentifier @linkml:String ? ;
+          observable:cellSiteLocationAreaCode @linkml:String ? ;
+          observable:cellSiteNetworkCode @linkml:String ? ;
+          observable:cellSiteType @linkml:String ?
+       ) ;
+       rdf:type [ observable:CellSiteFacet ] ?
+    )
+}
+
+observable:CharacterDeviceNode CLOSED {
+    (  $observable:CharacterDeviceNode_tes (  &observable:FileSystemObject_tes ;
+          rdf:type [ observable:FileSystemObject ] ?
+       ) ;
+       rdf:type [ observable:CharacterDeviceNode ] ?
+    )
+}
+
+observable:Code CLOSED {
+    (  $observable:Code_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Code ] ?
+    )
+}
+
+collections:CoItem  (
+    CLOSED {
+       (  $collections:CoItem_tes (  &collections:Thing_tes ;
+             rdf:type [ collections:Thing ] ? ;
+             collections:itemOf @collections:Bag ?
+          ) ;
+          rdf:type [ collections:CoItem ] ?
+       )
+    } OR @collections:ListItem OR @observable:ObservableObject
+)
+
+collections:Collection  (
+    CLOSED {
+       (  $collections:Collection_tes (  &collections:Thing_tes ;
+             rdf:type [ collections:Thing ] ? ;
+             collections:size @collections:PositiveInteger ?
+          ) ;
+          rdf:type [ collections:Collection ] ?
+       )
+    } OR @collections:Bag OR @collections:Set
+)
+
+core:Compilation  (
+    CLOSED {
+       (  $core:Compilation_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ?
+          ) ;
+          rdf:type [ core:Compilation ] ?
+       )
+    } OR @core:ContextualCompilation OR @core:EnclosingCompilation
+)
+
+tool:CompilerType CLOSED {
+    (  $tool:CompilerType_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          tool:compilerInformalDescription @linkml:String ? ;
+          tool:_cpeid @linkml:String ? ;
+          tool:_swid @linkml:String ?
+       ) ;
+       rdf:type [ tool:CompilerType ] ?
+    )
+}
+
+observable:CompressedStreamFacet CLOSED {
+    (  $observable:CompressedStreamFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:compressionRatio @location:DecimalType ? ;
+          observable:compressionMethod @linkml:String ?
+       ) ;
+       rdf:type [ observable:CompressedStreamFacet ] ?
+    )
+}
+
+observable:Computer  (
+    @observable:Laptop OR @observable:Server OR @observable:Tablet
+)
+
+observable:Computer_struct {
+    (  $observable:Computer_tes (  &observable:Device_tes ;
+          rdf:type [ observable:Device ] ?
+       ) ;
+       rdf:type [ observable:Computer ] ?
+    )
+}
+
+observable:ComputerSpecification CLOSED {
+    (  $observable:ComputerSpecification_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:ComputerSpecification ] ?
+    )
+}
+
+observable:ComputerSpecificationFacet CLOSED {
+    (  $observable:ComputerSpecificationFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:biosDate @linkml:Datetime ? ;
+          observable:biosReleaseDate @linkml:Datetime ? ;
+          observable:currentSystemDate @linkml:Datetime ? ;
+          observable:localTime @linkml:Datetime ? ;
+          observable:systemTime @linkml:Datetime ? ;
+          observable:availableRam @linkml:Integer ? ;
+          observable:totalRam @linkml:Integer ? ;
+          observable:biosManufacturer @linkml:String ? ;
+          observable:biosSerialNumber @linkml:String ? ;
+          observable:biosVersion @linkml:String ? ;
+          observable:cpu @linkml:String ? ;
+          observable:cpuFamily @linkml:String ? ;
+          observable:gpu @linkml:String ? ;
+          observable:gpuFamily @linkml:String ? ;
+          observable:hostname @linkml:String ? ;
+          observable:networkInterface @observable:ObservableObject * ;
+          observable:processorArchitecture @linkml:String ? ;
+          observable:timezoneDST @linkml:String ? ;
+          observable:timezoneStandard @linkml:String ? ;
+          observable:uptime @linkml:String ?
+       ) ;
+       rdf:type [ observable:ComputerSpecificationFacet ] ?
+    )
+}
+
+core:ConfidenceFacet CLOSED {
+    (  $core:ConfidenceFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          core:confidence @core:NonNegativeIntegerType
+       ) ;
+       rdf:type [ core:ConfidenceFacet ] ?
+    )
+}
+
+configuration:Configuration CLOSED {
+    (  $configuration:Configuration_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ? ;
+          configuration:configurationEntry @configuration:ConfigurationEntry * ;
+          configuration:dependencies @configuration:Dependency * ;
+          configuration:usageContextAssumptions @linkml:String *
+       ) ;
+       rdf:type [ configuration:Configuration ] ?
+    )
+}
+
+configuration:ConfigurationEntry CLOSED {
+    (  $configuration:ConfigurationEntry_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          configuration:itemObject @core:UcoObject * ;
+          configuration:itemDescription @linkml:String ? ;
+          configuration:itemName @linkml:String ? ;
+          configuration:itemType @linkml:String ? ;
+          configuration:itemValue @linkml:String *
+       ) ;
+       rdf:type [ configuration:ConfigurationEntry ] ?
+    )
+}
+
+observable:ConfiguredSoftware CLOSED {
+    (  $observable:ConfiguredSoftware_tes (  &observable:Software_tes ;
+          rdf:type [ observable:Software ] ? ;
+          configuration:usesConfiguration @configuration:Configuration ? ;
+          configuration:isConfigurationOf @core:UcoObject ?
+       ) ;
+       rdf:type [ observable:ConfiguredSoftware ] ?
+    )
+}
+
+tool:ConfiguredTool CLOSED {
+    (  $tool:ConfiguredTool_tes (  &tool:Tool_tes ;
+          rdf:type [ tool:Tool ] ? ;
+          configuration:usesConfiguration @configuration:Configuration ? ;
+          configuration:isConfigurationOf @core:UcoObject ?
+       ) ;
+       rdf:type [ tool:ConfiguredTool ] ?
+    )
+}
+
+observable:Contact CLOSED {
+    (  $observable:Contact_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Contact ] ?
+    )
+}
+
+observable:ContactAddress CLOSED {
+    (  $observable:ContactAddress_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:geoLocationAddress @location:Location ? ;
+          observable:contactAddressScope @linkml:String ?
+       ) ;
+       rdf:type [ observable:ContactAddress ] ?
+    )
+}
+
+observable:ContactAffiliation CLOSED {
+    (  $observable:ContactAffiliation_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:contactOrganization @identity:Organization ? ;
+          observable:organizationLocation @observable:ContactAddress ? ;
+          observable:contactEmail @observable:ContactEmail ? ;
+          observable:contactMessaging @observable:ContactMessaging ? ;
+          observable:contactPhone @observable:ContactPhone ? ;
+          observable:contactProfile @observable:ContactProfile ? ;
+          observable:contactURL @observable:ContactURL ? ;
+          observable:organizationDepartment @linkml:String ? ;
+          observable:organizationPosition @linkml:String ?
+       ) ;
+       rdf:type [ observable:ContactAffiliation ] ?
+    )
+}
+
+observable:ContactEmail CLOSED {
+    (  $observable:ContactEmail_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:emailAddress @observable:ObservableObject ? ;
+          observable:contactEmailScope @vocabulary:ContactEmailScopeEnum ?
+       ) ;
+       rdf:type [ observable:ContactEmail ] ?
+    )
+}
+
+observable:ContactFacet  (
+    CLOSED {
+       (  $observable:ContactFacet_tes (  &core:Facet_tes ;
+             rdf:type [ core:Facet ] ? ;
+             observable:contactAddress @observable:ContactAddress ? ;
+             observable:contactAffiliation @observable:ContactAffiliation ? ;
+             observable:contactEmail @observable:ContactEmail ? ;
+             observable:contactMessaging @observable:ContactMessaging ? ;
+             observable:contactPhone @observable:ContactPhone ? ;
+             observable:contactProfile @observable:ContactProfile ? ;
+             observable:contactSIP @observable:ContactSIP ? ;
+             observable:contactURL @observable:ContactURL ? ;
+             observable:sourceApplication @observable:ObservableObject ? ;
+             identity:birthdate @linkml:Datetime ? ;
+             observable:lastTimeContacted @linkml:Datetime ? ;
+             observable:numberTimesContacted @linkml:Integer ? ;
+             observable:contactID @linkml:String ? ;
+             observable:displayName @linkml:String ? ;
+             observable:firstName @linkml:String ? ;
+             observable:lastName @linkml:String ? ;
+             observable:middleName @linkml:String ? ;
+             observable:namePhonetic @linkml:String ? ;
+             observable:namePrefix @linkml:String ? ;
+             observable:nameSuffix @linkml:String ? ;
+             observable:contactGroup @linkml:String ? ;
+             observable:contactNote @linkml:String ? ;
+             observable:nickname @linkml:String ?
+          ) ;
+          rdf:type [ observable:ContactFacet ] ?
+       )
+    } OR @observable:WhoisContactFacet
+)
+
+observable:ContactList CLOSED {
+    (  $observable:ContactList_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:ContactList ] ?
+    )
+}
+
+observable:ContactListFacet CLOSED {
+    (  $observable:ContactListFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:sourceApplication @observable:ObservableObject ? ;
+          observable:contact @observable:ObservableObject *
+       ) ;
+       rdf:type [ observable:ContactListFacet ] ?
+    )
+}
+
+observable:ContactMessaging CLOSED {
+    (  $observable:ContactMessaging_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:contactMessagingPlatform @observable:ObservableObject ? ;
+          observable:messagingAddress @observable:ObservableObject ?
+       ) ;
+       rdf:type [ observable:ContactMessaging ] ?
+    )
+}
+
+observable:ContactPhone CLOSED {
+    (  $observable:ContactPhone_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:contactPhoneNumber @observable:ObservableObject ? ;
+          observable:contactPhoneScope @linkml:String ?
+       ) ;
+       rdf:type [ observable:ContactPhone ] ?
+    )
+}
+
+observable:ContactProfile CLOSED {
+    (  $observable:ContactProfile_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:contactProfilePlatform @observable:ObservableObject ? ;
+          observable:profile @observable:ObservableObject ?
+       ) ;
+       rdf:type [ observable:ContactProfile ] ?
+    )
+}
+
+observable:ContactSIP CLOSED {
+    (  $observable:ContactSIP_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:sipAddress @observable:ObservableObject ? ;
+          observable:contactSIPScope @linkml:String ?
+       ) ;
+       rdf:type [ observable:ContactSIP ] ?
+    )
+}
+
+observable:ContactURL CLOSED {
+    (  $observable:ContactURL_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:contactURLScope @linkml:String ? ;
+          observable:url @observable:ObservableObject ?
+       ) ;
+       rdf:type [ observable:ContactURL ] ?
+    )
+}
+
+observable:ContentData CLOSED {
+    (  $observable:ContentData_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:ContentData ] ?
+    )
+}
+
+observable:ContentDataFacet CLOSED {
+    (  $observable:ContentDataFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:dataPayloadReferenceURL @observable:ObservableObject ? ;
+          observable:hash @types:Hash * ;
+          observable:isEncrypted @core:BooleanType ? ;
+          observable:entropy @location:DecimalType ? ;
+          observable:sizeInBytes @linkml:Integer ? ;
+          observable:dataPayload @linkml:String ? ;
+          observable:magicNumber @linkml:String ? ;
+          observable:mimeClass @linkml:String ? ;
+          observable:mimeType @linkml:String * ;
+          observable:byteOrder @linkml:String ?
+       ) ;
+       rdf:type [ observable:ContentDataFacet ] ?
+    )
+}
+
+core:ContextualCompilation  (
+    CLOSED {
+       (  $core:ContextualCompilation_tes (  &core:Compilation_tes ;
+             rdf:type [ core:Compilation ] ? ;
+             core:object @core:UcoObject +
+          ) ;
+          rdf:type [ core:ContextualCompilation ] ?
+       )
+    } OR @core:Grouping
+)
+
+types:ControlledDictionary CLOSED {
+    (  $types:ControlledDictionary_tes (  &types:Dictionary_tes ;
+          rdf:type [ types:Dictionary ] ? ;
+          types:entry @types:DictionaryEntry *
+       ) ;
+       rdf:type [ types:ControlledDictionary ] ?
+    )
+}
+
+types:ControlledDictionaryEntry CLOSED {
+    (  $types:ControlledDictionaryEntry_tes (  &types:DictionaryEntry_tes ;
+          rdf:type [ types:DictionaryEntry ] ?
+       ) ;
+       rdf:type [ types:ControlledDictionaryEntry ] ?
+    )
+}
+
+core:ControlledVocabulary CLOSED {
+    (  $core:ControlledVocabulary_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ? ;
+          core:constrainingVocabularyReference @core:IriType ? ;
+          core:constrainingVocabularyName @linkml:String ? ;
+          core:value @linkml:String
+       ) ;
+       rdf:type [ core:ControlledVocabulary ] ?
+    )
+}
+
+observable:CookieHistory CLOSED {
+    (  $observable:CookieHistory_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:CookieHistory ] ?
+    )
+}
+
+identity:CountryOfResidenceFacet CLOSED {
+    (  $identity:CountryOfResidenceFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:CountryOfResidenceFacet ] ?
+    )
+}
+
+observable:Credential CLOSED {
+    (  $observable:Credential_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Credential ] ?
+    )
+}
+
+observable:CredentialDump CLOSED {
+    (  $observable:CredentialDump_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:CredentialDump ] ?
+    )
+}
+
+observable:DataRangeFacet CLOSED {
+    (  $observable:DataRangeFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:rangeOffset @linkml:Integer ? ;
+          observable:rangeSize @linkml:Integer ? ;
+          observable:rangeOffsetType @linkml:String ?
+       ) ;
+       rdf:type [ observable:DataRangeFacet ] ?
+    )
+}
+
+tool:DefensiveTool CLOSED {
+    (  $tool:DefensiveTool_tes (  &tool:Tool_tes ;
+          rdf:type [ tool:Tool ] ?
+       ) ;
+       rdf:type [ tool:DefensiveTool ] ?
+    )
+}
+
+observable:DefinedEffectFacet  (
+    CLOSED {
+       (  $observable:DefinedEffectFacet_tes (  &core:Facet_tes ;
+             rdf:type [ core:Facet ] ?
+          ) ;
+          rdf:type [ observable:DefinedEffectFacet ] ?
+       )
+    } OR @observable:PropertiesEnumeratedEffectFacet OR @observable:PropertyReadEffectFacet OR
+    @observable:SendControlCodeEffectFacet OR @observable:StateChangeEffectFacet OR @observable:ValuesEnumeratedEffectFacet
+)
+
+configuration:Dependency CLOSED {
+    (  $configuration:Dependency_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          configuration:dependencyDescription @linkml:String ? ;
+          configuration:dependencyType @linkml:String ?
+       ) ;
+       rdf:type [ configuration:Dependency ] ?
+    )
+}
+
+observable:Device  (
+    CLOSED {
+       (  $observable:Device_tes (  &observable:ObservableObject_tes ;
+             rdf:type [ observable:ObservableObject ] ?
+          ) ;
+          rdf:type [ observable:Device ] ?
+       )
+    } OR @observable:Adaptor OR @observable:AndroidDevice OR @observable:AppleDevice OR @observable:Appliance OR
+    @observable:Computer OR @observable:DigitalCamera OR @observable:EmbeddedDevice OR @observable:GamingConsole OR
+    @observable:MobileDevice OR @observable:ProtocolConverter OR @observable:SIMCard OR @observable:SmartDevice OR
+    @observable:StorageMedium OR @observable:WriteBlocker
+)
+
+observable:DeviceFacet CLOSED {
+    (  $observable:DeviceFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:manufacturer @identity:Identity ? ;
+          observable:deviceType @linkml:String ? ;
+          observable:model @linkml:String ? ;
+          observable:serialNumber @linkml:String ?
+       ) ;
+       rdf:type [ observable:DeviceFacet ] ?
+    )
+}
+
+types:Dictionary  (
+    CLOSED {
+       (  $types:Dictionary_tes (  &core:UcoInherentCharacterizationThing_tes ;
+             rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+             types:entry @types:DictionaryEntry +
+          ) ;
+          rdf:type [ types:Dictionary ] ?
+       )
+    } OR @types:ControlledDictionary
+)
+
+types:DictionaryEntry  (
+    CLOSED {
+       (  $types:DictionaryEntry_tes (  &core:UcoInherentCharacterizationThing_tes ;
+             rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+             types:key @linkml:String ;
+             core:value @linkml:String
+          ) ;
+          rdf:type [ types:DictionaryEntry ] ?
+       )
+    } OR @types:ControlledDictionaryEntry
+)
+
+observable:DigitalAccount  (
+    CLOSED {
+       (  $observable:DigitalAccount_tes (  &observable:Account_tes ;
+             rdf:type [ observable:Account ] ?
+          ) ;
+          rdf:type [ observable:DigitalAccount ] ?
+       )
+    } OR @observable:ApplicationAccount OR @observable:EmailAccount OR @observable:MobileAccount OR @observable:PhoneAccount OR
+    @observable:UNIXAccount OR @observable:UserAccount OR @observable:WindowsAccount OR @observable:WindowsActiveDirectoryAccount
+)
+
+observable:DigitalAccountFacet CLOSED {
+    (  $observable:DigitalAccountFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:isDisabled @core:BooleanType ? ;
+          observable:firstLoginTime @linkml:Datetime ? ;
+          observable:lastLoginTime @linkml:Datetime ? ;
+          observable:displayName @linkml:String ? ;
+          observable:accountLogin @linkml:String *
+       ) ;
+       rdf:type [ observable:DigitalAccountFacet ] ?
+    )
+}
+
+observable:DigitalAddress  (
+    CLOSED {
+       (  $observable:DigitalAddress_tes (  &observable:Address_tes ;
+             rdf:type [ observable:Address ] ?
+          ) ;
+          rdf:type [ observable:DigitalAddress ] ?
+       )
+    } OR @observable:EmailAddress OR @observable:IPAddress OR @observable:InstantMessagingAddress OR @observable:MACAddress OR
+    @observable:SIPAaddress
+)
+
+observable:DigitalAddressFacet  (
+    CLOSED {
+       (  $observable:DigitalAddressFacet_tes (  &core:Facet_tes ;
+             rdf:type [ core:Facet ] ? ;
+             observable:addressValue @linkml:String ? ;
+             observable:displayName @linkml:String ?
+          ) ;
+          rdf:type [ observable:DigitalAddressFacet ] ?
+       )
+    } OR @observable:EmailAddressFacet OR @observable:IPAddressFacet OR @observable:InstantMessagingAddressFacet OR
+    @observable:MACAddressFacet OR @observable:SIPAddressFacet
+)
+
+observable:DigitalCamera CLOSED {
+    (  $observable:DigitalCamera_tes (  &observable:Device_tes ;
+          rdf:type [ observable:Device ] ?
+       ) ;
+       rdf:type [ observable:DigitalCamera ] ?
+    )
+}
+
+observable:DigitalSignatureInfo CLOSED {
+    (  $observable:DigitalSignatureInfo_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:DigitalSignatureInfo ] ?
+    )
+}
+
+observable:DigitalSignatureInfoFacet CLOSED {
+    (  $observable:DigitalSignatureInfoFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:certificateSubject @core:UcoObject ? ;
+          observable:certificateIssuer @identity:Identity ? ;
+          observable:signatureExists @core:BooleanType ? ;
+          observable:signatureVerified @core:BooleanType ? ;
+          observable:signatureDescription @linkml:String ?
+       ) ;
+       rdf:type [ observable:DigitalSignatureInfoFacet ] ?
+    )
+}
+
+observable:Directory CLOSED {
+    (  $observable:Directory_tes (  &observable:FileSystemObject_tes ;
+          rdf:type [ observable:FileSystemObject ] ?
+       ) ;
+       rdf:type [ observable:Directory ] ?
+    )
+}
+
+observable:Disk CLOSED {
+    (  $observable:Disk_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Disk ] ?
+    )
+}
+
+observable:DiskFacet CLOSED {
+    (  $observable:DiskFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:partition @observable:ObservableObject * ;
+          observable:diskSize @linkml:Integer ? ;
+          observable:freeSpace @linkml:Integer ? ;
+          observable:diskType @linkml:String ?
+       ) ;
+       rdf:type [ observable:DiskFacet ] ?
+    )
+}
+
+observable:DiskPartition CLOSED {
+    (  $observable:DiskPartition_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:DiskPartition ] ?
+    )
+}
+
+observable:DiskPartitionFacet CLOSED {
+    (  $observable:DiskPartitionFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:observableCreatedTime @linkml:Datetime ? ;
+          observable:partitionLength @linkml:Integer ? ;
+          observable:partitionOffset @linkml:Integer ? ;
+          observable:spaceLeft @linkml:Integer ? ;
+          observable:spaceUsed @linkml:Integer ? ;
+          observable:totalSpace @linkml:Integer ? ;
+          observable:diskPartitionType @linkml:String ? ;
+          observable:mountPoint @linkml:String ? ;
+          observable:partitionID @linkml:String ?
+       ) ;
+       rdf:type [ observable:DiskPartitionFacet ] ?
+    )
+}
+
+observable:DNSCache CLOSED {
+    (  $observable:DNSCache_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:DNSCache ] ?
+    )
+}
+
+observable:DNSRecord CLOSED {
+    (  $observable:DNSRecord_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:DNSRecord ] ?
+    )
+}
+
+observable:DomainName CLOSED {
+    (  $observable:DomainName_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:DomainName ] ?
+    )
+}
+
+observable:DomainNameFacet CLOSED {
+    (  $observable:DomainNameFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:isTLD @core:BooleanType ? ;
+          core:value @linkml:String ?
+       ) ;
+       rdf:type [ observable:DomainNameFacet ] ?
+    )
+}
+
+observable:Drone CLOSED {
+    (  $observable:Drone_tes (  &observable:MobileDevice_tes ;
+          rdf:type [ observable:MobileDevice ] ?
+       ) ;
+       rdf:type [ observable:Drone ] ?
+    )
+}
+
+observable:EmailAccount CLOSED {
+    (  $observable:EmailAccount_tes (  &observable:DigitalAccount_tes ;
+          rdf:type [ observable:DigitalAccount ] ?
+       ) ;
+       rdf:type [ observable:EmailAccount ] ?
+    )
+}
+
+observable:EmailAccountFacet CLOSED {
+    (  $observable:EmailAccountFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:emailAddress @observable:ObservableObject ?
+       ) ;
+       rdf:type [ observable:EmailAccountFacet ] ?
+    )
+}
+
+observable:EmailAddress CLOSED {
+    (  $observable:EmailAddress_tes (  &observable:DigitalAddress_tes ;
+          rdf:type [ observable:DigitalAddress ] ?
+       ) ;
+       rdf:type [ observable:EmailAddress ] ?
+    )
+}
+
+observable:EmailAddressFacet CLOSED {
+    (  $observable:EmailAddressFacet_tes (  &observable:DigitalAddressFacet_tes ;
+          rdf:type [ observable:DigitalAddressFacet ] ?
+       ) ;
+       rdf:type [ observable:EmailAddressFacet ] ?
+    )
+}
+
+observable:EmailMessage CLOSED {
+    (  $observable:EmailMessage_tes (  &observable:Message_tes ;
+          rdf:type [ observable:Message ] ?
+       ) ;
+       rdf:type [ observable:EmailMessage ] ?
+    )
+}
+
+observable:EmailMessageFacet CLOSED {
+    (  $observable:EmailMessageFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:bodyMultipart @observable:MimePartType * ;
+          observable:application @observable:ObservableObject ? ;
+          observable:bodyRaw @observable:ObservableObject ? ;
+          observable:from @observable:ObservableObject ? ;
+          observable:headerRaw @observable:ObservableObject ? ;
+          observable:sender @observable:ObservableObject ? ;
+          observable:xOriginatingIP @observable:ObservableObject ? ;
+          observable:bcc @observable:ObservableObject * ;
+          observable:cc @observable:ObservableObject * ;
+          observable:references @observable:ObservableObject * ;
+          observable:to @observable:ObservableObject * ;
+          observable:otherHeaders @types:Dictionary ? ;
+          observable:isMimeEncoded @core:BooleanType ? ;
+          observable:isMultipart @core:BooleanType ? ;
+          observable:isRead @core:BooleanType ? ;
+          core:modifiedTime @linkml:Datetime ? ;
+          observable:receivedTime @linkml:Datetime ? ;
+          observable:sentTime @linkml:Datetime ? ;
+          observable:body @linkml:String ? ;
+          observable:contentDisposition @linkml:String ? ;
+          observable:contentType @linkml:String ? ;
+          observable:inReplyTo @linkml:String ? ;
+          observable:messageID @linkml:String ? ;
+          observable:priority @linkml:String ? ;
+          observable:subject @linkml:String ? ;
+          observable:xMailer @linkml:String ? ;
+          observable:categories @linkml:String * ;
+          observable:labels @linkml:String * ;
+          observable:receivedLines @linkml:String *
+       ) ;
+       rdf:type [ observable:EmailMessageFacet ] ?
+    )
+}
+
+observable:EmbeddedDevice CLOSED {
+    (  $observable:EmbeddedDevice_tes (  &observable:Device_tes ;
+          rdf:type [ observable:Device ] ?
+       ) ;
+       rdf:type [ observable:EmbeddedDevice ] ?
+    )
+}
+
+core:EnclosingCompilation  (
+    CLOSED {
+       (  $core:EnclosingCompilation_tes (  &core:Compilation_tes ;
+             rdf:type [ core:Compilation ] ? ;
+             core:object @core:UcoObject *
+          ) ;
+          rdf:type [ core:EnclosingCompilation ] ?
+       )
+    } OR @core:Bundle
+)
+
+observable:EncodedStreamFacet CLOSED {
+    (  $observable:EncodedStreamFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:encodingMethod @linkml:String ?
+       ) ;
+       rdf:type [ observable:EncodedStreamFacet ] ?
+    )
+}
+
+observable:EncryptedStreamFacet CLOSED {
+    (  $observable:EncryptedStreamFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:encryptionMethod @linkml:String ? ;
+          observable:encryptionMode @linkml:String ? ;
+          observable:encryptionIV @linkml:String * ;
+          observable:encryptionKey @linkml:String *
+       ) ;
+       rdf:type [ observable:EncryptedStreamFacet ] ?
+    )
+}
+
+observable:EnvironmentVariable CLOSED {
+    (  $observable:EnvironmentVariable_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          rdfs:label @linkml:String ? ;
+          core:value @linkml:String ?
+       ) ;
+       rdf:type [ observable:EnvironmentVariable ] ?
+    )
+}
+
+observable:EventLog CLOSED {
+    (  $observable:EventLog_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:EventLog ] ?
+    )
+}
+
+observable:EventRecord CLOSED {
+    (  $observable:EventRecord_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:EventRecord ] ?
+    )
+}
+
+observable:EventRecordFacet CLOSED {
+    (  $observable:EventRecordFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:cyberAction @observable:ObservableAction ? ;
+          observable:account @observable:ObservableObject ? ;
+          observable:application @observable:ObservableObject ? ;
+          observable:eventRecordDevice @observable:ObservableObject ? ;
+          observable:observableCreatedTime @linkml:Datetime ? ;
+          core:endTime @linkml:Datetime ? ;
+          core:startTime @linkml:Datetime ? ;
+          observable:eventID @linkml:String ? ;
+          observable:eventRecordID @linkml:String ? ;
+          observable:eventRecordRaw @linkml:String ? ;
+          observable:eventRecordServiceName @linkml:String ? ;
+          observable:eventRecordText @linkml:String ? ;
+          observable:eventType @linkml:String ?
+       ) ;
+       rdf:type [ observable:EventRecordFacet ] ?
+    )
+}
+
+identity:EventsFacet CLOSED {
+    (  $identity:EventsFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:EventsFacet ] ?
+    )
+}
+
+observable:EXIFFacet CLOSED {
+    (  $observable:EXIFFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:exifData @types:ControlledDictionary *
+       ) ;
+       rdf:type [ observable:EXIFFacet ] ?
+    )
+}
+
+core:ExternalReference CLOSED {
+    (  $core:ExternalReference_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          core:referenceURL @core:IriType ? ;
+          core:definingContext @linkml:String ? ;
+          core:externalIdentifier @linkml:String ?
+       ) ;
+       rdf:type [ core:ExternalReference ] ?
+    )
+}
+
+observable:ExtInodeFacet CLOSED {
+    (  $observable:ExtInodeFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:extDeletionTime @linkml:Datetime ? ;
+          observable:extInodeChangeTime @linkml:Datetime ? ;
+          observable:extFileType @linkml:Integer ? ;
+          observable:extFlags @linkml:Integer ? ;
+          observable:extHardLinkCount @linkml:Integer ? ;
+          observable:extInodeID @linkml:Integer ? ;
+          observable:extPermissions @linkml:Integer ? ;
+          observable:extSGID @linkml:Integer ? ;
+          observable:extSUID @linkml:Integer ?
+       ) ;
+       rdf:type [ observable:ExtInodeFacet ] ?
+    )
+}
+
+observable:ExtractedString CLOSED {
+    (  $observable:ExtractedString_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:length @linkml:Integer ? ;
+          observable:byteStringValue @observable:Base64BinaryType ? ;
+          observable:encoding @linkml:String ? ;
+          observable:englishTranslation @linkml:String ? ;
+          observable:language @linkml:String ? ;
+          observable:stringValue @linkml:String ?
+       ) ;
+       rdf:type [ observable:ExtractedString ] ?
+    )
+}
+
+observable:ExtractedStringsFacet CLOSED {
+    (  $observable:ExtractedStringsFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:strings @observable:ExtractedString *
+       ) ;
+       rdf:type [ observable:ExtractedStringsFacet ] ?
+    )
+}
+
+core:Facet  (
+    @observable:AccountAuthenticationFacet OR @observable:AccountFacet OR @action:ActionArgumentFacet OR
+    @action:ActionEstimationFacet OR @action:ActionFrequencyFacet OR @observable:AlternateDataStreamFacet OR
+    @analysis:AnalyticResultFacet OR @observable:AndroidDeviceFacet OR @observable:AntennaFacet OR
+    @observable:ApplicationAccountFacet OR @observable:ApplicationFacet OR @observable:ArchiveFileFacet OR @observable:AudioFacet
+    OR @observable:AutonomousSystemFacet OR @observable:BrowserBookmarkFacet OR @observable:BrowserCookieFacet OR @tool:BuildFacet
+    OR @observable:CalendarEntryFacet OR @observable:CalendarFacet OR @observable:CallFacet OR
+    @observable:CapturedTelecommunicationsInformationFacet OR @observable:CellSiteFacet OR @observable:CompressedStreamFacet OR
+    @observable:ComputerSpecificationFacet OR @core:ConfidenceFacet OR @observable:ContactFacet OR @observable:ContactListFacet OR
+    @observable:ContentDataFacet OR @observable:DataRangeFacet OR @observable:DefinedEffectFacet OR @observable:DeviceFacet OR
+    @observable:DigitalAccountFacet OR @observable:DigitalAddressFacet OR @observable:DigitalSignatureInfoFacet OR
+    @observable:DiskFacet OR @observable:DiskPartitionFacet OR @observable:DomainNameFacet OR @observable:EXIFFacet OR
+    @observable:EmailAccountFacet OR @observable:EmailMessageFacet OR @observable:EncodedStreamFacet OR
+    @observable:EncryptedStreamFacet OR @observable:EventRecordFacet OR @observable:ExtInodeFacet OR
+    @observable:ExtractedStringsFacet OR @observable:FileFacet OR @observable:FilePermissionsFacet OR @observable:FileSystemFacet
+    OR @observable:FragmentFacet OR @location:GPSCoordinatesFacet OR @observable:GeoLocationEntryFacet OR
+    @observable:GeoLocationLogFacet OR @observable:GeoLocationTrackFacet OR @observable:HTTPConnectionFacet OR
+    @observable:ICMPConnectionFacet OR @identity:IdentityFacet OR @observable:ImageFacet OR @location:LatLongCoordinatesFacet OR
+    @observable:LibraryFacet OR @observable:MemoryFacet OR @observable:MessageFacet OR @observable:MessageThreadFacet OR
+    @observable:MftRecordFacet OR @observable:MobileAccountFacet OR @observable:MobileDeviceFacet OR @observable:MutexFacet OR
+    @observable:NTFSFileFacet OR @observable:NTFSFilePermissionsFacet OR @observable:NetworkConnectionFacet OR
+    @observable:NetworkFlowFacet OR @observable:NetworkInterfaceFacet OR @observable:NoteFacet OR @observable:OnlineServiceFacet OR
+    @observable:OperatingSystemFacet OR @observable:PDFFileFacet OR @observable:PathRelationFacet OR @observable:PhoneAccountFacet
+    OR @observable:ProcessFacet OR @observable:ProfileFacet OR @observable:RasterPictureFacet OR @observable:RecoveredObjectFacet
+    OR @observable:SIMCardFacet OR @observable:SMSMessageFacet OR @observable:SQLiteBlobFacet OR @location:SimpleAddressFacet OR
+    @observable:SoftwareFacet OR @observable:SymbolicLinkFacet OR @observable:TCPConnectionFacet OR @observable:TableFieldFacet OR
+    @observable:TwitterProfileFacet OR @observable:UNIXAccountFacet OR @observable:UNIXFilePermissionsFacet OR
+    @observable:UNIXProcessFacet OR @observable:UNIXVolumeFacet OR @observable:URLFacet OR @observable:URLHistoryFacet OR
+    @observable:URLVisitFacet OR @observable:UserAccountFacet OR @observable:UserSessionFacet OR @observable:VolumeFacet OR
+    @observable:WhoisFacet OR @observable:WindowsAccountFacet OR @observable:WindowsActiveDirectoryAccountFacet OR
+    @observable:WindowsComputerSpecificationFacet OR @observable:WindowsPEBinaryFileFacet OR @observable:WindowsPrefetchFacet OR
+    @observable:WindowsProcessFacet OR @observable:WindowsRegistryHiveFacet OR @observable:WindowsRegistrykeyFacet OR
+    @observable:WindowsServiceFacet OR @observable:WindowsTaskFacet OR @observable:WindowsThreadFacet OR
+    @observable:WindowsVolumeFacet OR @observable:WirelessNetworkConnectionFacet OR @observable:X509CertificateFacet OR
+    @observable:X509V3ExtensionsFacet
+)
+
+core:Facet_struct {
+    (  $core:Facet_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ?
+       ) ;
+       rdf:type [ core:Facet ] ?
+    )
+}
+
+observable:File  (
+    CLOSED {
+       (  $observable:File_tes (  &observable:FileSystemObject_tes ;
+             rdf:type [ observable:FileSystemObject ] ?
+          ) ;
+          rdf:type [ observable:File ] ?
+       )
+    } OR @observable:ArchiveFile OR @observable:NTFSFile OR @observable:PDFFile OR @observable:RasterPicture OR
+    @observable:UNIXFile OR @observable:WindowsPEBinaryFile
+)
+
+observable:FileFacet CLOSED {
+    (  $observable:FileFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:isDirectory @core:BooleanType * ;
+          observable:accessedTime @linkml:Datetime ? ;
+          observable:metadataChangeTime @linkml:Datetime ? ;
+          core:modifiedTime @linkml:Datetime ? ;
+          observable:observableCreatedTime @linkml:Datetime ? ;
+          observable:sizeInBytes @linkml:Integer ? ;
+          observable:allocationStatus @linkml:String ? ;
+          observable:extension @linkml:String ? ;
+          observable:fileName @linkml:String * ;
+          observable:filePath @linkml:String *
+       ) ;
+       rdf:type [ observable:FileFacet ] ?
+    )
+}
+
+observable:FilePermissionsFacet CLOSED {
+    (  $observable:FilePermissionsFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:owner @core:UcoObject ?
+       ) ;
+       rdf:type [ observable:FilePermissionsFacet ] ?
+    )
+}
+
+observable:FileSystem CLOSED {
+    (  $observable:FileSystem_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:FileSystem ] ?
+    )
+}
+
+observable:FileSystemFacet CLOSED {
+    (  $observable:FileSystemFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:clusterSize @linkml:Integer ? ;
+          observable:fileSystemType @linkml:String ?
+       ) ;
+       rdf:type [ observable:FileSystemFacet ] ?
+    )
+}
+
+observable:FileSystemObject  (
+    CLOSED {
+       (  $observable:FileSystemObject_tes (  &observable:ObservableObject_tes ;
+             rdf:type [ observable:ObservableObject ] ?
+          ) ;
+          rdf:type [ observable:FileSystemObject ] ?
+       )
+    } OR @observable:BlockDeviceNode OR @observable:CharacterDeviceNode OR @observable:Directory OR @observable:File OR
+    @observable:Junction OR @observable:NamedPipe OR @observable:ReparsePoint OR @observable:Snapshot OR @observable:Socket OR
+    @observable:SymbolicLink
+)
+
+observable:ForumPost CLOSED {
+    (  $observable:ForumPost_tes (  &observable:Message_tes ;
+          rdf:type [ observable:Message ] ?
+       ) ;
+       rdf:type [ observable:ForumPost ] ?
+    )
+}
+
+observable:ForumPrivateMessage CLOSED {
+    (  $observable:ForumPrivateMessage_tes (  &observable:Message_tes ;
+          rdf:type [ observable:Message ] ?
+       ) ;
+       rdf:type [ observable:ForumPrivateMessage ] ?
+    )
+}
+
+observable:FragmentFacet CLOSED {
+    (  $observable:FragmentFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:fragmentIndex @linkml:Integer * ;
+          observable:totalFragments @linkml:Integer *
+       ) ;
+       rdf:type [ observable:FragmentFacet ] ?
+    )
+}
+
+observable:GamingConsole CLOSED {
+    (  $observable:GamingConsole_tes (  &observable:Device_tes ;
+          rdf:type [ observable:Device ] ?
+       ) ;
+       rdf:type [ observable:GamingConsole ] ?
+    )
+}
+
+observable:GenericObservableObject CLOSED {
+    (  $observable:GenericObservableObject_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:GenericObservableObject ] ?
+    )
+}
+
+observable:GeoLocationEntry CLOSED {
+    (  $observable:GeoLocationEntry_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:GeoLocationEntry ] ?
+    )
+}
+
+observable:GeoLocationEntryFacet CLOSED {
+    (  $observable:GeoLocationEntryFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          action:location @location:Location ? ;
+          observable:application @observable:ObservableObject ? ;
+          observable:observableCreatedTime @linkml:Datetime ?
+       ) ;
+       rdf:type [ observable:GeoLocationEntryFacet ] ?
+    )
+}
+
+observable:GeoLocationLog CLOSED {
+    (  $observable:GeoLocationLog_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:GeoLocationLog ] ?
+    )
+}
+
+observable:GeoLocationLogFacet CLOSED {
+    (  $observable:GeoLocationLogFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:application @observable:ObservableObject ? ;
+          observable:observableCreatedTime @linkml:Datetime ?
+       ) ;
+       rdf:type [ observable:GeoLocationLogFacet ] ?
+    )
+}
+
+observable:GeoLocationTrack CLOSED {
+    (  $observable:GeoLocationTrack_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:GeoLocationTrack ] ?
+    )
+}
+
+observable:GeoLocationTrackFacet CLOSED {
+    (  $observable:GeoLocationTrackFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:application @observable:ObservableObject ? ;
+          observable:geoLocationEntry @observable:ObservableObject * ;
+          core:endTime @linkml:Datetime ? ;
+          core:startTime @linkml:Datetime ?
+       ) ;
+       rdf:type [ observable:GeoLocationTrackFacet ] ?
+    )
+}
+
+observable:GlobalFlagType CLOSED {
+    (  $observable:GlobalFlagType_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:hexadecimalValue @core:HexBinaryType * ;
+          observable:abbreviation @linkml:String ? ;
+          observable:destination @linkml:String ? ;
+          observable:symbolicName @linkml:String ?
+       ) ;
+       rdf:type [ observable:GlobalFlagType ] ?
+    )
+}
+
+location:GPSCoordinatesFacet CLOSED {
+    (  $location:GPSCoordinatesFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          location:hdop @location:DecimalType ? ;
+          location:pdop @location:DecimalType ? ;
+          location:tdop @location:DecimalType ? ;
+          location:vdop @location:DecimalType ?
+       ) ;
+       rdf:type [ location:GPSCoordinatesFacet ] ?
+    )
+}
+
+marking:GranularMarking CLOSED {
+    (  $marking:GranularMarking_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          marking:marking @linkml:String * ;
+          marking:contentSelectors @linkml:String *
+       ) ;
+       rdf:type [ marking:GranularMarking ] ?
+    )
+}
+
+core:Grouping CLOSED {
+    (  $core:Grouping_tes (  &core:ContextualCompilation_tes ;
+          rdf:type [ core:ContextualCompilation ] ? ;
+          core:context @linkml:String *
+       ) ;
+       rdf:type [ core:Grouping ] ?
+    )
+}
+
+observable:GUI CLOSED {
+    (  $observable:GUI_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:GUI ] ?
+    )
+}
+
+types:Hash CLOSED {
+    (  $types:Hash_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          types:hashValue @core:HexBinaryType ;
+          types:hashMethod @linkml:String
+       ) ;
+       rdf:type [ types:Hash ] ?
+    )
+}
+
+observable:Hostname CLOSED {
+    (  $observable:Hostname_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Hostname ] ?
+    )
+}
+
+observable:HTTPConnection CLOSED {
+    (  $observable:HTTPConnection_tes (  &observable:NetworkConnection_tes ;
+          rdf:type [ observable:NetworkConnection ] ?
+       ) ;
+       rdf:type [ observable:HTTPConnection ] ?
+    )
+}
+
+observable:HTTPConnectionFacet CLOSED {
+    (  $observable:HTTPConnectionFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:httpMessageBodyData @observable:ObservableObject ? ;
+          observable:httpMessageBodyLength @linkml:Integer ? ;
+          observable:httpRequestHeader @types:Dictionary ? ;
+          observable:requestMethod @linkml:String ? ;
+          observable:requestValue @linkml:String ? ;
+          observable:requestVersion @linkml:String ?
+       ) ;
+       rdf:type [ observable:HTTPConnectionFacet ] ?
+    )
+}
+
+observable:ICMPConnection CLOSED {
+    (  $observable:ICMPConnection_tes (  &observable:NetworkConnection_tes ;
+          rdf:type [ observable:NetworkConnection ] ?
+       ) ;
+       rdf:type [ observable:ICMPConnection ] ?
+    )
+}
+
+observable:ICMPConnectionFacet CLOSED {
+    (  $observable:ICMPConnectionFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:icmpCode @core:HexBinaryType * ;
+          observable:icmpType @core:HexBinaryType *
+       ) ;
+       rdf:type [ observable:ICMPConnectionFacet ] ?
+    )
+}
+
+observable:IComHandlerActionType CLOSED {
+    (  $observable:IComHandlerActionType_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:comClassID @linkml:String ? ;
+          observable:comData @linkml:String ?
+       ) ;
+       rdf:type [ observable:IComHandlerActionType ] ?
+    )
+}
+
+identity:IdentifierFacet CLOSED {
+    (  $identity:IdentifierFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:IdentifierFacet ] ?
+    )
+}
+
+identity:Identity  (
+    CLOSED {
+       (  $identity:Identity_tes (  &core:IdentityAbstraction_tes ;
+             rdf:type [ core:IdentityAbstraction ] ?
+          ) ;
+          rdf:type [ identity:Identity ] ?
+       )
+    } OR @identity:Organization OR @identity:Person
+)
+
+core:IdentityAbstraction  (
+    CLOSED {
+       (  $core:IdentityAbstraction_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ?
+          ) ;
+          rdf:type [ core:IdentityAbstraction ] ?
+       )
+    } OR @identity:Identity
+)
+
+identity:IdentityFacet  (
+    CLOSED {
+       (  $identity:IdentityFacet_tes (  &core:Facet_tes ;
+             rdf:type [ core:Facet ] ?
+          ) ;
+          rdf:type [ identity:IdentityFacet ] ?
+       )
+    } OR @identity:AddressFacet OR @identity:AffiliationFacet OR @identity:BirthInformationFacet OR
+    @identity:CountryOfResidenceFacet OR @identity:EventsFacet OR @identity:IdentifierFacet OR @identity:LanguagesFacet OR
+    @identity:NationalityFacet OR @identity:OccupationFacet OR @identity:OrganizationDetailsFacet OR @identity:PersonalDetailsFacet
+    OR @identity:PhysicalInfoFacet OR @identity:QualificationFacet OR @identity:RelatedIdentityFacet OR @identity:SimpleNameFacet
+    OR @identity:VisaFacet
+)
+
+observable:IExecActionType CLOSED {
+    (  $observable:IExecActionType_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:execProgramHashes @types:Hash * ;
+          observable:execArguments @linkml:String ? ;
+          observable:execProgramPath @linkml:String ? ;
+          observable:execWorkingDirectory @linkml:String ?
+       ) ;
+       rdf:type [ observable:IExecActionType ] ?
+    )
+}
+
+observable:Image CLOSED {
+    (  $observable:Image_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Image ] ?
+    )
+}
+
+observable:ImageFacet CLOSED {
+    (  $observable:ImageFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:imageType @linkml:String ?
+       ) ;
+       rdf:type [ observable:ImageFacet ] ?
+    )
+}
+
+observable:InstantMessagingAddress CLOSED {
+    (  $observable:InstantMessagingAddress_tes (  &observable:DigitalAddress_tes ;
+          rdf:type [ observable:DigitalAddress ] ?
+       ) ;
+       rdf:type [ observable:InstantMessagingAddress ] ?
+    )
+}
+
+observable:InstantMessagingAddressFacet CLOSED {
+    (  $observable:InstantMessagingAddressFacet_tes (  &observable:DigitalAddressFacet_tes ;
+          rdf:type [ observable:DigitalAddressFacet ] ?
+       ) ;
+       rdf:type [ observable:InstantMessagingAddressFacet ] ?
+    )
+}
+
+observable:IPAddress  (
+    CLOSED {
+       (  $observable:IPAddress_tes (  &observable:DigitalAddress_tes ;
+             rdf:type [ observable:DigitalAddress ] ?
+          ) ;
+          rdf:type [ observable:IPAddress ] ?
+       )
+    } OR @observable:IPv4Address OR @observable:IPv6Address
+)
+
+observable:IPAddressFacet  (
+    CLOSED {
+       (  $observable:IPAddressFacet_tes (  &observable:DigitalAddressFacet_tes ;
+             rdf:type [ observable:DigitalAddressFacet ] ?
+          ) ;
+          rdf:type [ observable:IPAddressFacet ] ?
+       )
+    } OR @observable:IPv4AddressFacet OR @observable:IPv6AddressFacet
+)
+
+observable:IPhone CLOSED {
+    (  $observable:IPhone_tes (  &observable:AppleDevice_tes ;
+          rdf:type [ observable:AppleDevice ] ? ;
+          &observable:SmartPhone_tes ;
+          rdf:type [ observable:SmartPhone ] ?
+       ) ;
+       rdf:type [ observable:IPhone ] ?
+    )
+}
+
+observable:IPNetmask CLOSED {
+    (  $observable:IPNetmask_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:IPNetmask ] ?
+    )
+}
+
+observable:IPv4Address CLOSED {
+    (  $observable:IPv4Address_tes (  &observable:IPAddress_tes ;
+          rdf:type [ observable:IPAddress ] ?
+       ) ;
+       rdf:type [ observable:IPv4Address ] ?
+    )
+}
+
+observable:IPv4AddressFacet CLOSED {
+    (  $observable:IPv4AddressFacet_tes (  &observable:IPAddressFacet_tes ;
+          rdf:type [ observable:IPAddressFacet ] ?
+       ) ;
+       rdf:type [ observable:IPv4AddressFacet ] ?
+    )
+}
+
+observable:IPv6Address CLOSED {
+    (  $observable:IPv6Address_tes (  &observable:IPAddress_tes ;
+          rdf:type [ observable:IPAddress ] ?
+       ) ;
+       rdf:type [ observable:IPv6Address ] ?
+    )
+}
+
+observable:IPv6AddressFacet CLOSED {
+    (  $observable:IPv6AddressFacet_tes (  &observable:IPAddressFacet_tes ;
+          rdf:type [ observable:IPAddressFacet ] ?
+       ) ;
+       rdf:type [ observable:IPv6AddressFacet ] ?
+    )
+}
+
+observable:IShowMessageActionType CLOSED {
+    (  $observable:IShowMessageActionType_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:showMessageBody @linkml:String ? ;
+          observable:showMessageTitle @linkml:String ?
+       ) ;
+       rdf:type [ observable:IShowMessageActionType ] ?
+    )
+}
+
+core:Item CLOSED {
+    (  $core:Item_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ?
+       ) ;
+       rdf:type [ core:Item ] ?
+    )
+}
+
+observable:Junction CLOSED {
+    (  $observable:Junction_tes (  &observable:FileSystemObject_tes ;
+          rdf:type [ observable:FileSystemObject ] ?
+       ) ;
+       rdf:type [ observable:Junction ] ?
+    )
+}
+
+identity:LanguagesFacet CLOSED {
+    (  $identity:LanguagesFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:LanguagesFacet ] ?
+    )
+}
+
+observable:Laptop CLOSED {
+    (  $observable:Laptop_tes (  &observable:Computer_tes ;
+          rdf:type [ observable:Computer ] ?
+       ) ;
+       rdf:type [ observable:Laptop ] ?
+    )
+}
+
+location:LatLongCoordinatesFacet CLOSED {
+    (  $location:LatLongCoordinatesFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          location:altitude @location:DecimalType ? ;
+          location:latitude @location:DecimalType ? ;
+          location:longitude @location:DecimalType ?
+       ) ;
+       rdf:type [ location:LatLongCoordinatesFacet ] ?
+    )
+}
+
+observable:Library CLOSED {
+    (  $observable:Library_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Library ] ?
+    )
+}
+
+observable:LibraryFacet CLOSED {
+    (  $observable:LibraryFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:libraryType @linkml:String ?
+       ) ;
+       rdf:type [ observable:LibraryFacet ] ?
+    )
+}
+
+tool:LibraryType CLOSED {
+    (  $tool:LibraryType_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          tool:libraryName @linkml:String ? ;
+          tool:libraryVersion @linkml:String ?
+       ) ;
+       rdf:type [ tool:LibraryType ] ?
+    )
+}
+
+marking:LicenseMarking CLOSED {
+    (  $marking:LicenseMarking_tes (  &marking:MarkingModel_tes ;
+          rdf:type [ marking:MarkingModel ] ? ;
+          marking:definitionType @linkml:String ? ;
+          marking:license @linkml:String
+       ) ;
+       rdf:type [ marking:LicenseMarking ] ?
+    )
+}
+
+collections:List CLOSED {
+    (  $collections:List_tes (  &collections:Bag_tes ;
+          rdf:type [ collections:Bag ] ? ;
+          collections:lastItem @collections:ListItem ? ;
+          collections:firstItem @collections:ListItem ?
+       ) ;
+       rdf:type [ collections:List ] ?
+    )
+}
+
+collections:ListItem CLOSED {
+    (  $collections:ListItem_tes (  &collections:CoItem_tes ;
+          rdf:type [ collections:CoItem ] ? ;
+          collections:_index @collections:PositiveInteger
+       ) ;
+       rdf:type [ collections:ListItem ] ?
+    )
+}
+
+location:Location CLOSED {
+    (  $location:Location_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ?
+       ) ;
+       rdf:type [ location:Location ] ?
+    )
+}
+
+pattern:LogicalPattern CLOSED {
+    (  $pattern:LogicalPattern_tes (  &pattern:Pattern_tes ;
+          rdf:type [ pattern:Pattern ] ? ;
+          pattern:patternExpression @linkml:String ?
+       ) ;
+       rdf:type [ pattern:LogicalPattern ] ?
+    )
+}
+
+observable:MACAddress  (
+    CLOSED {
+       (  $observable:MACAddress_tes (  &observable:DigitalAddress_tes ;
+             rdf:type [ observable:DigitalAddress ] ?
+          ) ;
+          rdf:type [ observable:MACAddress ] ?
+       )
+    } OR @observable:BluetoothAddress OR @observable:WifiAddress
+)
+
+observable:MACAddressFacet  (
+    CLOSED {
+       (  $observable:MACAddressFacet_tes (  &observable:DigitalAddressFacet_tes ;
+             rdf:type [ observable:DigitalAddressFacet ] ?
+          ) ;
+          rdf:type [ observable:MACAddressFacet ] ?
+       )
+    } OR @observable:BluetoothAddressFacet OR @observable:WifiAddressFacet
+)
+
+role:MaliciousRole CLOSED {
+    (  $role:MaliciousRole_tes (  &role:Role_tes ;
+          rdf:type [ role:Role ] ?
+       ) ;
+       rdf:type [ role:MaliciousRole ] ?
+    )
+}
+
+tool:MaliciousTool CLOSED {
+    (  $tool:MaliciousTool_tes (  &tool:Tool_tes ;
+          rdf:type [ tool:Tool ] ?
+       ) ;
+       rdf:type [ tool:MaliciousTool ] ?
+    )
+}
+
+marking:MarkingDefinition CLOSED {
+    (  $marking:MarkingDefinition_tes (  &core:MarkingDefinitionAbstraction_tes ;
+          rdf:type [ core:MarkingDefinitionAbstraction ] ? ;
+          marking:definition @linkml:String * ;
+          marking:definitionType @linkml:String
+       ) ;
+       rdf:type [ marking:MarkingDefinition ] ?
+    )
+}
+
+core:MarkingDefinitionAbstraction  (
+    CLOSED {
+       (  $core:MarkingDefinitionAbstraction_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ?
+          ) ;
+          rdf:type [ core:MarkingDefinitionAbstraction ] ?
+       )
+    } OR @marking:MarkingDefinition
+)
+
+marking:MarkingModel  (
+    CLOSED {
+       (  $marking:MarkingModel_tes (  &core:UcoInherentCharacterizationThing_tes ;
+             rdf:type [ core:UcoInherentCharacterizationThing ] ?
+          ) ;
+          rdf:type [ marking:MarkingModel ] ?
+       )
+    } OR @marking:LicenseMarking OR @marking:ReleaseToMarking OR @marking:StatementMarking OR @marking:TermsOfUseMarking
+)
+
+observable:Memory CLOSED {
+    (  $observable:Memory_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Memory ] ?
+    )
+}
+
+observable:MemoryFacet CLOSED {
+    (  $observable:MemoryFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:isInjected @core:BooleanType ? ;
+          observable:isMapped @core:BooleanType ? ;
+          observable:isProtected @core:BooleanType ? ;
+          observable:isVolatile @core:BooleanType ? ;
+          observable:regionEndAddress @core:HexBinaryType * ;
+          observable:regionStartAddress @core:HexBinaryType * ;
+          observable:regionSize @linkml:Integer ? ;
+          observable:blockType @vocabulary:MemoryBlockTypeEnum ?
+       ) ;
+       rdf:type [ observable:MemoryFacet ] ?
+    )
+}
+
+observable:Message  (
+    CLOSED {
+       (  $observable:Message_tes (  &observable:ObservableObject_tes ;
+             rdf:type [ observable:ObservableObject ] ?
+          ) ;
+          rdf:type [ observable:Message ] ?
+       )
+    } OR @observable:EmailMessage OR @observable:ForumPost OR @observable:ForumPrivateMessage OR @observable:Post OR
+    @observable:SMSMessage OR @observable:Tweet
+)
+
+observable:MessageFacet CLOSED {
+    (  $observable:MessageFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:application @observable:ObservableObject ? ;
+          observable:from @observable:ObservableObject * ;
+          observable:to @observable:ObservableObject * ;
+          observable:sentTime @linkml:Datetime ? ;
+          observable:messageID @linkml:String ? ;
+          observable:messageText @linkml:String ? ;
+          observable:messageType @linkml:String ? ;
+          observable:sessionID @linkml:String ?
+       ) ;
+       rdf:type [ observable:MessageFacet ] ?
+    )
+}
+
+observable:MessageThreadFacet CLOSED {
+    (  $observable:MessageThreadFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:messageThreadOrderedItems @types:Thread ? ;
+          observable:messageThreadOriginItems @types:Thread ? ;
+          observable:messageThreadTerminalItems @types:Thread ? ;
+          observable:messageThreadUnorderedItems @types:Thread ? ;
+          action:participant @observable:ObservableObject * ;
+          observable:visibility @core:BooleanType ?
+       ) ;
+       rdf:type [ observable:MessageThreadFacet ] ?
+    )
+}
+
+observable:MftRecordFacet CLOSED {
+    (  $observable:MftRecordFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:mftFileNameAccessedTime @linkml:Datetime ? ;
+          observable:mftFileNameCreatedTime @linkml:Datetime ? ;
+          observable:mftFileNameModifiedTime @linkml:Datetime ? ;
+          observable:mftFileNameRecordChangeTme @linkml:Datetime ? ;
+          observable:mftRecordChangeTime @linkml:Datetime ? ;
+          observable:mftFileID @linkml:Integer ? ;
+          observable:mftFileNameLength @linkml:Integer ? ;
+          observable:mftFlags @linkml:Integer ? ;
+          observable:mftParentID @linkml:Integer ? ;
+          observable:ntfsHardLinkCount @linkml:Integer ? ;
+          observable:ntfsOwnerID @linkml:String ? ;
+          observable:ntfsOwnerSID @linkml:String ?
+       ) ;
+       rdf:type [ observable:MftRecordFacet ] ?
+    )
+}
+
+observable:MimePartType CLOSED {
+    (  $observable:MimePartType_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:bodyRaw @observable:ObservableObject ? ;
+          observable:body @linkml:String ? ;
+          observable:contentDisposition @linkml:String ? ;
+          observable:contentType @linkml:String ?
+       ) ;
+       rdf:type [ observable:MimePartType ] ?
+    )
+}
+
+observable:MobileAccount CLOSED {
+    (  $observable:MobileAccount_tes (  &observable:DigitalAccount_tes ;
+          rdf:type [ observable:DigitalAccount ] ?
+       ) ;
+       rdf:type [ observable:MobileAccount ] ?
+    )
+}
+
+observable:MobileAccountFacet CLOSED {
+    (  $observable:MobileAccountFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:IMSI @linkml:String ? ;
+          observable:MSISDN @linkml:String ? ;
+          observable:MSISDNType @linkml:String ?
+       ) ;
+       rdf:type [ observable:MobileAccountFacet ] ?
+    )
+}
+
+observable:MobileDevice  (
+    CLOSED {
+       (  $observable:MobileDevice_tes (  &observable:Device_tes ;
+             rdf:type [ observable:Device ] ?
+          ) ;
+          rdf:type [ observable:MobileDevice ] ?
+       )
+    } OR @observable:Drone OR @observable:MobilePhone
+)
+
+observable:MobileDeviceFacet CLOSED {
+    (  $observable:MobileDeviceFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:mockLocationsAllowed @core:BooleanType ? ;
+          observable:clockSetting @linkml:Datetime ? ;
+          observable:phoneActivationTime @linkml:Datetime ? ;
+          observable:storageCapacityInBytes @linkml:Integer ? ;
+          observable:ESN @linkml:String ? ;
+          observable:IMEI @linkml:String ? ;
+          observable:bluetoothDeviceName @linkml:String ? ;
+          observable:keypadUnlockCode @linkml:String ? ;
+          observable:network @linkml:String ?
+       ) ;
+       rdf:type [ observable:MobileDeviceFacet ] ?
+    )
+}
+
+observable:MobilePhone {
+    (  $observable:MobilePhone_tes (  &observable:MobileDevice_tes ;
+          rdf:type [ observable:MobileDevice ] ?
+       ) ;
+       rdf:type [ observable:MobilePhone ] ?
+    )
+}
+
+core:ModusOperandi CLOSED {
+    (  $core:ModusOperandi_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ?
+       ) ;
+       rdf:type [ core:ModusOperandi ] ?
+    )
+}
+
+observable:Mutex CLOSED {
+    (  $observable:Mutex_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Mutex ] ?
+    )
+}
+
+observable:MutexFacet CLOSED {
+    (  $observable:MutexFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:isNamed @core:BooleanType ? ;
+          observable:mutexName @linkml:String ?
+       ) ;
+       rdf:type [ observable:MutexFacet ] ?
+    )
+}
+
+observable:NamedPipe CLOSED {
+    (  $observable:NamedPipe_tes (  &observable:FileSystemObject_tes ;
+          rdf:type [ observable:FileSystemObject ] ?
+       ) ;
+       rdf:type [ observable:NamedPipe ] ?
+    )
+}
+
+identity:NationalityFacet CLOSED {
+    (  $identity:NationalityFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:NationalityFacet ] ?
+    )
+}
+
+observable:NetworkAppliance CLOSED {
+    (  $observable:NetworkAppliance_tes (  &observable:Appliance_tes ;
+          rdf:type [ observable:Appliance ] ?
+       ) ;
+       rdf:type [ observable:NetworkAppliance ] ?
+    )
+}
+
+observable:NetworkConnection  (
+    CLOSED {
+       (  $observable:NetworkConnection_tes (  &observable:ObservableObject_tes ;
+             rdf:type [ observable:ObservableObject ] ?
+          ) ;
+          rdf:type [ observable:NetworkConnection ] ?
+       )
+    } OR @observable:HTTPConnection OR @observable:ICMPConnection OR @observable:TCPConnection OR
+    @observable:WirelessNetworkConnection
+)
+
+observable:NetworkConnectionFacet CLOSED {
+    (  $observable:NetworkConnectionFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:src @core:UcoObject * ;
+          observable:dst @observable:ObservableObject * ;
+          observable:protocols @types:ControlledDictionary ? ;
+          observable:isActive @core:BooleanType ? ;
+          core:endTime @linkml:Datetime ? ;
+          core:startTime @linkml:Datetime ? ;
+          observable:destinationPort @linkml:Integer ? ;
+          observable:sourcePort @linkml:Integer ?
+       ) ;
+       rdf:type [ observable:NetworkConnectionFacet ] ?
+    )
+}
+
+observable:NetworkFlow CLOSED {
+    (  $observable:NetworkFlow_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:NetworkFlow ] ?
+    )
+}
+
+observable:NetworkFlowFacet CLOSED {
+    (  $observable:NetworkFlowFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:dstPayload @observable:ObservableObject ? ;
+          observable:srcPayload @observable:ObservableObject ? ;
+          observable:ipfix @types:Dictionary ? ;
+          observable:dstBytes @linkml:Integer ? ;
+          observable:dstPackets @linkml:Integer ? ;
+          observable:srcBytes @linkml:Integer ? ;
+          observable:srcPackets @linkml:Integer ?
+       ) ;
+       rdf:type [ observable:NetworkFlowFacet ] ?
+    )
+}
+
+observable:NetworkInterface CLOSED {
+    (  $observable:NetworkInterface_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:NetworkInterface ] ?
+    )
+}
+
+observable:NetworkInterfaceFacet CLOSED {
+    (  $observable:NetworkInterfaceFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:macAddress @observable:ObservableObject ? ;
+          observable:dhcpServer @observable:ObservableObject * ;
+          observable:ip @observable:ObservableObject * ;
+          observable:ipGateway @observable:ObservableObject * ;
+          observable:dhcpLeaseExpires @linkml:Datetime ? ;
+          observable:dhcpLeaseObtained @linkml:Datetime ? ;
+          observable:adapterName @linkml:String ?
+       ) ;
+       rdf:type [ observable:NetworkInterfaceFacet ] ?
+    )
+}
+
+observable:NetworkProtocol CLOSED {
+    (  $observable:NetworkProtocol_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:NetworkProtocol ] ?
+    )
+}
+
+observable:NetworkRoute CLOSED {
+    (  $observable:NetworkRoute_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:NetworkRoute ] ?
+    )
+}
+
+observable:NetworkSocketAddressFamily CLOSED {
+    (  $observable:NetworkSocketAddressFamily_tes rdf:type . * ;
+       rdf:type [ observable:NetworkSocketAddressFamily ] ?
+    )
+}
+
+observable:NetworkSocketProtocolFamily CLOSED {
+    (  $observable:NetworkSocketProtocolFamily_tes rdf:type . * ;
+       rdf:type [ observable:NetworkSocketProtocolFamily ] ?
+    )
+}
+
+observable:NetworkSocketType CLOSED {
+    (  $observable:NetworkSocketType_tes rdf:type . * ;
+       rdf:type [ observable:NetworkSocketType ] ?
+    )
+}
+
+observable:NetworkSubnet CLOSED {
+    (  $observable:NetworkSubnet_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:NetworkSubnet ] ?
+    )
+}
+
+role:NeutralRole  (
+    CLOSED {
+       (  $role:NeutralRole_tes (  &role:Role_tes ;
+             rdf:type [ role:Role ] ?
+          ) ;
+          rdf:type [ role:NeutralRole ] ?
+       )
+    } OR @victim:Victim
+)
+
+observable:Note CLOSED {
+    (  $observable:Note_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Note ] ?
+    )
+}
+
+observable:NoteFacet CLOSED {
+    (  $observable:NoteFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:application @observable:ObservableObject ? ;
+          core:modifiedTime @linkml:Datetime ? ;
+          observable:observableCreatedTime @linkml:Datetime ? ;
+          observable:text @linkml:String ?
+       ) ;
+       rdf:type [ observable:NoteFacet ] ?
+    )
+}
+
+observable:NTFSFile CLOSED {
+    (  $observable:NTFSFile_tes (  &observable:File_tes ;
+          rdf:type [ observable:File ] ?
+       ) ;
+       rdf:type [ observable:NTFSFile ] ?
+    )
+}
+
+observable:NTFSFileFacet CLOSED {
+    (  $observable:NTFSFileFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:alternateDataStreams @observable:AlternateDataStream * ;
+          observable:entryID @linkml:Integer ? ;
+          observable:sid @linkml:String ?
+       ) ;
+       rdf:type [ observable:NTFSFileFacet ] ?
+    )
+}
+
+observable:NTFSFilePermissionsFacet CLOSED {
+    (  $observable:NTFSFilePermissionsFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ?
+       ) ;
+       rdf:type [ observable:NTFSFilePermissionsFacet ] ?
+    )
+}
+
+observable:Observable  (
+    {
+       (  $observable:Observable_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ?
+          ) ;
+          rdf:type [ observable:Observable ] ?
+       )
+    } OR @observable:ObservablePattern
+)
+
+observable:ObservableAction CLOSED {
+    (  $observable:ObservableAction_tes (  &action:Action_tes ;
+          rdf:type [ action:Action ] ? ;
+          &observable:Observable_tes ;
+          rdf:type [ observable:Observable ] ?
+       ) ;
+       rdf:type [ observable:ObservableAction ] ?
+    )
+}
+
+observable:ObservableObject  (
+    CLOSED {
+       (  $observable:ObservableObject_tes (  &collections:CoItem_tes ;
+             rdf:type [ collections:CoItem ] ? ;
+             &observable:Observable_tes ;
+             rdf:type [ observable:Observable ] ? ;
+             observable:hasChanged @core:BooleanType ? ;
+             observable:state @linkml:String ? ;
+             core:createdBy @linkml:String ? ;
+             dcterms:description @linkml:String * ;
+             core:externalReference @linkml:String * ;
+             core:hasFacet @linkml:String * ;
+             core:modifiedTime @linkml:Datetime * ;
+             rdfs:label @linkml:String ? ;
+             core:objectMarking @core:MarkingDefinitionAbstraction * ;
+             core:objectCreatedTime @linkml:Datetime ? ;
+             core:specVersion @linkml:String ? ;
+             core:tag @linkml:String *
+          ) ;
+          rdf:type [ observable:ObservableObject ] ?
+       )
+    } OR @observable:API OR @observable:ARPCache OR @observable:ARPCacheEntry OR @observable:Account OR @observable:Address OR
+    @observable:AlternateDataStream OR @observable:Application OR @observable:Audio OR @observable:AutonomousSystem OR
+    @observable:BotConfiguration OR @observable:BrowserBookmark OR @observable:BrowserCookie OR @observable:Calendar OR
+    @observable:CalendarEntry OR @observable:Call OR @observable:CapturedTelecommunicationsInformation OR @observable:CellSite OR
+    @observable:Code OR @observable:ComputerSpecification OR @observable:Contact OR @observable:ContactList OR
+    @observable:ContentData OR @observable:CookieHistory OR @observable:Credential OR @observable:CredentialDump OR
+    @observable:DNSCache OR @observable:DNSRecord OR @observable:Device OR @observable:DigitalSignatureInfo OR @observable:Disk OR
+    @observable:DiskPartition OR @observable:DomainName OR @observable:EventLog OR @observable:EventRecord OR
+    @observable:FileSystem OR @observable:FileSystemObject OR @observable:GUI OR @observable:GenericObservableObject OR
+    @observable:GeoLocationEntry OR @observable:GeoLocationLog OR @observable:GeoLocationTrack OR @observable:Hostname OR
+    @observable:IPNetmask OR @observable:Image OR @observable:Library OR @observable:Memory OR @observable:Message OR
+    @observable:Mutex OR @observable:NetworkConnection OR @observable:NetworkFlow OR @observable:NetworkInterface OR
+    @observable:NetworkProtocol OR @observable:NetworkRoute OR @observable:NetworkSubnet OR @observable:Note OR
+    @observable:OnlineService OR @observable:OperatingSystem OR @observable:PaymentCard OR @observable:Pipe OR @observable:Process
+    OR @observable:ProcessThread OR @observable:Profile OR @observable:RecoveredObject OR @observable:SQLiteBlob OR
+    @observable:Semaphore OR @observable:ShopListing OR @observable:Software OR @observable:TableField OR @observable:URL OR
+    @observable:URLHistory OR @observable:URLVisit OR @observable:UserSession OR @observable:Volume OR @observable:WebPage OR
+    @observable:Whois OR @observable:Wiki OR @observable:WikiArticle OR @observable:WindowsComputerSpecification OR
+    @observable:WindowsCriticalSection OR @observable:WindowsEvent OR @observable:WindowsFileMapping OR @observable:WindowsHandle
+    OR @observable:WindowsHook OR @observable:WindowsMailSlot OR @observable:WindowsNetworkShare OR @observable:WindowsPrefetch OR
+    @observable:WindowsRegistryHive OR @observable:WindowsRegistryKey OR @observable:WindowsService OR
+    @observable:WindowsSystemRestore OR @observable:WindowsTask OR @observable:WindowsWaitableTime OR @observable:X509Certificate
+    OR @observable:X509V3Certificate
+)
+
+observable:ObservablePattern CLOSED {
+    (  $observable:ObservablePattern_tes (  &observable:Observable_tes ;
+          rdf:type [ observable:Observable ] ?
+       ) ;
+       rdf:type [ observable:ObservablePattern ] ?
+    )
+}
+
+observable:ObservableRelationship CLOSED {
+    (  $observable:ObservableRelationship_tes (  &core:Relationship_tes ;
+          rdf:type [ core:Relationship ] ? ;
+          &observable:Observable_tes ;
+          rdf:type [ observable:Observable ] ?
+       ) ;
+       rdf:type [ observable:ObservableRelationship ] ?
+    )
+}
+
+observable:Observation CLOSED {
+    (  $observable:Observation_tes (  &action:Action_tes ;
+          rdf:type [ action:Action ] ? ;
+          rdfs:label @linkml:String
+       ) ;
+       rdf:type [ observable:Observation ] ?
+    )
+}
+
+identity:OccupationFacet CLOSED {
+    (  $identity:OccupationFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:OccupationFacet ] ?
+    )
+}
+
+observable:OnlineService CLOSED {
+    (  $observable:OnlineService_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:OnlineService ] ?
+    )
+}
+
+observable:OnlineServiceFacet CLOSED {
+    (  $observable:OnlineServiceFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          action:location @location:Location ? ;
+          observable:inetLocation @observable:ObservableObject ? ;
+          rdfs:label @linkml:String ?
+       ) ;
+       rdf:type [ observable:OnlineServiceFacet ] ?
+    )
+}
+
+observable:OperatingSystem CLOSED {
+    (  $observable:OperatingSystem_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:OperatingSystem ] ?
+    )
+}
+
+observable:OperatingSystemFacet CLOSED {
+    (  $observable:OperatingSystemFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:manufacturer @identity:Identity ? ;
+          observable:environmentVariables @types:Dictionary ? ;
+          observable:isLimitAdTrackingEnabled @core:BooleanType ? ;
+          observable:installDate @linkml:Datetime ? ;
+          observable:bitness @linkml:String ? ;
+          observable:version @linkml:String ? ;
+          observable:advertisingID @linkml:String *
+       ) ;
+       rdf:type [ observable:OperatingSystemFacet ] ?
+    )
+}
+
+identity:Organization CLOSED {
+    (  $identity:Organization_tes (  &identity:Identity_tes ;
+          rdf:type [ identity:Identity ] ?
+       ) ;
+       rdf:type [ identity:Organization ] ?
+    )
+}
+
+identity:OrganizationDetailsFacet CLOSED {
+    (  $identity:OrganizationDetailsFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:OrganizationDetailsFacet ] ?
+    )
+}
+
+observable:PathRelationFacet CLOSED {
+    (  $observable:PathRelationFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:path @linkml:String *
+       ) ;
+       rdf:type [ observable:PathRelationFacet ] ?
+    )
+}
+
+pattern:Pattern  (
+    CLOSED {
+       (  $pattern:Pattern_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ?
+          ) ;
+          rdf:type [ pattern:Pattern ] ?
+       )
+    } OR @pattern:LogicalPattern
+)
+
+pattern:PatternExpression CLOSED {
+    (  $pattern:PatternExpression_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ?
+       ) ;
+       rdf:type [ pattern:PatternExpression ] ?
+    )
+}
+
+observable:PaymentCard CLOSED {
+    (  $observable:PaymentCard_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:PaymentCard ] ?
+    )
+}
+
+observable:PDFFile CLOSED {
+    (  $observable:PDFFile_tes (  &observable:File_tes ;
+          rdf:type [ observable:File ] ?
+       ) ;
+       rdf:type [ observable:PDFFile ] ?
+    )
+}
+
+observable:PDFFileFacet CLOSED {
+    (  $observable:PDFFileFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:documentInformationDictionary @types:ControlledDictionary ? ;
+          observable:isOptimized @core:BooleanType ? ;
+          observable:pdfCreationDate @linkml:Datetime ? ;
+          observable:pdfModDate @linkml:Datetime ? ;
+          observable:pdfId1 @linkml:String ? ;
+          observable:version @linkml:String ? ;
+          observable:pdfId0 @linkml:String *
+       ) ;
+       rdf:type [ observable:PDFFileFacet ] ?
+    )
+}
+
+identity:Person CLOSED {
+    (  $identity:Person_tes (  &identity:Identity_tes ;
+          rdf:type [ identity:Identity ] ?
+       ) ;
+       rdf:type [ identity:Person ] ?
+    )
+}
+
+identity:PersonalDetailsFacet CLOSED {
+    (  $identity:PersonalDetailsFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:PersonalDetailsFacet ] ?
+    )
+}
+
+observable:PhoneAccount CLOSED {
+    (  $observable:PhoneAccount_tes (  &observable:DigitalAccount_tes ;
+          rdf:type [ observable:DigitalAccount ] ?
+       ) ;
+       rdf:type [ observable:PhoneAccount ] ?
+    )
+}
+
+observable:PhoneAccountFacet CLOSED {
+    (  $observable:PhoneAccountFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:phoneNumber @linkml:String ?
+       ) ;
+       rdf:type [ observable:PhoneAccountFacet ] ?
+    )
+}
+
+identity:PhysicalInfoFacet CLOSED {
+    (  $identity:PhysicalInfoFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:PhysicalInfoFacet ] ?
+    )
+}
+
+observable:Pipe CLOSED {
+    (  $observable:Pipe_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Pipe ] ?
+    )
+}
+
+observable:Post CLOSED {
+    (  $observable:Post_tes (  &observable:Message_tes ;
+          rdf:type [ observable:Message ] ?
+       ) ;
+       rdf:type [ observable:Post ] ?
+    )
+}
+
+observable:Process  (
+    CLOSED {
+       (  $observable:Process_tes (  &observable:ObservableObject_tes ;
+             rdf:type [ observable:ObservableObject ] ?
+          ) ;
+          rdf:type [ observable:Process ] ?
+       )
+    } OR @observable:UNIXProcess OR @observable:WindowsProcess
+)
+
+observable:ProcessFacet CLOSED {
+    (  $observable:ProcessFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:binary @observable:ObservableObject ? ;
+          observable:creatorUser @observable:ObservableObject ? ;
+          observable:parent @observable:ObservableObject ? ;
+          observable:environmentVariables @types:Dictionary ? ;
+          observable:isHidden @core:BooleanType ? ;
+          observable:exitTime @linkml:Datetime ? ;
+          observable:observableCreatedTime @linkml:Datetime ? ;
+          observable:exitStatus @linkml:Integer ? ;
+          observable:pid @linkml:Integer ? ;
+          observable:currentWorkingDirectory @linkml:String ? ;
+          observable:status @linkml:String ? ;
+          observable:arguments @linkml:String *
+       ) ;
+       rdf:type [ observable:ProcessFacet ] ?
+    )
+}
+
+observable:ProcessThread  (
+    CLOSED {
+       (  $observable:ProcessThread_tes (  &observable:ObservableObject_tes ;
+             rdf:type [ observable:ObservableObject ] ?
+          ) ;
+          rdf:type [ observable:ProcessThread ] ?
+       )
+    } OR @observable:WindowsThread
+)
+
+observable:Profile CLOSED {
+    (  $observable:Profile_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Profile ] ?
+    )
+}
+
+observable:ProfileFacet CLOSED {
+    (  $observable:ProfileFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:profileIdentity @identity:Identity ? ;
+          observable:contactAddress @observable:ContactAddress ? ;
+          observable:contactEmail @observable:ContactEmail ? ;
+          observable:contactMessaging @observable:ContactMessaging ? ;
+          observable:contactPhone @observable:ContactPhone ? ;
+          observable:contactURL @observable:ContactURL ? ;
+          observable:profileAccount @observable:ObservableObject ? ;
+          observable:profileService @observable:ObservableObject ? ;
+          observable:profileWebsite @observable:ObservableObject ? ;
+          observable:profileCreated @linkml:Datetime ? ;
+          rdfs:label @linkml:String ? ;
+          observable:displayName @linkml:String ?
+       ) ;
+       rdf:type [ observable:ProfileFacet ] ?
+    )
+}
+
+observable:PropertiesEnumeratedEffectFacet CLOSED {
+    (  $observable:PropertiesEnumeratedEffectFacet_tes (  &observable:DefinedEffectFacet_tes ;
+          rdf:type [ observable:DefinedEffectFacet ] ? ;
+          &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:properties @linkml:String ?
+       ) ;
+       rdf:type [ observable:PropertiesEnumeratedEffectFacet ] ?
+    )
+}
+
+observable:PropertyReadEffectFacet CLOSED {
+    (  $observable:PropertyReadEffectFacet_tes (  &observable:DefinedEffectFacet_tes ;
+          rdf:type [ observable:DefinedEffectFacet ] ? ;
+          observable:propertyName @linkml:String ? ;
+          core:value @linkml:String ?
+       ) ;
+       rdf:type [ observable:PropertyReadEffectFacet ] ?
+    )
+}
+
+observable:ProtocolConverter CLOSED {
+    (  $observable:ProtocolConverter_tes (  &observable:Device_tes ;
+          rdf:type [ observable:Device ] ?
+       ) ;
+       rdf:type [ observable:ProtocolConverter ] ?
+    )
+}
+
+identity:QualificationFacet CLOSED {
+    (  $identity:QualificationFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:QualificationFacet ] ?
+    )
+}
+
+observable:RasterPicture CLOSED {
+    (  $observable:RasterPicture_tes (  &observable:File_tes ;
+          rdf:type [ observable:File ] ?
+       ) ;
+       rdf:type [ observable:RasterPicture ] ?
+    )
+}
+
+observable:RasterPictureFacet CLOSED {
+    (  $observable:RasterPictureFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:camera @observable:ObservableObject ? ;
+          observable:bitsPerPixel @linkml:Integer ? ;
+          observable:pictureHeight @linkml:Integer ? ;
+          observable:pictureWidth @linkml:Integer ? ;
+          observable:imageCompressionMethod @linkml:String ? ;
+          observable:pictureType @linkml:String ?
+       ) ;
+       rdf:type [ observable:RasterPictureFacet ] ?
+    )
+}
+
+observable:RecoveredObject CLOSED {
+    (  $observable:RecoveredObject_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:RecoveredObject ] ?
+    )
+}
+
+observable:RecoveredObjectFacet CLOSED {
+    (  $observable:RecoveredObjectFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:contentRecoveredStatus @vocabulary:RecoveredObjectStatusEnum ? ;
+          observable:metadataRecoveredStatus @vocabulary:RecoveredObjectStatusEnum ? ;
+          observable:nameRecoveredStatus @vocabulary:RecoveredObjectStatusEnum ?
+       ) ;
+       rdf:type [ observable:RecoveredObjectFacet ] ?
+    )
+}
+
+observable:RegistryDatatype CLOSED {
+    (  $observable:RegistryDatatype_tes rdf:type . * ;
+       rdf:type [ observable:RegistryDatatype ] ?
+    )
+}
+
+identity:RelatedIdentityFacet CLOSED {
+    (  $identity:RelatedIdentityFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:RelatedIdentityFacet ] ?
+    )
+}
+
+core:Relationship  (
+    CLOSED {
+       (  $core:Relationship_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ? ;
+             core:endTime @linkml:Datetime * ;
+             core:isDirectional @core:BooleanType ;
+             core:kindOfRelationship @linkml:String ? ;
+             core:source @core:UcoObject + ;
+             core:startTime @linkml:Datetime * ;
+             core:target @core:UcoObject
+          ) ;
+          rdf:type [ core:Relationship ] ?
+       )
+    } OR @observable:ObservableRelationship
+)
+
+marking:ReleaseToMarking CLOSED {
+    (  $marking:ReleaseToMarking_tes (  &marking:MarkingModel_tes ;
+          rdf:type [ marking:MarkingModel ] ? ;
+          marking:authorizedIdentities @linkml:String + ;
+          marking:definitionType @linkml:String *
+       ) ;
+       rdf:type [ marking:ReleaseToMarking ] ?
+    )
+}
+
+observable:ReparsePoint CLOSED {
+    (  $observable:ReparsePoint_tes (  &observable:FileSystemObject_tes ;
+          rdf:type [ observable:FileSystemObject ] ?
+       ) ;
+       rdf:type [ observable:ReparsePoint ] ?
+    )
+}
+
+role:Role  (
+    CLOSED {
+       (  $role:Role_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ?
+          ) ;
+          rdf:type [ role:Role ] ?
+       )
+    } OR @role:BenevolentRole OR @role:MaliciousRole OR @role:NeutralRole
+)
+
+observable:SecurityAppliance CLOSED {
+    (  $observable:SecurityAppliance_tes (  &observable:Appliance_tes ;
+          rdf:type [ observable:Appliance ] ?
+       ) ;
+       rdf:type [ observable:SecurityAppliance ] ?
+    )
+}
+
+observable:Semaphore CLOSED {
+    (  $observable:Semaphore_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Semaphore ] ?
+    )
+}
+
+observable:SendControlCodeEffectFacet CLOSED {
+    (  $observable:SendControlCodeEffectFacet_tes (  &observable:DefinedEffectFacet_tes ;
+          rdf:type [ observable:DefinedEffectFacet ] ? ;
+          observable:controlCode @linkml:String ?
+       ) ;
+       rdf:type [ observable:SendControlCodeEffectFacet ] ?
+    )
+}
+
+observable:Server CLOSED {
+    (  $observable:Server_tes (  &observable:Computer_tes ;
+          rdf:type [ observable:Computer ] ?
+       ) ;
+       rdf:type [ observable:Server ] ?
+    )
+}
+
+collections:Set CLOSED {
+    (  $collections:Set_tes (  &collections:Collection_tes ;
+          rdf:type [ collections:Collection ] ?
+       ) ;
+       rdf:type [ collections:Set ] ?
+    )
+}
+
+observable:ShopListing CLOSED {
+    (  $observable:ShopListing_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:ShopListing ] ?
+    )
+}
+
+observable:SIMCard CLOSED {
+    (  $observable:SIMCard_tes (  &observable:Device_tes ;
+          rdf:type [ observable:Device ] ?
+       ) ;
+       rdf:type [ observable:SIMCard ] ?
+    )
+}
+
+observable:SIMCardFacet CLOSED {
+    (  $observable:SIMCardFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:carrier @identity:Identity ? ;
+          observable:storageCapacityInBytes @linkml:Integer ? ;
+          observable:ICCID @linkml:String ? ;
+          observable:IMSI @linkml:String ? ;
+          observable:PIN @linkml:String ? ;
+          observable:PUK @linkml:String ? ;
+          observable:SIMForm @linkml:String ? ;
+          observable:SIMType @linkml:String ?
+       ) ;
+       rdf:type [ observable:SIMCardFacet ] ?
+    )
+}
+
+location:SimpleAddressFacet CLOSED {
+    (  $location:SimpleAddressFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          location:addressType @linkml:String ? ;
+          location:country @linkml:String ? ;
+          location:locality @linkml:String ? ;
+          location:postalCode @linkml:String ? ;
+          location:region @linkml:String ? ;
+          location:street @linkml:String ?
+       ) ;
+       rdf:type [ location:SimpleAddressFacet ] ?
+    )
+}
+
+identity:SimpleNameFacet CLOSED {
+    (  $identity:SimpleNameFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ? ;
+          identity:familyName @linkml:String * ;
+          identity:givenName @linkml:String * ;
+          identity:honorificPrefix @linkml:String * ;
+          identity:honorificSuffix @linkml:String *
+       ) ;
+       rdf:type [ identity:SimpleNameFacet ] ?
+    )
+}
+
+observable:SIPAaddress CLOSED {
+    (  $observable:SIPAaddress_tes (  &observable:DigitalAddress_tes ;
+          rdf:type [ observable:DigitalAddress ] ?
+       ) ;
+       rdf:type [ observable:SIPAaddress ] ?
+    )
+}
+
+observable:SIPAddressFacet CLOSED {
+    (  $observable:SIPAddressFacet_tes (  &observable:DigitalAddressFacet_tes ;
+          rdf:type [ observable:DigitalAddressFacet ] ?
+       ) ;
+       rdf:type [ observable:SIPAddressFacet ] ?
+    )
+}
+
+observable:SmartDevice  (
+    @observable:SmartPhone OR @observable:WearableDevice
+)
+
+observable:SmartDevice_struct {
+    (  $observable:SmartDevice_tes (  &observable:Device_tes ;
+          rdf:type [ observable:Device ] ?
+       ) ;
+       rdf:type [ observable:SmartDevice ] ?
+    )
+}
+
+observable:SmartPhone  (
+    CLOSED {
+       (  $observable:SmartPhone_tes (  &observable:SmartDevice_tes ;
+             rdf:type [ observable:SmartDevice ] ? ;
+             &observable:MobilePhone_tes ;
+             rdf:type [ observable:MobilePhone ] ? ;
+             &observable:Computer_tes ;
+             rdf:type [ observable:Computer ] ?
+          ) ;
+          rdf:type [ observable:SmartPhone ] ?
+       )
+    } OR @observable:BlackBerryPhone
+)
+
+observable:SMSMessage CLOSED {
+    (  $observable:SMSMessage_tes (  &observable:Message_tes ;
+          rdf:type [ observable:Message ] ?
+       ) ;
+       rdf:type [ observable:SMSMessage ] ?
+    )
+}
+
+observable:SMSMessageFacet CLOSED {
+    (  $observable:SMSMessageFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:isRead @core:BooleanType ?
+       ) ;
+       rdf:type [ observable:SMSMessageFacet ] ?
+    )
+}
+
+observable:Snapshot CLOSED {
+    (  $observable:Snapshot_tes (  &observable:FileSystemObject_tes ;
+          rdf:type [ observable:FileSystemObject ] ?
+       ) ;
+       rdf:type [ observable:Snapshot ] ?
+    )
+}
+
+observable:Socket CLOSED {
+    (  $observable:Socket_tes (  &observable:FileSystemObject_tes ;
+          rdf:type [ observable:FileSystemObject ] ?
+       ) ;
+       rdf:type [ observable:Socket ] ?
+    )
+}
+
+observable:SocketAddress CLOSED {
+    (  $observable:SocketAddress_tes (  &observable:Address_tes ;
+          rdf:type [ observable:Address ] ?
+       ) ;
+       rdf:type [ observable:SocketAddress ] ?
+    )
+}
+
+observable:Software  (
+    CLOSED {
+       (  $observable:Software_tes (  &observable:ObservableObject_tes ;
+             rdf:type [ observable:ObservableObject ] ?
+          ) ;
+          rdf:type [ observable:Software ] ?
+       )
+    } OR @observable:ConfiguredSoftware
+)
+
+observable:SoftwareFacet CLOSED {
+    (  $observable:SoftwareFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:manufacturer @identity:Identity ? ;
+          observable:cpeid @linkml:String ? ;
+          observable:language @linkml:String ? ;
+          observable:swid @linkml:String ? ;
+          observable:version @linkml:String ?
+       ) ;
+       rdf:type [ observable:SoftwareFacet ] ?
+    )
+}
+
+observable:SQLiteBlob CLOSED {
+    (  $observable:SQLiteBlob_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:SQLiteBlob ] ?
+    )
+}
+
+observable:SQLiteBlobFacet CLOSED {
+    (  $observable:SQLiteBlobFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:rowIndex @observable:PositiveIntegerType * ;
+          observable:columnName @linkml:String ? ;
+          observable:rowCondition @linkml:String ? ;
+          observable:tableName @linkml:String ?
+       ) ;
+       rdf:type [ observable:SQLiteBlobFacet ] ?
+    )
+}
+
+observable:StateChangeEffectFacet CLOSED {
+    (  $observable:StateChangeEffectFacet_tes (  &observable:DefinedEffectFacet_tes ;
+          rdf:type [ observable:DefinedEffectFacet ] ? ;
+          observable:newObject @observable:ObservableObject ? ;
+          observable:oldObject @observable:ObservableObject ?
+       ) ;
+       rdf:type [ observable:StateChangeEffectFacet ] ?
+    )
+}
+
+marking:StatementMarking CLOSED {
+    (  $marking:StatementMarking_tes (  &marking:MarkingModel_tes ;
+          rdf:type [ marking:MarkingModel ] ? ;
+          marking:definitionType @linkml:String * ;
+          core:statement @linkml:String
+       ) ;
+       rdf:type [ marking:StatementMarking ] ?
+    )
+}
+
+observable:StorageMedium CLOSED {
+    (  $observable:StorageMedium_tes (  &observable:Device_tes ;
+          rdf:type [ observable:Device ] ?
+       ) ;
+       rdf:type [ observable:StorageMedium ] ?
+    )
+}
+
+observable:SymbolicLink CLOSED {
+    (  $observable:SymbolicLink_tes (  &observable:FileSystemObject_tes ;
+          rdf:type [ observable:FileSystemObject ] ?
+       ) ;
+       rdf:type [ observable:SymbolicLink ] ?
+    )
+}
+
+observable:SymbolicLinkFacet CLOSED {
+    (  $observable:SymbolicLinkFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:targetFile @observable:ObservableObject ?
+       ) ;
+       rdf:type [ observable:SymbolicLinkFacet ] ?
+    )
+}
+
+observable:TableField CLOSED {
+    (  $observable:TableField_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:TableField ] ?
+    )
+}
+
+observable:TableFieldFacet CLOSED {
+    (  $observable:TableFieldFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:recordFieldIsNull @core:BooleanType ? ;
+          observable:recordFieldName @linkml:String ? ;
+          observable:tableName @linkml:String ? ;
+          observable:tableSchema @linkml:String ? ;
+          observable:recordFieldValue @linkml:String ? ;
+          observable:recordRowID @linkml:String ?
+       ) ;
+       rdf:type [ observable:TableFieldFacet ] ?
+    )
+}
+
+observable:Tablet CLOSED {
+    (  $observable:Tablet_tes (  &observable:Computer_tes ;
+          rdf:type [ observable:Computer ] ? ;
+          &observable:SmartDevice_tes ;
+          rdf:type [ observable:SmartDevice ] ? ;
+          &observable:MobileDevice_tes ;
+          rdf:type [ observable:MobileDevice ] ?
+       ) ;
+       rdf:type [ observable:Tablet ] ?
+    )
+}
+
+observable:TaskActionType CLOSED {
+    (  $observable:TaskActionType_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:iComHandlerAction @observable:IComHandlerActionType ? ;
+          observable:iExecAction @observable:IExecActionType ? ;
+          observable:iShowMessageAction @observable:IShowMessageActionType ? ;
+          observable:iEmailAction @observable:ObservableObject ? ;
+          observable:actionID @linkml:String ? ;
+          observable:actionType @vocabulary:TaskActionTypeEnum ?
+       ) ;
+       rdf:type [ observable:TaskActionType ] ?
+    )
+}
+
+observable:TCPConnection CLOSED {
+    (  $observable:TCPConnection_tes (  &observable:NetworkConnection_tes ;
+          rdf:type [ observable:NetworkConnection ] ?
+       ) ;
+       rdf:type [ observable:TCPConnection ] ?
+    )
+}
+
+observable:TCPConnectionFacet CLOSED {
+    (  $observable:TCPConnectionFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:sourceFlags @core:HexBinaryType * ;
+          observable:destinationFlags @linkml:String *
+       ) ;
+       rdf:type [ observable:TCPConnectionFacet ] ?
+    )
+}
+
+marking:TermsOfUseMarking CLOSED {
+    (  $marking:TermsOfUseMarking_tes (  &marking:MarkingModel_tes ;
+          rdf:type [ marking:MarkingModel ] ? ;
+          marking:definitionType @linkml:String ? ;
+          marking:termsOfUse @linkml:String
+       ) ;
+       rdf:type [ marking:TermsOfUseMarking ] ?
+    )
+}
+
+collections:Thing  (
+    @collections:CoItem OR @collections:Collection
+)
+
+collections:Thing_struct {
+    (  $collections:Thing_tes rdf:type . * ;
+       rdf:type [ collections:Thing ] ?
+    )
+}
+
+types:Thread CLOSED {
+    (  $types:Thread_tes (  &collections:Bag_tes ;
+          rdf:type [ collections:Bag ] ? ;
+          &core:UcoThing_tes ;
+          rdf:type [ core:UcoThing ] ?
+       ) ;
+       rdf:type [ types:Thread ] ?
+    )
+}
+
+types:ThreadItem CLOSED {
+    (  $types:ThreadItem_tes (  &core:UcoThing_tes ;
+          rdf:type [ core:UcoThing ] ?
+       ) ;
+       rdf:type [ collections:CoItem ] ?
+    )
+}
+
+time:Time CLOSED {
+    (  $time:Time_tes rdf:type . * ;
+       rdf:type [ time:Time ] ?
+    )
+}
+
+time:TimeRange CLOSED {
+    (  $time:TimeRange_tes rdf:type . * ;
+       rdf:type [ time:TimeRange ] ?
+    )
+}
+
+time:TimeStamp CLOSED {
+    (  $time:TimeStamp_tes rdf:type . * ;
+       rdf:type [ time:TimeStamp ] ?
+    )
+}
+
+tool:Tool  (
+    CLOSED {
+       (  $tool:Tool_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ? ;
+             tool:_creator @identity:Identity ? ;
+             tool:_references @core:IriType * ;
+             tool:servicePack @linkml:String ? ;
+             tool:toolType @linkml:String ? ;
+             tool:_version @linkml:String ?
+          ) ;
+          rdf:type [ tool:Tool ] ?
+       )
+    } OR @tool:AnalyticTool OR @tool:ConfiguredTool OR @tool:DefensiveTool OR @tool:MaliciousTool
+)
+
+observable:TriggerType CLOSED {
+    (  $observable:TriggerType_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:isEnabled @core:BooleanType ? ;
+          observable:triggerBeginTime @linkml:Datetime ? ;
+          observable:triggerEndTime @linkml:Datetime ? ;
+          observable:triggerDelay @linkml:String ? ;
+          observable:triggerMaxRunTime @linkml:String ? ;
+          observable:triggerSessionChangeType @linkml:String ? ;
+          observable:triggerFrequency @vocabulary:TriggerFrequencyEnum ? ;
+          observable:triggerType @vocabulary:TriggerTypeEnum ?
+       ) ;
+       rdf:type [ observable:TriggerType ] ?
+    )
+}
+
+observable:Tweet CLOSED {
+    (  $observable:Tweet_tes (  &observable:Message_tes ;
+          rdf:type [ observable:Message ] ?
+       ) ;
+       rdf:type [ observable:Tweet ] ?
+    )
+}
+
+observable:TwitterProfileFacet CLOSED {
+    (  $observable:TwitterProfileFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:profileBackgroundLocation @observable:ObservableObject ? ;
+          observable:profileBannerLocation @observable:ObservableObject ? ;
+          observable:profileImageLocation @observable:ObservableObject ? ;
+          observable:profileBackgroundHash @types:Hash ? ;
+          observable:profileBannerHash @types:Hash ? ;
+          observable:profileImageHash @types:Hash ? ;
+          observable:profileIsProtected @core:BooleanType ? ;
+          observable:profileIsVerified @core:BooleanType ? ;
+          observable:listedCount @linkml:Integer ? ;
+          observable:favoritesCount @core:NonNegativeIntegerType ? ;
+          observable:followersCount @core:NonNegativeIntegerType ? ;
+          observable:friendsCount @core:NonNegativeIntegerType ? ;
+          observable:statusesCount @core:NonNegativeIntegerType ? ;
+          observable:twitterHandle @linkml:String ? ;
+          observable:twitterId @linkml:String ? ;
+          observable:userLocationString @linkml:String ?
+       ) ;
+       rdf:type [ observable:TwitterProfileFacet ] ?
+    )
+}
+
+core:UcoInherentCharacterizationThing  (
+    CLOSED {
+       (  $core:UcoInherentCharacterizationThing_tes (  &core:UcoThing_tes ;
+             rdf:type [ core:UcoThing ] ?
+          ) ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ?
+       )
+    } OR @observable:ApplicationVersion OR @action:ArrayOfAction OR @analysis:ArtifactClassification OR @tool:BuildInformationType
+    OR @tool:BuildUtilityType OR @tool:CompilerType OR @configuration:ConfigurationEntry OR @observable:ContactAddress OR
+    @observable:ContactAffiliation OR @observable:ContactEmail OR @observable:ContactMessaging OR @observable:ContactPhone OR
+    @observable:ContactProfile OR @observable:ContactSIP OR @observable:ContactURL OR @configuration:Dependency OR
+    @types:Dictionary OR @types:DictionaryEntry OR @observable:EnvironmentVariable OR @core:ExternalReference OR
+    @observable:ExtractedString OR @core:Facet OR @observable:GlobalFlagType OR @marking:GranularMarking OR @types:Hash OR
+    @observable:IComHandlerActionType OR @observable:IExecActionType OR @observable:IShowMessageActionType OR @tool:LibraryType OR
+    @marking:MarkingModel OR @observable:MimePartType OR @pattern:PatternExpression OR @observable:TaskActionType OR
+    @observable:TriggerType OR @observable:URLHistoryEntry OR @observable:WhoisRegistrarInfoType OR
+    @observable:WindowsPEFileHheader OR @observable:WindowsPEOptionalHeader OR @observable:WindowsPESection OR
+    @observable:WindowsRegistryValue
+)
+
+core:UcoObject  (
+    CLOSED {
+       (  $core:UcoObject_tes (  &core:UcoThing_tes ;
+             rdf:type [ core:UcoThing ] ? ;
+             core:createdBy @linkml:String ? ;
+             dcterms:description @linkml:String * ;
+             core:externalReference @linkml:String * ;
+             core:hasFacet @linkml:String * ;
+             core:modifiedTime @linkml:Datetime * ;
+             rdfs:label @linkml:String ? ;
+             core:objectMarking @core:MarkingDefinitionAbstraction * ;
+             core:objectCreatedTime @linkml:Datetime ? ;
+             core:specVersion @linkml:String ? ;
+             core:tag @linkml:String *
+          ) ;
+          rdf:type [ core:UcoObject ] ?
+       )
+    } OR @action:Action OR @core:Assertion OR @core:AttributedName OR @core:Compilation OR @configuration:Configuration OR
+    @core:ControlledVocabulary OR @core:IdentityAbstraction OR @core:Item OR @location:Location OR
+    @core:MarkingDefinitionAbstraction OR @core:ModusOperandi OR @observable:Observable OR @pattern:Pattern OR @core:Relationship
+    OR @role:Role OR @tool:Tool
+)
+
+core:UcoThing  (
+    @core:UcoInherentCharacterizationThing OR @core:UcoObject
+)
+
+core:UcoThing_struct {
+    (  $core:UcoThing_tes rdf:type . * ;
+       rdf:type [ core:UcoThing ] ?
+    )
+}
+
+observable:UNIXAccount CLOSED {
+    (  $observable:UNIXAccount_tes (  &observable:DigitalAccount_tes ;
+          rdf:type [ observable:DigitalAccount ] ?
+       ) ;
+       rdf:type [ observable:UNIXAccount ] ?
+    )
+}
+
+observable:UNIXAccountFacet CLOSED {
+    (  $observable:UNIXAccountFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:gid @linkml:Integer ? ;
+          observable:shell @linkml:String ?
+       ) ;
+       rdf:type [ observable:UNIXAccountFacet ] ?
+    )
+}
+
+observable:UNIXFile CLOSED {
+    (  $observable:UNIXFile_tes (  &observable:File_tes ;
+          rdf:type [ observable:File ] ?
+       ) ;
+       rdf:type [ observable:UNIXFile ] ?
+    )
+}
+
+observable:UNIXFilePermissionsFacet CLOSED {
+    (  $observable:UNIXFilePermissionsFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ?
+       ) ;
+       rdf:type [ observable:UNIXFilePermissionsFacet ] ?
+    )
+}
+
+observable:UNIXProcess CLOSED {
+    (  $observable:UNIXProcess_tes (  &observable:Process_tes ;
+          rdf:type [ observable:Process ] ?
+       ) ;
+       rdf:type [ observable:UNIXProcess ] ?
+    )
+}
+
+observable:UNIXProcessFacet CLOSED {
+    (  $observable:UNIXProcessFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:openFileDescriptor @linkml:Integer * ;
+          observable:ruid @core:NonNegativeIntegerType *
+       ) ;
+       rdf:type [ observable:UNIXProcessFacet ] ?
+    )
+}
+
+observable:UNIXVolumeFacet CLOSED {
+    (  $observable:UNIXVolumeFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:mountPoint @linkml:String ? ;
+          observable:options @linkml:String ?
+       ) ;
+       rdf:type [ observable:UNIXVolumeFacet ] ?
+    )
+}
+
+observable:URL CLOSED {
+    (  $observable:URL_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:URL ] ?
+    )
+}
+
+observable:URLFacet CLOSED {
+    (  $observable:URLFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:host @observable:ObservableObject ? ;
+          observable:port @linkml:Integer ? ;
+          observable:fragment @linkml:String ? ;
+          observable:fullValue @linkml:String ? ;
+          observable:password @linkml:String ? ;
+          observable:path @linkml:String ? ;
+          observable:query @linkml:String ? ;
+          observable:scheme @linkml:String ? ;
+          observable:userName @linkml:String ?
+       ) ;
+       rdf:type [ observable:URLFacet ] ?
+    )
+}
+
+observable:URLHistory CLOSED {
+    (  $observable:URLHistory_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:URLHistory ] ?
+    )
+}
+
+observable:URLHistoryEntry CLOSED {
+    (  $observable:URLHistoryEntry_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:url @observable:ObservableObject ? ;
+          observable:referrerURL @observable:ObservableObject ? ;
+          observable:expirationTime @linkml:Datetime ? ;
+          observable:firstVisit @linkml:Datetime ? ;
+          observable:lastVisit @linkml:Datetime ? ;
+          observable:visitCount @linkml:Integer ? ;
+          observable:manuallyEnteredCount @core:NonNegativeIntegerType ? ;
+          observable:browserUserProfile @linkml:String ? ;
+          observable:hostname @linkml:String ? ;
+          observable:pageTitle @linkml:String ? ;
+          observable:keywordSearchTerm @linkml:String ?
+       ) ;
+       rdf:type [ observable:URLHistoryEntry ] ?
+    )
+}
+
+observable:URLHistoryFacet CLOSED {
+    (  $observable:URLHistoryFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:browserInformation @observable:ObservableObject ? ;
+          observable:urlHistoryEntry @observable:URLHistoryEntry *
+       ) ;
+       rdf:type [ observable:URLHistoryFacet ] ?
+    )
+}
+
+observable:URLVisit CLOSED {
+    (  $observable:URLVisit_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:URLVisit ] ?
+    )
+}
+
+observable:URLVisitFacet CLOSED {
+    (  $observable:URLVisitFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:browserInformation @observable:ObservableObject ? ;
+          observable:fromURLVisit @observable:ObservableObject ? ;
+          observable:url @observable:ObservableObject ? ;
+          observable:visitTime @linkml:Datetime ? ;
+          observable:visitDuration @observable:DurationType ? ;
+          observable:urlTransitionType @vocabulary:URLTransitionTypeEnum ?
+       ) ;
+       rdf:type [ observable:URLVisitFacet ] ?
+    )
+}
+
+observable:UserAccount CLOSED {
+    (  $observable:UserAccount_tes (  &observable:DigitalAccount_tes ;
+          rdf:type [ observable:DigitalAccount ] ?
+       ) ;
+       rdf:type [ observable:UserAccount ] ?
+    )
+}
+
+observable:UserAccountFacet CLOSED {
+    (  $observable:UserAccountFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:canEscalatePrivs @core:BooleanType ? ;
+          observable:isPrivileged @core:BooleanType ? ;
+          observable:isServiceAccount @core:BooleanType ? ;
+          observable:homeDirectory @linkml:String ?
+       ) ;
+       rdf:type [ observable:UserAccountFacet ] ?
+    )
+}
+
+observable:UserSession CLOSED {
+    (  $observable:UserSession_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:UserSession ] ?
+    )
+}
+
+observable:UserSessionFacet CLOSED {
+    (  $observable:UserSessionFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:effectiveUser @observable:ObservableObject ? ;
+          observable:loginTime @linkml:Datetime ? ;
+          observable:logoutTime @linkml:Datetime ? ;
+          observable:effectiveGroup @linkml:String ? ;
+          observable:effectiveGroupID @linkml:String ?
+       ) ;
+       rdf:type [ observable:UserSessionFacet ] ?
+    )
+}
+
+observable:ValuesEnumeratedEffectFacet CLOSED {
+    (  $observable:ValuesEnumeratedEffectFacet_tes (  &observable:DefinedEffectFacet_tes ;
+          rdf:type [ observable:DefinedEffectFacet ] ? ;
+          observable:values @linkml:String ?
+       ) ;
+       rdf:type [ observable:ValuesEnumeratedEffectFacet ] ?
+    )
+}
+
+victim:Victim  (
+    CLOSED {
+       (  $victim:Victim_tes (  &role:NeutralRole_tes ;
+             rdf:type [ role:NeutralRole ] ?
+          ) ;
+          rdf:type [ victim:Victim ] ?
+       )
+    } OR @victim:VictimTargeting
+)
+
+victim:VictimTargeting CLOSED {
+    (  $victim:VictimTargeting_tes (  &victim:Victim_tes ;
+          rdf:type [ victim:Victim ] ?
+       ) ;
+       rdf:type [ victim:VictimTargeting ] ?
+    )
+}
+
+identity:VisaFacet CLOSED {
+    (  $identity:VisaFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:VisaFacet ] ?
+    )
+}
+
+observable:Volume CLOSED {
+    (  $observable:Volume_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Volume ] ?
+    )
+}
+
+observable:VolumeFacet CLOSED {
+    (  $observable:VolumeFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:sectorSize @linkml:Integer ? ;
+          observable:volumeID @linkml:String ?
+       ) ;
+       rdf:type [ observable:VolumeFacet ] ?
+    )
+}
+
+observable:WearableDevice CLOSED {
+    (  $observable:WearableDevice_tes (  &observable:SmartDevice_tes ;
+          rdf:type [ observable:SmartDevice ] ?
+       ) ;
+       rdf:type [ observable:WearableDevice ] ?
+    )
+}
+
+observable:WebPage CLOSED {
+    (  $observable:WebPage_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WebPage ] ?
+    )
+}
+
+observable:Whois CLOSED {
+    (  $observable:Whois_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Whois ] ?
+    )
+}
+
+observable:WhoisContactFacet CLOSED {
+    (  $observable:WhoisContactFacet_tes (  &observable:ContactFacet_tes ;
+          rdf:type [ observable:ContactFacet ] ? ;
+          observable:whoisContactType @vocabulary:WhoisContactTypeEnum ?
+       ) ;
+       rdf:type [ observable:WhoisContactFacet ] ?
+    )
+}
+
+observable:WhoisFacet CLOSED {
+    (  $observable:WhoisFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:domainName @observable:ObservableObject ? ;
+          observable:ipAddress @observable:ObservableObject ? ;
+          observable:registrantContactInfo @observable:ObservableObject ? ;
+          observable:serverName @observable:ObservableObject ? ;
+          observable:nameServer @observable:ObservableObject * ;
+          observable:registrarInfo @observable:WhoisRegistrarInfoType ? ;
+          observable:creationDate @linkml:Datetime ? ;
+          observable:expirationDate @linkml:Datetime ? ;
+          observable:lookupDate @linkml:Datetime ? ;
+          observable:updatedDate @linkml:Datetime ? ;
+          observable:domainID @linkml:String ? ;
+          observable:remarks @linkml:String ? ;
+          observable:sponsoringRegistrar @linkml:String ? ;
+          observable:registrantIDs @linkml:String * ;
+          observable:dnssec @linkml:String ? ;
+          observable:status @vocabulary:WhoisStatusTypeEnum ? ;
+          observable:regionalInternetRegistry @linkml:String ?
+       ) ;
+       rdf:type [ observable:WhoisFacet ] ?
+    )
+}
+
+observable:WhoisRegistrarInfoType CLOSED {
+    (  $observable:WhoisRegistrarInfoType_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:geoLocationAddress @location:Location ? ;
+          observable:contactPhoneNumber @observable:ObservableObject ? ;
+          observable:emailAddress @observable:ObservableObject ? ;
+          observable:referralURL @observable:ObservableObject ? ;
+          observable:whoisServer @observable:ObservableObject ? ;
+          observable:registrarGUID @linkml:String ? ;
+          observable:registrarID @linkml:String ? ;
+          observable:registrarName @linkml:String ?
+       ) ;
+       rdf:type [ observable:WhoisRegistrarInfoType ] ?
+    )
+}
+
+observable:WifiAddress CLOSED {
+    (  $observable:WifiAddress_tes (  &observable:MACAddress_tes ;
+          rdf:type [ observable:MACAddress ] ?
+       ) ;
+       rdf:type [ observable:WifiAddress ] ?
+    )
+}
+
+observable:WifiAddressFacet CLOSED {
+    (  $observable:WifiAddressFacet_tes (  &observable:MACAddressFacet_tes ;
+          rdf:type [ observable:MACAddressFacet ] ?
+       ) ;
+       rdf:type [ observable:WifiAddressFacet ] ?
+    )
+}
+
+observable:Wiki CLOSED {
+    (  $observable:Wiki_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:Wiki ] ?
+    )
+}
+
+observable:WikiArticle CLOSED {
+    (  $observable:WikiArticle_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WikiArticle ] ?
+    )
+}
+
+observable:WindowsAccount CLOSED {
+    (  $observable:WindowsAccount_tes (  &observable:DigitalAccount_tes ;
+          rdf:type [ observable:DigitalAccount ] ?
+       ) ;
+       rdf:type [ observable:WindowsAccount ] ?
+    )
+}
+
+observable:WindowsAccountFacet CLOSED {
+    (  $observable:WindowsAccountFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:groups @linkml:String *
+       ) ;
+       rdf:type [ observable:WindowsAccountFacet ] ?
+    )
+}
+
+observable:WindowsActiveDirectoryAccount CLOSED {
+    (  $observable:WindowsActiveDirectoryAccount_tes (  &observable:DigitalAccount_tes ;
+          rdf:type [ observable:DigitalAccount ] ?
+       ) ;
+       rdf:type [ observable:WindowsActiveDirectoryAccount ] ?
+    )
+}
+
+observable:WindowsActiveDirectoryAccountFacet CLOSED {
+    (  $observable:WindowsActiveDirectoryAccountFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:objectGUID @linkml:String ? ;
+          observable:activeDirectoryGroups @linkml:String *
+       ) ;
+       rdf:type [ observable:WindowsActiveDirectoryAccountFacet ] ?
+    )
+}
+
+observable:WindowsComputerSpecification CLOSED {
+    (  $observable:WindowsComputerSpecification_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsComputerSpecification ] ?
+    )
+}
+
+observable:WindowsComputerSpecificationFacet CLOSED {
+    (  $observable:WindowsComputerSpecificationFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:registeredOrganization @identity:Identity ? ;
+          observable:registeredOwner @identity:Identity ? ;
+          observable:globalFlagList @observable:GlobalFlagType * ;
+          observable:windowsDirectory @observable:ObservableObject ? ;
+          observable:windowsSystemDirectory @observable:ObservableObject ? ;
+          observable:windowsTempDirectory @observable:ObservableObject ? ;
+          observable:lastShutdownDate @linkml:Datetime ? ;
+          observable:osInstallDate @linkml:Datetime ? ;
+          observable:osLastUpgradeDate @linkml:Datetime ? ;
+          observable:msProductID @linkml:String ? ;
+          observable:msProductName @linkml:String ? ;
+          observable:netBIOSName @linkml:String ? ;
+          observable:domain @linkml:String *
+       ) ;
+       rdf:type [ observable:WindowsComputerSpecificationFacet ] ?
+    )
+}
+
+observable:WindowsCriticalSection CLOSED {
+    (  $observable:WindowsCriticalSection_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsCriticalSection ] ?
+    )
+}
+
+observable:WindowsEvent CLOSED {
+    (  $observable:WindowsEvent_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsEvent ] ?
+    )
+}
+
+observable:WindowsFileMapping CLOSED {
+    (  $observable:WindowsFileMapping_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsFileMapping ] ?
+    )
+}
+
+observable:WindowsHandle CLOSED {
+    (  $observable:WindowsHandle_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsHandle ] ?
+    )
+}
+
+observable:WindowsHook CLOSED {
+    (  $observable:WindowsHook_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsHook ] ?
+    )
+}
+
+observable:WindowsMailSlot CLOSED {
+    (  $observable:WindowsMailSlot_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsMailSlot ] ?
+    )
+}
+
+observable:WindowsNetworkShare CLOSED {
+    (  $observable:WindowsNetworkShare_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsNetworkShare ] ?
+    )
+}
+
+observable:WindowsPEBinaryFile CLOSED {
+    (  $observable:WindowsPEBinaryFile_tes (  &observable:File_tes ;
+          rdf:type [ observable:File ] ?
+       ) ;
+       rdf:type [ observable:WindowsPEBinaryFile ] ?
+    )
+}
+
+observable:WindowsPEBinaryFileFacet CLOSED {
+    (  $observable:WindowsPEBinaryFileFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:optionalHeader @observable:WindowsPEOptionalHeader ? ;
+          observable:sections @observable:WindowsPESection * ;
+          observable:fileHeaderHashes @types:Hash * ;
+          observable:timeDateStamp @linkml:Datetime ? ;
+          observable:pointerToSymbolTable @core:HexBinaryType * ;
+          observable:numberOfSections @linkml:Integer ? ;
+          observable:numberOfSymbols @linkml:Integer ? ;
+          observable:sizeOfOptionalHeader @linkml:Integer ? ;
+          observable:impHash @linkml:String ? ;
+          observable:peType @linkml:String ? ;
+          observable:machine @linkml:String * ;
+          observable:characteristics @observable:UnsignedShortType *
+       ) ;
+       rdf:type [ observable:WindowsPEBinaryFileFacet ] ?
+    )
+}
+
+observable:WindowsPEBinaryType CLOSED {
+    (  $observable:WindowsPEBinaryType_tes rdf:type . * ;
+       rdf:type [ observable:WindowsPEBinaryType ] ?
+    )
+}
+
+observable:WindowsPEFileHheader CLOSED {
+    (  $observable:WindowsPEFileHheader_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:timeDateStamp @linkml:Datetime ?
+       ) ;
+       rdf:type [ observable:WindowsPEFileHheader ] ?
+    )
+}
+
+observable:WindowsPEOptionalHeader CLOSED {
+    (  $observable:WindowsPEOptionalHeader_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:majorLinkerVersion @observable:ByteType * ;
+          observable:minorLinkerVersion @observable:ByteType * ;
+          observable:addressOfEntryPoint @observable:UnsignedIntegerType * ;
+          observable:baseOfCode @observable:UnsignedIntegerType * ;
+          observable:checksum @observable:UnsignedIntegerType * ;
+          observable:fileAlignment @observable:UnsignedIntegerType * ;
+          observable:imageBase @observable:UnsignedIntegerType * ;
+          observable:loaderFlags @observable:UnsignedIntegerType * ;
+          observable:numberOfRVAAndSizes @observable:UnsignedIntegerType * ;
+          observable:sectionAlignment @observable:UnsignedIntegerType * ;
+          observable:sizeOfCode @observable:UnsignedIntegerType * ;
+          observable:sizeOfHeaders @observable:UnsignedIntegerType * ;
+          observable:sizeOfHeapCommit @observable:UnsignedIntegerType * ;
+          observable:sizeOfHeapReserve @observable:UnsignedIntegerType * ;
+          observable:sizeOfImage @observable:UnsignedIntegerType * ;
+          observable:sizeOfInitializedData @observable:UnsignedIntegerType * ;
+          observable:sizeOfStackCommit @observable:UnsignedIntegerType * ;
+          observable:sizeOfStackReserve @observable:UnsignedIntegerType * ;
+          observable:sizeOfUninitializedData @observable:UnsignedIntegerType * ;
+          observable:win32VersionValue @observable:UnsignedIntegerType * ;
+          observable:dllCharacteristics @observable:UnsignedShortType * ;
+          observable:magic @observable:UnsignedShortType * ;
+          observable:majorImageVersion @observable:UnsignedShortType * ;
+          observable:majorOSVersion @observable:UnsignedShortType * ;
+          observable:majorSubsystemVersion @observable:UnsignedShortType * ;
+          observable:minorImageVersion @observable:UnsignedShortType * ;
+          observable:minorOSVersion @observable:UnsignedShortType * ;
+          observable:minorSubsystemVersion @observable:UnsignedShortType * ;
+          observable:subsystem @observable:UnsignedShortType *
+       ) ;
+       rdf:type [ observable:WindowsPEOptionalHeader ] ?
+    )
+}
+
+observable:WindowsPESection CLOSED {
+    (  $observable:WindowsPESection_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          observable:hashes @types:Hash * ;
+          observable:entropy @location:DecimalType ? ;
+          collections:size @collections:PositiveInteger ? ;
+          rdfs:label @linkml:String ?
+       ) ;
+       rdf:type [ observable:WindowsPESection ] ?
+    )
+}
+
+observable:WindowsPrefetch CLOSED {
+    (  $observable:WindowsPrefetch_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsPrefetch ] ?
+    )
+}
+
+observable:WindowsPrefetchFacet CLOSED {
+    (  $observable:WindowsPrefetchFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:volume @observable:ObservableObject ? ;
+          observable:accessedDirectory @observable:ObservableObject * ;
+          observable:accessedFile @observable:ObservableObject * ;
+          observable:firstRun @linkml:Datetime ? ;
+          observable:lastRun @linkml:Datetime ? ;
+          observable:timesExecuted @linkml:Integer ? ;
+          observable:applicationFileName @linkml:String ? ;
+          observable:prefetchHash @linkml:String ?
+       ) ;
+       rdf:type [ observable:WindowsPrefetchFacet ] ?
+    )
+}
+
+observable:WindowsProcess CLOSED {
+    (  $observable:WindowsProcess_tes (  &observable:Process_tes ;
+          rdf:type [ observable:Process ] ?
+       ) ;
+       rdf:type [ observable:WindowsProcess ] ?
+    )
+}
+
+observable:WindowsProcessFacet CLOSED {
+    (  $observable:WindowsProcessFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:startupInfo @types:Dictionary ? ;
+          observable:aslrEnabled @core:BooleanType ? ;
+          observable:depEnabled @core:BooleanType ? ;
+          observable:ownerSID @linkml:String ? ;
+          observable:priority @linkml:String ? ;
+          observable:windowTitle @linkml:String ?
+       ) ;
+       rdf:type [ observable:WindowsProcessFacet ] ?
+    )
+}
+
+observable:WindowsRegistryHive CLOSED {
+    (  $observable:WindowsRegistryHive_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsRegistryHive ] ?
+    )
+}
+
+observable:WindowsRegistryHiveFacet CLOSED {
+    (  $observable:WindowsRegistryHiveFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:hiveType @linkml:String ?
+       ) ;
+       rdf:type [ observable:WindowsRegistryHiveFacet ] ?
+    )
+}
+
+observable:WindowsRegistryKey CLOSED {
+    (  $observable:WindowsRegistryKey_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsRegistryKey ] ?
+    )
+}
+
+observable:WindowsRegistrykeyFacet CLOSED {
+    (  $observable:WindowsRegistrykeyFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:creator @observable:ObservableObject ? ;
+          observable:registryValues @observable:WindowsRegistryValue * ;
+          core:modifiedTime @linkml:Datetime ? ;
+          observable:numberOfSubkeys @linkml:Integer ? ;
+          types:key @linkml:String ?
+       ) ;
+       rdf:type [ observable:WindowsRegistrykeyFacet ] ?
+    )
+}
+
+observable:WindowsRegistryValue CLOSED {
+    (  $observable:WindowsRegistryValue_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          rdfs:label @linkml:String ? ;
+          observable:data @linkml:String ? ;
+          observable:dataType @linkml:String ?
+       ) ;
+       rdf:type [ observable:WindowsRegistryValue ] ?
+    )
+}
+
+observable:WindowsService CLOSED {
+    (  $observable:WindowsService_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsService ] ?
+    )
+}
+
+observable:WindowsServiceFacet CLOSED {
+    (  $observable:WindowsServiceFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:displayName @linkml:String ? ;
+          observable:groupName @linkml:String ? ;
+          observable:serviceName @linkml:String ? ;
+          observable:servicStatus @linkml:String ? ;
+          observable:serviceType @linkml:String ? ;
+          observable:startCommandLine @linkml:String ? ;
+          observable:startType @linkml:String ? ;
+          observable:descriptions @linkml:String *
+       ) ;
+       rdf:type [ observable:WindowsServiceFacet ] ?
+    )
+}
+
+observable:WindowsServiceStartType CLOSED {
+    (  $observable:WindowsServiceStartType_tes rdf:type . * ;
+       rdf:type [ observable:WindowsServiceStartType ] ?
+    )
+}
+
+observable:WindowsServiceStatus CLOSED {
+    (  $observable:WindowsServiceStatus_tes rdf:type . * ;
+       rdf:type [ observable:WindowsServiceStatus ] ?
+    )
+}
+
+observable:WindowsServiceType CLOSED {
+    (  $observable:WindowsServiceType_tes rdf:type . * ;
+       rdf:type [ observable:WindowsServiceType ] ?
+    )
+}
+
+observable:WindowsSystemRestore CLOSED {
+    (  $observable:WindowsSystemRestore_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsSystemRestore ] ?
+    )
+}
+
+observable:WindowsTask CLOSED {
+    (  $observable:WindowsTask_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsTask ] ?
+    )
+}
+
+observable:WindowsTaskFacet CLOSED {
+    (  $observable:WindowsTaskFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:account @observable:ObservableObject ? ;
+          observable:application @observable:ObservableObject ? ;
+          observable:workItemData @observable:ObservableObject ? ;
+          observable:workingDirectory @observable:ObservableObject ? ;
+          observable:actionList @observable:TaskActionType * ;
+          observable:triggerList @linkml:String * ;
+          observable:mostRecentRunTime @linkml:Datetime ? ;
+          observable:nextRunTime @linkml:Datetime ? ;
+          observable:observableCreatedTime @linkml:Datetime ? ;
+          observable:exitCode @linkml:Integer ? ;
+          observable:maxRunTime @linkml:Integer ? ;
+          observable:accountLogonType @linkml:String ? ;
+          observable:accountRunLevel @linkml:String ? ;
+          observable:imageName @linkml:String ? ;
+          observable:parameters @linkml:String ? ;
+          observable:taskComment @linkml:String ? ;
+          observable:taskCreator @linkml:String ? ;
+          observable:flags @vocabulary:TaskFlagEnum ? ;
+          observable:priority @vocabulary:TaskPriorityEnum ? ;
+          observable:status @vocabulary:TaskStatusEnum ?
+       ) ;
+       rdf:type [ observable:WindowsTaskFacet ] ?
+    )
+}
+
+observable:WindowsThread CLOSED {
+    (  $observable:WindowsThread_tes (  &observable:ProcessThread_tes ;
+          rdf:type [ observable:ProcessThread ] ?
+       ) ;
+       rdf:type [ observable:WindowsThread ] ?
+    )
+}
+
+observable:WindowsThreadFacet CLOSED {
+    (  $observable:WindowsThreadFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:creationTime @linkml:Datetime ? ;
+          observable:parameterAddress @core:HexBinaryType * ;
+          observable:startAddress @core:HexBinaryType * ;
+          observable:priority @linkml:String ? ;
+          observable:stackSize @core:NonNegativeIntegerType * ;
+          observable:threadID @core:NonNegativeIntegerType * ;
+          core:context @linkml:String ? ;
+          observable:runningStatus @linkml:String ? ;
+          observable:securityAttributes @linkml:String ? ;
+          observable:creationFlags @observable:UnsignedIntegerType *
+       ) ;
+       rdf:type [ observable:WindowsThreadFacet ] ?
+    )
+}
+
+observable:WindowsVolumeFacet CLOSED {
+    (  $observable:WindowsVolumeFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:driveLetter @linkml:String ? ;
+          observable:driveType @vocabulary:WindowsDriveTypeEnum ? ;
+          observable:windowsVolumeAttributes @linkml:String ?
+       ) ;
+       rdf:type [ observable:WindowsVolumeFacet ] ?
+    )
+}
+
+observable:WindowsWaitableTime CLOSED {
+    (  $observable:WindowsWaitableTime_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:WindowsWaitableTime ] ?
+    )
+}
+
+observable:WirelessNetworkConnection CLOSED {
+    (  $observable:WirelessNetworkConnection_tes (  &observable:NetworkConnection_tes ;
+          rdf:type [ observable:NetworkConnection ] ?
+       ) ;
+       rdf:type [ observable:WirelessNetworkConnection ] ?
+    )
+}
+
+observable:WirelessNetworkConnectionFacet CLOSED {
+    (  $observable:WirelessNetworkConnectionFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:baseStation @linkml:String ? ;
+          observable:password @linkml:String ? ;
+          observable:ssid @linkml:String ? ;
+          observable:wirelessNetworkSecurityMode @vocabulary:WirelessNetworkSecurityModeEnum ?
+       ) ;
+       rdf:type [ observable:WirelessNetworkConnectionFacet ] ?
+    )
+}
+
+observable:WriteBlocker CLOSED {
+    (  $observable:WriteBlocker_tes (  &observable:Device_tes ;
+          rdf:type [ observable:Device ] ?
+       ) ;
+       rdf:type [ observable:WriteBlocker ] ?
+    )
+}
+
+observable:X509Certificate CLOSED {
+    (  $observable:X509Certificate_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:X509Certificate ] ?
+    )
+}
+
+observable:X509CertificateFacet CLOSED {
+    (  $observable:X509CertificateFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:x509v3extensions @observable:X509V3ExtensionsFacet ? ;
+          observable:issuerHash @types:Hash ? ;
+          observable:subjectHash @types:Hash ? ;
+          observable:thumbprintHash @types:Hash ? ;
+          observable:isSelfSigned @core:BooleanType ? ;
+          observable:validityNotAfter @linkml:Datetime ? ;
+          observable:validityNotBefore @linkml:Datetime ? ;
+          observable:subjectPublicKeyExponent @linkml:Integer ? ;
+          observable:issuer @linkml:String ? ;
+          observable:serialNumber @linkml:String ? ;
+          observable:signature @linkml:String ? ;
+          observable:signatureAlgorithm @linkml:String ? ;
+          observable:subject @linkml:String ? ;
+          observable:subjectPublicKeyAlgorithm @linkml:String ? ;
+          observable:subjectPublicKeyModulus @linkml:String ? ;
+          observable:version @linkml:String ?
+       ) ;
+       rdf:type [ observable:X509CertificateFacet ] ?
+    )
+}
+
+observable:X509V3Certificate CLOSED {
+    (  $observable:X509V3Certificate_tes (  &observable:ObservableObject_tes ;
+          rdf:type [ observable:ObservableObject ] ?
+       ) ;
+       rdf:type [ observable:X509V3Certificate ] ?
+    )
+}
+
+observable:X509V3ExtensionsFacet CLOSED {
+    (  $observable:X509V3ExtensionsFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          observable:privateKeyUsagePeriodNotAfter @linkml:Datetime ? ;
+          observable:privateKeyUsagePeriodNotBefore @linkml:Datetime ? ;
+          observable:authorityKeyIdentifier @linkml:String ? ;
+          observable:basicConstraints @linkml:String ? ;
+          observable:certificatePolicies @linkml:String ? ;
+          observable:crlDistributionPoints @linkml:String ? ;
+          observable:extendedKeyUsage @linkml:String ? ;
+          observable:inhibitAnyPolicy @linkml:String ? ;
+          observable:issuerAlternativeName @linkml:String ? ;
+          observable:keyUsage @linkml:String ? ;
+          observable:nameConstraints @linkml:String ? ;
+          observable:policyConstraints @linkml:String ? ;
+          observable:policyMappings @linkml:String ? ;
+          observable:subjectAlternativeName @linkml:String ? ;
+          observable:subjectDirectoryAttributes @linkml:String ? ;
+          observable:subjectKeyIdentifier @linkml:String ?
+       ) ;
+       rdf:type [ observable:X509V3ExtensionsFacet ] ?
+    )
+}
+
+
