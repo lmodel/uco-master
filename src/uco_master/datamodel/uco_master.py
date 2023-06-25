@@ -1,8 +1,8 @@
 # Auto generated from uco_master.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-06-25T02:22:38
+# Generation date: 2023-06-25T09:25:23
 # Schema: uco-master
 #
-# id: https://w3id.org/linkmodel/uco-master
+# id: https://w3id.org/lmodel/uco-master
 # description: Unified Cyber Ontology
 # license: https://www.apache.org/licenses/LICENSE-2.0
 

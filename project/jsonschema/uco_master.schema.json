@@ -24128,7 +24128,7 @@
             "type": "object"
         }
     },
-    "$id": "https://w3id.org/linkmodel/uco-master",
+    "$id": "https://w3id.org/lmodel/uco-master",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
     "metamodel_version": "1.7.0",
