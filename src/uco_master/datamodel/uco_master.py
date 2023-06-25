@@ -1,5 +1,5 @@
 # Auto generated from uco_master.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-12T12:49:16
+# Generation date: 2023-06-25T02:22:38
 # Schema: uco-master
 #
 # id: https://w3id.org/linkmodel/uco-master

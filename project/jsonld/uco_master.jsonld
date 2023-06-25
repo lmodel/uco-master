@@ -216,7 +216,7 @@
         "schema:Time"
       ],
       "base": "XSDTime",
-      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#time",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -323,7 +323,7 @@
       "definition_uri": "https://w3id.org/linkml/Objectidentifier",
       "description": "A URI or CURIE that represents an object in the model.",
       "comments": [
-        "Used for inheritence and type checking"
+        "Used for inheritance and type checking"
       ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
@@ -340,6 +340,42 @@
       "imported_from": "linkml:types",
       "base": "NodeIdentifier",
       "uri": "http://www.w3.org/ns/shex#nonLiteral",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpointer",
+      "definition_uri": "https://w3id.org/linkml/Jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpath",
+      "definition_uri": "https://w3id.org/linkml/Jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "sparqlpath",
+      "definition_uri": "https://w3id.org/linkml/Sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -3558,7 +3594,7 @@
       "name": "action",
       "definition_uri": "https://w3id.org/lmodel/uco-action/action",
       "description": "\"A characterization of a single action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/action",
       "owner": "ArrayOfAction",
       "domain_of": [
@@ -3572,7 +3608,7 @@
       "name": "actionCount",
       "definition_uri": "https://w3id.org/lmodel/uco-action/actionCount",
       "description": "\"The number of times that the action was performed.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/actionCount",
       "owner": "ActionLifecycle",
       "domain_of": [
@@ -3586,7 +3622,7 @@
       "name": "actionStatus",
       "definition_uri": "https://w3id.org/lmodel/uco-action/actionStatus",
       "description": "\"The current state of the action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "ActionStatusTypeVocab",
       "slot_uri": "https://w3id.org/lmodel/uco-action/actionStatus",
       "owner": "Action",
@@ -3600,7 +3636,7 @@
       "name": "argumentName",
       "definition_uri": "https://w3id.org/lmodel/uco-action/argumentName",
       "description": "\"The identifying label of an argument.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/argumentName",
       "owner": "ActionArgumentFacet",
       "domain_of": [
@@ -3613,7 +3649,7 @@
       "name": "_endTime",
       "definition_uri": "https://w3id.org/lmodel/uco-action/_endTime",
       "description": "\"The time at which performance of the action ended.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/_endTime",
       "range": "datetime",
       "@type": "SlotDefinition"
@@ -3622,7 +3658,7 @@
       "name": "environment",
       "definition_uri": "https://w3id.org/lmodel/uco-action/environment",
       "description": "\"The environment wherein an action occurs.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/environment",
       "owner": "Action",
       "domain_of": [
@@ -3636,7 +3672,7 @@
       "name": "error",
       "definition_uri": "https://w3id.org/lmodel/uco-action/error",
       "description": "\"A characterization of the differences between the expected and the actual performance of the action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/error",
       "owner": "ActionLifecycle",
       "domain_of": [
@@ -3651,7 +3687,7 @@
       "name": "estimatedCost",
       "definition_uri": "https://w3id.org/lmodel/uco-action/estimatedCost",
       "description": "\"An estimation of the cost if the action is performed.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/estimatedCost",
       "owner": "ActionEstimationFacet",
       "domain_of": [
@@ -3664,7 +3700,7 @@
       "name": "estimatedEfficacy",
       "definition_uri": "https://w3id.org/lmodel/uco-action/estimatedEfficacy",
       "description": "\"An estimation of the effectiveness of the action at achieving its objective if the action is performed.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/estimatedEfficacy",
       "owner": "ActionEstimationFacet",
       "domain_of": [
@@ -3677,7 +3713,7 @@
       "name": "estimatedImpact",
       "definition_uri": "https://w3id.org/lmodel/uco-action/estimatedImpact",
       "description": "\"An estimation of the impact if the action is performed.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/estimatedImpact",
       "owner": "ActionEstimationFacet",
       "domain_of": [
@@ -3690,7 +3726,7 @@
       "name": "instrument",
       "definition_uri": "https://w3id.org/lmodel/uco-action/instrument",
       "description": "\"The things used to perform an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/instrument",
       "owner": "Action",
       "domain_of": [
@@ -3704,7 +3740,7 @@
       "name": "location",
       "definition_uri": "https://w3id.org/lmodel/uco-action/location",
       "description": "\"The locations where an action occurs.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/location",
       "owner": "OnlineServiceFacet",
       "domain_of": [
@@ -3721,7 +3757,7 @@
       "name": "_object",
       "definition_uri": "https://w3id.org/lmodel/uco-action/_object",
       "description": "\"The things that the action is performed on/against.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/_object",
       "range": "UcoObject",
       "inlined": true,
@@ -3731,7 +3767,7 @@
       "name": "objective",
       "definition_uri": "https://w3id.org/lmodel/uco-action/objective",
       "description": "\"The intended purpose for performing the action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/objective",
       "owner": "ActionEstimationFacet",
       "domain_of": [
@@ -3744,7 +3780,7 @@
       "name": "participant",
       "definition_uri": "https://w3id.org/lmodel/uco-action/participant",
       "description": "\"The supporting (non-primary) performers of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/participant",
       "owner": "MessageThreadFacet",
       "domain_of": [
@@ -3760,7 +3796,7 @@
       "name": "performer",
       "definition_uri": "https://w3id.org/lmodel/uco-action/performer",
       "description": "\"The primary performer of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/performer",
       "owner": "Action",
       "domain_of": [
@@ -3774,7 +3810,7 @@
       "name": "phase",
       "definition_uri": "https://w3id.org/lmodel/uco-action/phase",
       "description": "\"The ordered set of actions or sub action-lifecycles that represent the action lifecycle.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "subaction",
       "slot_uri": "https://w3id.org/lmodel/uco-action/phase",
       "owner": "ActionLifecycle",
@@ -3789,7 +3825,7 @@
       "name": "rate",
       "definition_uri": "https://w3id.org/lmodel/uco-action/rate",
       "description": "\"The frequency rate for the occurence of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/rate",
       "owner": "ActionFrequencyFacet",
       "domain_of": [
@@ -3802,7 +3838,7 @@
       "name": "result",
       "definition_uri": "https://w3id.org/lmodel/uco-action/result",
       "description": "\"The things resulting from performing an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/result",
       "owner": "Action",
       "domain_of": [
@@ -3816,7 +3852,7 @@
       "name": "scale",
       "definition_uri": "https://w3id.org/lmodel/uco-action/scale",
       "description": "\"The time scale utilized for the frequency rate count for the occurence of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/scale",
       "owner": "ActionFrequencyFacet",
       "domain_of": [
@@ -3829,7 +3865,7 @@
       "name": "_startTime",
       "definition_uri": "https://w3id.org/lmodel/uco-action/_startTime",
       "description": "\"The time at which performance of the action began.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/_startTime",
       "range": "datetime",
       "@type": "SlotDefinition"
@@ -3838,7 +3874,7 @@
       "name": "subaction",
       "definition_uri": "https://w3id.org/lmodel/uco-action/subaction",
       "description": "\"References to other actions that make up part of a larger more complex action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/subaction",
       "owner": "Action",
       "domain_of": [
@@ -3852,7 +3888,7 @@
       "name": "trend",
       "definition_uri": "https://w3id.org/lmodel/uco-action/trend",
       "description": "\"A characterization of the frequency trend for the occurence of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "TrendVocab",
       "slot_uri": "https://w3id.org/lmodel/uco-action/trend",
       "owner": "ActionFrequencyFacet",
@@ -3866,7 +3902,7 @@
       "name": "units",
       "definition_uri": "https://w3id.org/lmodel/uco-action/units",
       "description": "\"The units of measure utilized for the frequency rate count for the occurence of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/units",
       "owner": "ActionFrequencyFacet",
       "domain_of": [
@@ -3879,7 +3915,7 @@
       "name": "class",
       "definition_uri": "https://w3id.org/lmodel/uco-analysis/class",
       "description": "\"A specific classification class.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-analysis",
+      "from_schema": "https://w3id.org/lmodel/uco-analysis",
       "slot_uri": "https://w3id.org/lmodel/uco-analysis/class",
       "owner": "ArtifactClassification",
       "domain_of": [
@@ -3892,7 +3928,7 @@
       "name": "classification",
       "definition_uri": "https://w3id.org/lmodel/uco-analysis/classification",
       "description": "\"An asserted classification of an analyzed artifact resulting from the analysis.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-analysis",
+      "from_schema": "https://w3id.org/lmodel/uco-analysis",
       "slot_uri": "https://w3id.org/lmodel/uco-analysis/classification",
       "owner": "ArtifactClassificationResultFacet",
       "domain_of": [
@@ -3906,7 +3942,7 @@
       "name": "classificationConfidence",
       "definition_uri": "https://w3id.org/lmodel/uco-analysis/classificationConfidence",
       "description": "\"The level of confidence that a classification assertion is correct.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-analysis",
+      "from_schema": "https://w3id.org/lmodel/uco-analysis",
       "slot_uri": "https://w3id.org/lmodel/uco-analysis/classificationConfidence",
       "owner": "ArtifactClassification",
       "domain_of": [
@@ -3919,7 +3955,7 @@
       "name": "originatingAnalysis",
       "definition_uri": "https://w3id.org/lmodel/uco-analysis/originatingAnalysis",
       "description": "\"The analysis action that resulted in an analytic result.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-analysis",
+      "from_schema": "https://w3id.org/lmodel/uco-analysis",
       "slot_uri": "https://w3id.org/lmodel/uco-analysis/originatingAnalysis",
       "owner": "AnalyticResult",
       "domain_of": [
@@ -3933,7 +3969,7 @@
       "name": "resultContent",
       "definition_uri": "https://w3id.org/lmodel/uco-analysis/resultContent",
       "description": "\"Structured content expressing the results of an analysis action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-analysis",
+      "from_schema": "https://w3id.org/lmodel/uco-analysis",
       "slot_uri": "https://w3id.org/lmodel/uco-analysis/resultContent",
       "owner": "AnalyticResult",
       "domain_of": [
@@ -13968,7 +14004,7 @@
       "name": "buildConfiguration",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildConfiguration",
       "description": "\"How the build utility was configured for a particular build of a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildConfiguration",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -13982,7 +14018,7 @@
       "name": "buildID",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildID",
       "description": "\"An externally defined unique identifier for a particular build of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildID",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -13995,7 +14031,7 @@
       "name": "buildInformation",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildInformation",
       "description": "\"Describes how a particular tool was built.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildInformation",
       "owner": "BuildFacet",
       "domain_of": [
@@ -14009,7 +14045,7 @@
       "name": "buildLabel",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildLabel",
       "description": "\"Relevant label for a particular build of a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildLabel",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -14022,7 +14058,7 @@
       "name": "buildOutputLog",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildOutputLog",
       "description": "\"The output log of the build process for a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildOutputLog",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -14035,7 +14071,7 @@
       "name": "buildProject",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildProject",
       "description": "\"The project name of a build of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildProject",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -14048,7 +14084,7 @@
       "name": "buildScript",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildScript",
       "description": "\"The actual build script for a particular build of a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildScript",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -14061,7 +14097,7 @@
       "name": "buildUtility",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildUtility",
       "description": "\"Identifies the utility used to build a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildUtility",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -14075,7 +14111,7 @@
       "name": "buildUtilityName",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildUtilityName",
       "description": "\"The informally defined name of the utility used to build a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildUtilityName",
       "owner": "BuildUtilityType",
       "domain_of": [
@@ -14088,7 +14124,7 @@
       "name": "buildVersion",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildVersion",
       "description": "\"The appropriate version descriptor of a particular build of a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildVersion",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -14101,7 +14137,7 @@
       "name": "compilationDate",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/compilationDate",
       "description": "\"The compilation date for the build of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/compilationDate",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -14114,7 +14150,7 @@
       "name": "compilerInformalDescription",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/compilerInformalDescription",
       "description": "\"An informal description of a compiler.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/compilerInformalDescription",
       "owner": "CompilerType",
       "domain_of": [
@@ -14127,7 +14163,7 @@
       "name": "compilers",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/compilers",
       "description": "\"The compilers utilized during a particular build of a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/compilers",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -14141,7 +14177,7 @@
       "name": "_cpeid",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/_cpeid",
       "description": "\"Specifies the Common Platform Enumeration identifier for the software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/_cpeid",
       "owner": "CompilerType",
       "domain_of": [
@@ -14155,7 +14191,7 @@
       "name": "_creator",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/_creator",
       "description": "\"The creator organization for a particular tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/_creator",
       "owner": "Tool",
       "domain_of": [
@@ -14169,7 +14205,7 @@
       "name": "libraries",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/libraries",
       "description": "\"The libraries incorporated into a particular build of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/libraries",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -14183,7 +14219,7 @@
       "name": "libraryName",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/libraryName",
       "description": "\"The name of the library.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/libraryName",
       "owner": "LibraryType",
       "domain_of": [
@@ -14196,7 +14232,7 @@
       "name": "libraryVersion",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/libraryVersion",
       "description": "\"The version of the library.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/libraryVersion",
       "owner": "LibraryType",
       "domain_of": [
@@ -14209,7 +14245,7 @@
       "name": "_references",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/_references",
       "description": "\"References to information describing a particular tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "exact_mappings": [
         "http://identifiers.org/wikidata/Q96622155"
       ],
@@ -14225,7 +14261,7 @@
       "name": "servicePack",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/servicePack",
       "description": "\"An appropriate service pack descriptor for a particular tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "exact_mappings": [
         "http://identifiers.org/wikidata/Q208218"
       ],
@@ -14241,7 +14277,7 @@
       "name": "_swid",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/_swid",
       "description": "\"Specifies the SWID tag for the software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/_swid",
       "owner": "CompilerType",
       "domain_of": [
@@ -14255,7 +14291,7 @@
       "name": "toolType",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/toolType",
       "description": "\"The type of tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/toolType",
       "owner": "Tool",
       "domain_of": [
@@ -14268,7 +14304,7 @@
       "name": "_version",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/_version",
       "description": "\"An appropriate version descriptor of a particular tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "exact_mappings": [
         "http://identifiers.org/wikidata/Q20826013"
       ],
@@ -15674,7 +15710,7 @@
       "name": "Action_subaction",
       "definition_uri": "https://w3id.org/lmodel/uco-action/subaction",
       "description": "\"References to other actions that make up part of a larger more complex action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "subaction",
       "domain": "Action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/subaction",
@@ -15694,7 +15730,7 @@
       "name": "Action_error",
       "definition_uri": "https://w3id.org/lmodel/uco-action/error",
       "description": "\"A characterization of the differences between the expected and the actual performance of the action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "error",
       "domain": "Action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/error",
@@ -15714,7 +15750,7 @@
       "name": "Action_instrument",
       "definition_uri": "https://w3id.org/lmodel/uco-action/instrument",
       "description": "\"The things used to perform an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "instrument",
       "domain": "Action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/instrument",
@@ -15757,7 +15793,7 @@
       "name": "Action_participant",
       "definition_uri": "https://w3id.org/lmodel/uco-action/participant",
       "description": "\"The supporting (non-primary) performers of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "participant",
       "domain": "Action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/participant",
@@ -15777,7 +15813,7 @@
       "name": "Action_result",
       "definition_uri": "https://w3id.org/lmodel/uco-action/result",
       "description": "\"The things resulting from performing an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "result",
       "domain": "Action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/result",
@@ -15797,7 +15833,7 @@
       "name": "Action_location",
       "definition_uri": "https://w3id.org/lmodel/uco-action/location",
       "description": "\"The locations where an action occurs.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "location",
       "domain": "Action",
       "slot_uri": "https://w3id.org/lmodel/uco-action/location",
@@ -15865,7 +15901,7 @@
       "name": "ActionArgumentFacet_argumentName",
       "definition_uri": "https://w3id.org/lmodel/uco-action/argumentName",
       "description": "\"The identifying label of an argument.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "argumentName",
       "domain": "ActionArgumentFacet",
       "slot_uri": "https://w3id.org/lmodel/uco-action/argumentName",
@@ -15907,7 +15943,7 @@
       "name": "ActionFrequencyFacet_rate",
       "definition_uri": "https://w3id.org/lmodel/uco-action/rate",
       "description": "\"The frequency rate for the occurence of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "rate",
       "domain": "ActionFrequencyFacet",
       "slot_uri": "https://w3id.org/lmodel/uco-action/rate",
@@ -15928,7 +15964,7 @@
       "name": "ActionFrequencyFacet_scale",
       "definition_uri": "https://w3id.org/lmodel/uco-action/scale",
       "description": "\"The time scale utilized for the frequency rate count for the occurence of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "scale",
       "domain": "ActionFrequencyFacet",
       "slot_uri": "https://w3id.org/lmodel/uco-action/scale",
@@ -15949,7 +15985,7 @@
       "name": "ActionFrequencyFacet_units",
       "definition_uri": "https://w3id.org/lmodel/uco-action/units",
       "description": "\"The units of measure utilized for the frequency rate count for the occurence of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "units",
       "domain": "ActionFrequencyFacet",
       "slot_uri": "https://w3id.org/lmodel/uco-action/units",
@@ -15970,7 +16006,7 @@
       "name": "ActionFrequencyFacet_trend",
       "definition_uri": "https://w3id.org/lmodel/uco-action/trend",
       "description": "\"A characterization of the frequency trend for the occurence of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "trend",
       "domain": "ActionFrequencyFacet",
       "slot_uri": "https://w3id.org/lmodel/uco-action/trend",
@@ -15991,7 +16027,7 @@
       "name": "ActionLifecycle_phase",
       "definition_uri": "https://w3id.org/lmodel/uco-action/phase",
       "description": "\"The ordered set of actions or sub action-lifecycles that represent the action lifecycle.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "phase",
       "domain": "ActionLifecycle",
       "slot_uri": "https://w3id.org/lmodel/uco-action/phase",
@@ -16013,7 +16049,7 @@
       "name": "ActionLifecycle_error",
       "definition_uri": "https://w3id.org/lmodel/uco-action/error",
       "description": "\"A characterization of the differences between the expected and the actual performance of the action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "Action_error",
       "domain": "ActionLifecycle",
       "slot_uri": "https://w3id.org/lmodel/uco-action/error",
@@ -16084,7 +16120,7 @@
       "name": "ActionLifecycle_actionCount",
       "definition_uri": "https://w3id.org/lmodel/uco-action/actionCount",
       "description": "\"The number of times that the action was performed.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "actionCount",
       "domain": "ActionLifecycle",
       "slot_uri": "https://w3id.org/lmodel/uco-action/actionCount",
@@ -16103,7 +16139,7 @@
       "name": "ActionLifecycle_actionStatus",
       "definition_uri": "https://w3id.org/lmodel/uco-action/actionStatus",
       "description": "\"The current state of the action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "actionStatus",
       "domain": "ActionLifecycle",
       "slot_uri": "https://w3id.org/lmodel/uco-action/actionStatus",
@@ -16122,7 +16158,7 @@
       "name": "ArrayOfAction_action",
       "definition_uri": "https://w3id.org/lmodel/uco-action/action",
       "description": "\"A characterization of a single action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "action",
       "domain": "ArrayOfAction",
       "slot_uri": "https://w3id.org/lmodel/uco-action/action",
@@ -16142,7 +16178,7 @@
       "name": "AnalyticResult_resultContent",
       "definition_uri": "https://w3id.org/lmodel/uco-analysis/resultContent",
       "description": "\"Structured content expressing the results of an analysis action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-analysis",
+      "from_schema": "https://w3id.org/lmodel/uco-analysis",
       "is_a": "resultContent",
       "domain": "AnalyticResult",
       "slot_uri": "https://w3id.org/lmodel/uco-analysis/resultContent",
@@ -16162,7 +16198,7 @@
       "name": "ArtifactClassificationResultFacet_classification",
       "definition_uri": "https://w3id.org/lmodel/uco-analysis/classification",
       "description": "\"An asserted classification of an analyzed artifact resulting from the analysis.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-analysis",
+      "from_schema": "https://w3id.org/lmodel/uco-analysis",
       "is_a": "classification",
       "domain": "ArtifactClassificationResultFacet",
       "slot_uri": "https://w3id.org/lmodel/uco-analysis/classification",
@@ -17868,7 +17904,7 @@
       "name": "CalendarEntryFacet_location",
       "definition_uri": "https://w3id.org/lmodel/uco-action/location",
       "description": "\"An associated location.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "location",
       "domain": "CalendarEntryFacet",
       "slot_uri": "https://w3id.org/lmodel/uco-action/location",
@@ -17887,7 +17923,7 @@
       "name": "CallFacet_participant",
       "definition_uri": "https://w3id.org/lmodel/uco-action/participant",
       "description": "\"The supporting (non-primary) performers of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "participant",
       "domain": "CallFacet",
       "slot_uri": "https://w3id.org/lmodel/uco-action/participant",
@@ -18820,7 +18856,7 @@
       "name": "GeoLocationEntryFacet_location",
       "definition_uri": "https://w3id.org/lmodel/uco-action/location",
       "description": "\"An associated location.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "location",
       "domain": "GeoLocationEntryFacet",
       "slot_uri": "https://w3id.org/lmodel/uco-action/location",
@@ -19039,7 +19075,7 @@
       "name": "MessageThreadFacet_participant",
       "definition_uri": "https://w3id.org/lmodel/uco-action/participant",
       "description": "\"The supporting (non-primary) performers of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "participant",
       "domain": "MessageThreadFacet",
       "slot_uri": "https://w3id.org/lmodel/uco-action/participant",
@@ -19241,7 +19277,7 @@
       "name": "OnlineServiceFacet_location",
       "definition_uri": "https://w3id.org/lmodel/uco-action/location",
       "description": "\"An associated location.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "location",
       "domain": "OnlineServiceFacet",
       "slot_uri": "https://w3id.org/lmodel/uco-action/location",
@@ -20905,7 +20941,7 @@
       "name": "BuildInformationType_compilers",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/compilers",
       "description": "\"The compilers utilized during a particular build of a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "compilers",
       "domain": "BuildInformationType",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/compilers",
@@ -20925,7 +20961,7 @@
       "name": "BuildInformationType_libraries",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/libraries",
       "description": "\"The libraries incorporated into a particular build of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "libraries",
       "domain": "BuildInformationType",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/libraries",
@@ -20945,7 +20981,7 @@
       "name": "Tool__references",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/_references",
       "description": "\"References to information describing a particular tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "exact_mappings": [
         "http://identifiers.org/wikidata/Q96622155"
       ],
@@ -21369,7 +21405,7 @@
       "name": "Action",
       "definition_uri": "https://w3id.org/lmodel/uco-action/Action",
       "description": "\"An action is something that may be done or performed.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "exact_mappings": [
         "wikidata:Q4026292",
         "NCIT:C25404",
@@ -21412,7 +21448,7 @@
       "name": "ActionArgumentFacet",
       "definition_uri": "https://w3id.org/lmodel/uco-action/ActionArgumentFacet",
       "description": "\"An action argument facet is a grouping of characteristics unique to a single parameter of an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "Facet",
       "slots": [
         "ActionArgumentFacet_argumentName",
@@ -21426,7 +21462,7 @@
       "name": "ActionEstimationFacet",
       "definition_uri": "https://w3id.org/lmodel/uco-action/ActionEstimationFacet",
       "description": "\"An action estimation facet is a grouping of characteristics unique to decision-focused approximation aspects for an action that may potentially be performed.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "Facet",
       "slots": [
         "estimatedCost",
@@ -21442,7 +21478,7 @@
       "name": "ActionFrequencyFacet",
       "definition_uri": "https://w3id.org/lmodel/uco-action/ActionFrequencyFacet",
       "description": "\"An action frequency facet is a grouping of characteristics unique to the frequency of occurrence for an action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "Facet",
       "slots": [
         "ActionFrequencyFacet_rate",
@@ -21458,7 +21494,7 @@
       "name": "ActionLifecycle",
       "definition_uri": "https://w3id.org/lmodel/uco-action/ActionLifecycle",
       "description": "\"An action lifecycle is an action pattern consisting of an ordered set of multiple actions or subordinate action lifecycles.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "Action",
       "slots": [
         "UcoObject_createdBy",
@@ -21497,7 +21533,7 @@
       "name": "ActionPattern",
       "definition_uri": "https://w3id.org/lmodel/uco-action/ActionPattern",
       "description": "\"An action pattern is a grouping of characteristics unique to a combination of actions forming a consistent or characteristic arrangement.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "Action",
       "mixins": [
         "Pattern"
@@ -21535,7 +21571,7 @@
       "name": "ArrayOfAction",
       "definition_uri": "https://w3id.org/lmodel/uco-action/ArrayOfAction",
       "description": "\"An array of action is an ordered list of references to things that may be done or performed.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-action",
+      "from_schema": "https://w3id.org/lmodel/uco-action",
       "is_a": "UcoInherentCharacterizationThing",
       "slots": [
         "ArrayOfAction_action"
@@ -21548,7 +21584,7 @@
       "name": "Analysis",
       "definition_uri": "https://w3id.org/lmodel/uco-analysis/Analysis",
       "description": "\"An analysis is an action of detailed examination of something in order to understand its nature, context or essential features.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-analysis",
+      "from_schema": "https://w3id.org/lmodel/uco-analysis",
       "is_a": "Action",
       "slots": [
         "UcoObject_createdBy",
@@ -21583,7 +21619,7 @@
       "name": "AnalyticResult",
       "definition_uri": "https://w3id.org/lmodel/uco-analysis/AnalyticResult",
       "description": "\"An analytic result is a characterization of the understanding resulting from an analysis action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-analysis",
+      "from_schema": "https://w3id.org/lmodel/uco-analysis",
       "is_a": "Assertion",
       "slots": [
         "UcoObject_createdBy",
@@ -21608,7 +21644,7 @@
       "name": "AnalyticResultFacet",
       "definition_uri": "https://w3id.org/lmodel/uco-analysis/AnalyticResultFacet",
       "description": "\"An analytic result facet is a grouping of characteristics unique to the results of an analysis action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-analysis",
+      "from_schema": "https://w3id.org/lmodel/uco-analysis",
       "is_a": "Facet",
       "slot_usage": {},
       "class_uri": "https://w3id.org/lmodel/uco-analysis/AnalyticResultFacet",
@@ -21618,7 +21654,7 @@
       "name": "ArtifactClassification",
       "definition_uri": "https://w3id.org/lmodel/uco-analysis/ArtifactClassification",
       "description": "\"An artifact classification is a single specific assertion that a particular class of a classification taxonomy applies to something.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-analysis",
+      "from_schema": "https://w3id.org/lmodel/uco-analysis",
       "is_a": "UcoInherentCharacterizationThing",
       "slots": [
         "classificationConfidence",
@@ -21632,7 +21668,7 @@
       "name": "ArtifactClassificationResultFacet",
       "definition_uri": "https://w3id.org/lmodel/uco-analysis/ArtifactClassificationResultFacet",
       "description": "\"An artifact classification result facet is a grouping of characteristics unique to the results of an artifact classification analysis action.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-analysis",
+      "from_schema": "https://w3id.org/lmodel/uco-analysis",
       "is_a": "AnalyticResultFacet",
       "slots": [
         "ArtifactClassificationResultFacet_classification"
@@ -31003,7 +31039,7 @@
       "name": "AnalyticTool",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/AnalyticTool",
       "description": "\"An analytic tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of explanation, interpretation or logical reasoning.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "Tool",
       "slots": [
         "UcoObject_createdBy",
@@ -31030,7 +31066,7 @@
       "name": "BuildFacet",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/BuildFacet",
       "description": "\"A build facet is a grouping of characteristics unique to a particular version of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "Facet",
       "slots": [
         "buildInformation"
@@ -31043,7 +31079,7 @@
       "name": "BuildInformationType",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/BuildInformationType",
       "description": "\"A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "UcoInherentCharacterizationThing",
       "slots": [
         "buildConfiguration",
@@ -31066,7 +31102,7 @@
       "name": "BuildUtilityType",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/BuildUtilityType",
       "description": "\"A build utility type characterizes the tool used to convert from source code to executable code for a particular version of software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "UcoInherentCharacterizationThing",
       "slots": [
         "buildUtilityName",
@@ -31081,7 +31117,7 @@
       "name": "CompilerType",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/CompilerType",
       "description": "\"A compiler type is a grouping of characteristics unique to a specific program that translates computer code written in one programming language (the source language) into another language (the target language). Typically a program that translates source code from a high-level programming language to a lower-level language (e.g., assembly language, object code, or machine code) to create an executable program. [based on https://en.wikipedia.org/wiki/Compiler]\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "UcoInherentCharacterizationThing",
       "slots": [
         "compilerInformalDescription",
@@ -31096,7 +31132,7 @@
       "name": "ConfiguredTool",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/ConfiguredTool",
       "description": "\"A ConfiguredTool is a Tool that is known to be configured to run in a more specified manner than some unconfigured or less-configured Tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "Tool",
       "slots": [
         "UcoObject_createdBy",
@@ -31125,7 +31161,7 @@
       "name": "DefensiveTool",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/DefensiveTool",
       "description": "\"A defensive tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of guarding.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "Tool",
       "slots": [
         "UcoObject_createdBy",
@@ -31152,7 +31188,7 @@
       "name": "LibraryType",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/LibraryType",
       "description": "\"A library type is a grouping of characteristics unique to a collection of resources incorporated into the build of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "UcoInherentCharacterizationThing",
       "slots": [
         "libraryName",
@@ -31166,7 +31202,7 @@
       "name": "MaliciousTool",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/MaliciousTool",
       "description": "\"A malicious tool is an artifact of hardware and/or software utilized to accomplish a malevolent task or purpose.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "Tool",
       "slots": [
         "UcoObject_createdBy",
@@ -31193,7 +31229,7 @@
       "name": "Tool",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/Tool",
       "description": "\"A tool is an element of hardware and/or software utilized to carry out a particular function.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "narrow_mappings": [
         "wikidata:Q1077784"
       ],
@@ -31567,7 +31603,7 @@
   "source_file": "uco_master.yaml",
   "source_file_date": "2023-04-11T22:59:35",
   "source_file_size": 2094,
-  "generation_date": "2023-04-12T12:44:42",
+  "generation_date": "2023-06-25T02:17:16",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/uco_master.context.jsonld",
