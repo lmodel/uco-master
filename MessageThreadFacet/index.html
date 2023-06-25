@@ -302,7 +302,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-master</li>
+<li>from schema: https://w3id.org/lmodel/uco-master</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -330,7 +330,7 @@
 <pre><code class="language-yaml">name: MessageThreadFacet
 description: '"A messageThread facet is a grouping of characteristics unique to a
   running commentary of electronic messages pertaining to one topic or question."'
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 rank: 1000
 is_a: Facet
 slots:
@@ -358,7 +358,7 @@ slot_usage:
 <pre><code class="language-yaml">name: MessageThreadFacet
 description: '"A messageThread facet is a grouping of characteristics unique to a
   running commentary of electronic messages pertaining to one topic or question."'
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 rank: 1000
 is_a: Facet
 slot_usage:
@@ -375,7 +375,7 @@ attributes:
     name: messageThreadOrderedItems
     description: '"The contents of ordered items in the Thread linked by messageThread
       must be Message objects."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     mixins:
     - messageThread
@@ -391,7 +391,7 @@ attributes:
     name: messageThreadOriginItems
     description: '"The contents of origin items in the Thread linked by messageThread
       must be Message objects."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     mixins:
     - messageThread
@@ -407,7 +407,7 @@ attributes:
     name: messageThreadTerminalItems
     description: '"The contents of terminal items in the Thread linked by messageThread
       must be Message objects."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     mixins:
     - messageThread
@@ -423,7 +423,7 @@ attributes:
     name: messageThreadUnorderedItems
     description: '"The contents of unordered items in the Thread linked by messageThread
       must be Message objects."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     mixins:
     - messageThread
@@ -437,7 +437,7 @@ attributes:
   participant:
     name: participant
     description: '"The supporting (non-primary) performers of an action."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: participant
@@ -450,7 +450,7 @@ attributes:
   messageThread:
     name: messageThread
     description: ''
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     mixin: true
     alias: messageThread
@@ -460,7 +460,7 @@ attributes:
     range: Thread
   visibility:
     name: visibility
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: visibility
     owner: MessageThreadFacet

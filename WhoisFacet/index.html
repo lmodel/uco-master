@@ -384,7 +384,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-master</li>
+<li>from schema: https://w3id.org/lmodel/uco-master</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -412,7 +412,7 @@
 <pre><code class="language-yaml">name: WhoisFacet
 description: '"A Whois facet is a grouping of characteristics unique to a response
   record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"'
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 rank: 1000
 is_a: Facet
 slots:
@@ -459,7 +459,7 @@ slot_usage:
 <pre><code class="language-yaml">name: WhoisFacet
 description: '"A Whois facet is a grouping of characteristics unique to a response
   record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"'
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 rank: 1000
 is_a: Facet
 slot_usage:
@@ -484,7 +484,7 @@ attributes:
   domainName:
     name: domainName
     description: '"Specifies the corresponding domainName for a Whois entry."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: domainName
     owner: WhoisFacet
@@ -495,7 +495,7 @@ attributes:
     name: ipAddress
     description: '"Specifies the corresponding ip address for a Whois entry. Usually
       corresponds to a nameServer lookup."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: ipAddress
     owner: WhoisFacet
@@ -506,7 +506,7 @@ attributes:
     name: registrantContactInfo
     description: '"Specifies contact info for the registrant of a domain within a
       WHOIS entity."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: registrantContactInfo
     owner: WhoisFacet
@@ -517,7 +517,7 @@ attributes:
     name: serverName
     description: '"Specifies the corresponding serverName for a Whois entry. This
       usually corresponds to a nameServer lookup."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: serverName
     owner: WhoisFacet
@@ -527,7 +527,7 @@ attributes:
   nameServer:
     name: nameServer
     description: '"Specifies a list of nameServer entries for a Whois entry."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: nameServer
@@ -539,7 +539,7 @@ attributes:
     name: registrarInfo
     description: '"Specifies registrarInfo that would be returned from a registrar
       lookup."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: registrarInfo
     owner: WhoisFacet
@@ -549,7 +549,7 @@ attributes:
   creationDate:
     name: creationDate
     description: '"Specifies the date in which the registered domain was created."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     aliases:
     - publication date
     exact_mappings:
@@ -574,7 +574,7 @@ attributes:
   expirationDate:
     name: expirationDate
     description: '"Specifies the date in which the registered domain will expire."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     exact_mappings:
     - wikidata:Q898931
     rank: 1000
@@ -587,7 +587,7 @@ attributes:
   lookupDate:
     name: lookupDate
     description: '"Specifies the date and time that the Whois record was queried."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: lookupDate
     owner: WhoisFacet
@@ -598,7 +598,7 @@ attributes:
     name: updatedDate
     description: '"Specifies the date in which the registered domain information was
       last updated."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: updatedDate
     owner: WhoisFacet
@@ -609,7 +609,7 @@ attributes:
     name: domainID
     description: '"Specifies the domain id for the domain associated with a Whois
       entry."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: domainID
     owner: WhoisFacet
@@ -619,7 +619,7 @@ attributes:
   remarks:
     name: remarks
     description: '"Specifies any remarks associated with this Whois entry."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: remarks
     owner: WhoisFacet
@@ -629,7 +629,7 @@ attributes:
   sponsoringRegistrar:
     name: sponsoringRegistrar
     description: '"Specifies the name of the sponsoringRegistrar for a domain."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: sponsoringRegistrar
     owner: WhoisFacet
@@ -639,7 +639,7 @@ attributes:
   registrantIDs:
     name: registrantIDs
     description: '"Specifies the registrantIDs associated with a domain lookup."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: registrantIDs
@@ -651,7 +651,7 @@ attributes:
     name: dnssec
     description: '"Specifies the DNSSEC property associated with a Whois entry. Acceptable
       values are: ''Signed'' or ''Unsigned''."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     broad_mappings:
     - wikidata:Q41609
     rank: 1000
@@ -665,7 +665,7 @@ attributes:
   status:
     name: status
     description: '"Specifies a list of statuses for a given Whois entry."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: status
     owner: WhoisFacet
@@ -678,7 +678,7 @@ attributes:
     name: regionalInternetRegistry
     description: '"specifies the name of the Regional Internet Registry (RIR) which
       allocated the IP address contained in a WHOIS entry."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: regionalInternetRegistry
     owner: WhoisFacet

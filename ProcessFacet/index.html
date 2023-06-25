@@ -338,7 +338,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-master</li>
+<li>from schema: https://w3id.org/lmodel/uco-master</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -366,7 +366,7 @@
 <pre><code class="language-yaml">name: ProcessFacet
 description: '"A process facet is a grouping of characteristics unique to an instance
   of a computer program executed on an operating system."'
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 rank: 1000
 is_a: Facet
 slots:
@@ -396,7 +396,7 @@ slot_usage:
 <pre><code class="language-yaml">name: ProcessFacet
 description: '"A process facet is a grouping of characteristics unique to an instance
   of a computer program executed on an operating system."'
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 rank: 1000
 is_a: Facet
 slot_usage:
@@ -409,7 +409,7 @@ attributes:
   binary:
     name: binary
     description: ''
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: binary
     owner: ProcessFacet
@@ -419,7 +419,7 @@ attributes:
   creatorUser:
     name: creatorUser
     description: '"The user that created/owns the process."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: creatorUser
     owner: ProcessFacet
@@ -429,7 +429,7 @@ attributes:
   parent:
     name: parent
     description: '"The process that created this process."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: parent
     owner: ProcessFacet
@@ -439,7 +439,7 @@ attributes:
   environmentVariables:
     name: environmentVariables
     description: '"A list of environmentVariables associated with the process."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     exact_mappings:
     - wikidata:Q400857
     narrow_mappings:
@@ -455,7 +455,7 @@ attributes:
     name: isHidden
     description: '"The isHidden property specifies whether the process isHidden or
       not."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: isHidden
     owner: ProcessFacet
@@ -465,7 +465,7 @@ attributes:
   exitTime:
     name: exitTime
     description: '"The time at which the process exited."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: exitTime
     owner: ProcessFacet
@@ -478,7 +478,7 @@ attributes:
       was created. This time pertains to an intrinsic characteristic of the observable
       object, and would be consistent across independent characterizations or observations
       of the observable object."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: observableCreatedTime
     owner: ProcessFacet
@@ -501,7 +501,7 @@ attributes:
     description: '"A small number passed from the process to the parent process when
       it has finished executing. In general, 0 indicates successful termination, any
       other number indicates a failure."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     exact_mappings:
     - wikidata:Q2553232
     rank: 1000
@@ -513,7 +513,7 @@ attributes:
   pid:
     name: pid
     description: '"The process ID, or PID, of the process."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     aliases:
     - pid_mode
     exact_mappings:
@@ -526,7 +526,7 @@ attributes:
     range: integer
   currentWorkingDirectory:
     name: currentWorkingDirectory
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     exact_mappings:
     - wikidata:Q1192634
     rank: 1000
@@ -538,7 +538,7 @@ attributes:
   status:
     name: status
     description: '"Specifies a list of statuses for a given Whois entry."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: status
     owner: ProcessFacet
@@ -554,7 +554,7 @@ attributes:
   arguments:
     name: arguments
     description: '"A list of arguments utilized in initiating the process."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: arguments

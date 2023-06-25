@@ -333,7 +333,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-master</li>
+<li>from schema: https://w3id.org/lmodel/uco-master</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -366,7 +366,7 @@
 description: A contextual compilation is a grouping of things sharing some context
   (e.g., a set of network connections observed on a given day, all accounts associated
   with a given person).
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 related_mappings:
 - wikidata:Q5165203
 - wikidata:Q498552
@@ -393,7 +393,7 @@ slot_usage:
 description: A contextual compilation is a grouping of things sharing some context
   (e.g., a set of network connections observed on a given day, all accounts associated
   with a given person).
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 related_mappings:
 - wikidata:Q5165203
 - wikidata:Q498552
@@ -413,7 +413,7 @@ attributes:
   object:
     name: object
     description: Specifies one or more UcoObjects.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: object
@@ -428,7 +428,7 @@ attributes:
   createdBy:
     name: createdBy
     description: The identity that created a characterization of a concept.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     domain: IdentityAbstraction
     alias: createdBy
@@ -440,7 +440,7 @@ attributes:
   description:
     name: description
     description: A human-readable description of an entity
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     slot_uri: dcterms:description
     multivalued: true
@@ -452,7 +452,7 @@ attributes:
   externalReference:
     name: externalReference
     description: Specifies a reference to a resource outside of the UCO.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     domain: ExternalReference
     multivalued: true
@@ -468,7 +468,7 @@ attributes:
     description: Further sets of properties characterizing a concept based on the
       particular context of the class and of the particular instance of the concept
       being characterized.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     domain: Facet
     multivalued: true
@@ -486,7 +486,7 @@ attributes:
       property. Object creators MUST update the modified property when creating a
       new version of an object. The modified timestamp MUST be precise to the nearest
       millisecond (exactly three digits after the decimal place in seconds).
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: modifiedTime
@@ -504,7 +504,7 @@ attributes:
   name:
     name: name
     description: The name of a particular concept characterization.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     slot_uri: rdfs:label
     alias: name
@@ -523,7 +523,7 @@ attributes:
     name: objectMarking
     description: Marking definitions to be applied to a particular concept characterization
       in its entirety.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: objectMarking
@@ -536,7 +536,7 @@ attributes:
     description: The time at which a characterization of a concept is created. This
       time pertains to the time of creating the record object, and is not an intrinsic
       characteristic of the concept.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: objectCreatedTime
     owner: ContextualCompilation
@@ -548,7 +548,7 @@ attributes:
     name: specVersion
     description: The version of UCO ontology or subontology specification used to
       characterize a concept.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: specVersion
     owner: ContextualCompilation
@@ -559,7 +559,7 @@ attributes:
   tag:
     name: tag
     description: A generic tag/label.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: tag

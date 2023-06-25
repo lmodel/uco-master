@@ -362,7 +362,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-master</li>
+<li>from schema: https://w3id.org/lmodel/uco-master</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -391,7 +391,7 @@
 description: '"A calendar entry facet is a grouping of characteristics unique to an
   appointment, meeting, or event within a collection of appointments, meetings, and
   events."'
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 rank: 1000
 is_a: Facet
 slots:
@@ -434,7 +434,7 @@ slot_usage:
 description: '"A calendar entry facet is a grouping of characteristics unique to an
   appointment, meeting, or event within a collection of appointments, meetings, and
   events."'
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 rank: 1000
 is_a: Facet
 slot_usage:
@@ -456,7 +456,7 @@ attributes:
   application:
     name: application
     description: '"The application associated with this object."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: application
     owner: CalendarEntryFacet
@@ -479,7 +479,7 @@ attributes:
   attendant:
     name: attendant
     description: '"The attendants of the event."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: attendant
@@ -490,7 +490,7 @@ attributes:
   isPrivate:
     name: isPrivate
     description: '"Is the event marked as private?"'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: isPrivate
     owner: CalendarEntryFacet
@@ -500,7 +500,7 @@ attributes:
   endTime:
     name: endTime
     description: The ending time of a time range.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     exact_mappings:
     - NCIT:C82573
     - SIO:000670
@@ -525,7 +525,7 @@ attributes:
   location:
     name: location
     description: '"An associated location."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: location
     owner: CalendarEntryFacet
@@ -544,7 +544,7 @@ attributes:
       property. Object creators MUST update the modified property when creating a
       new version of an object. The modified timestamp MUST be precise to the nearest
       millisecond (exactly three digits after the decimal place in seconds).
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     broad_mappings:
     - sumo:TimePoint
     rank: 1000
@@ -566,7 +566,7 @@ attributes:
       was created. This time pertains to an intrinsic characteristic of the observable
       object, and would be consistent across independent characterizations or observations
       of the observable object."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: observableCreatedTime
     owner: CalendarEntryFacet
@@ -587,7 +587,7 @@ attributes:
   owner:
     name: owner
     description: '"Specifies the owner of an observable Object."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: owner
     owner: CalendarEntryFacet
@@ -599,7 +599,7 @@ attributes:
     range: UcoObject
   remindTime:
     name: remindTime
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: remindTime
     owner: CalendarEntryFacet
@@ -609,7 +609,7 @@ attributes:
   startTime:
     name: startTime
     description: The initial time of a time range.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     broad_mappings:
     - sumo:TimePoint
     rank: 1000
@@ -629,7 +629,7 @@ attributes:
   duration:
     name: duration
     description: '"The duration of the phone call in seconds."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     exact_mappings:
     - lm_core:Duration
     rank: 1000
@@ -643,7 +643,7 @@ attributes:
   eventStatus:
     name: eventStatus
     description: '"The status of the event, for instance accepted, pending or cancelled."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     narrow_mappings:
     - NCIT:C41202
     rank: 1000
@@ -656,7 +656,7 @@ attributes:
     name: eventType
     description: '"The type of the event, for example ''information'', ''warning''
       or ''error''."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: eventType
     owner: CalendarEntryFacet
@@ -667,7 +667,7 @@ attributes:
   recurrence:
     name: recurrence
     description: '"Recurrence of the event."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: recurrence
     owner: CalendarEntryFacet
@@ -677,7 +677,7 @@ attributes:
   subject:
     name: subject
     description: '"The subject of the email."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: subject
     owner: CalendarEntryFacet

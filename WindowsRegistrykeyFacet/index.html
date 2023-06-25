@@ -278,7 +278,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-master</li>
+<li>from schema: https://w3id.org/lmodel/uco-master</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -310,7 +310,7 @@ description: '"A Windows registry key facet is a grouping of characteristics uni
   that opt to use the registry). [based on https://en.wikipedia.org/wiki/Windows_Registry]"'
 in_subset:
 - microsoft
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 rank: 1000
 is_a: Facet
 slots:
@@ -337,7 +337,7 @@ description: '"A Windows registry key facet is a grouping of characteristics uni
   that opt to use the registry). [based on https://en.wikipedia.org/wiki/Windows_Registry]"'
 in_subset:
 - microsoft
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 rank: 1000
 is_a: Facet
 slot_usage:
@@ -350,7 +350,7 @@ attributes:
   creator:
     name: creator
     description: '"Specifies the name of the creator of the registry key."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     exact_mappings:
     - lm_core:Author
     rank: 1000
@@ -363,7 +363,7 @@ attributes:
     name: registryValues
     description: '"The values that were enumerated as a result of the action on the
       object."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: registryValues
@@ -380,7 +380,7 @@ attributes:
       property. Object creators MUST update the modified property when creating a
       new version of an object. The modified timestamp MUST be precise to the nearest
       millisecond (exactly three digits after the decimal place in seconds).
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     broad_mappings:
     - sumo:TimePoint
     rank: 1000
@@ -398,7 +398,7 @@ attributes:
     range: datetime
   numberOfSubkeys:
     name: numberOfSubkeys
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: numberOfSubkeys
     owner: WindowsRegistrykeyFacet
@@ -408,7 +408,7 @@ attributes:
   key:
     name: key
     description: '"A key property of a single dictionary entry."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     exact_mappings:
     - wikidata:Q937228
     narrow_mappings:

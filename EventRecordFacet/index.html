@@ -346,7 +346,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-master</li>
+<li>from schema: https://w3id.org/lmodel/uco-master</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -374,7 +374,7 @@
 <pre><code class="language-yaml">name: EventRecordFacet
 description: '"An event record facet is a grouping of characteristics unique to something
   that happens in a digital context (e.g., operating system events)."'
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 rank: 1000
 is_a: Facet
 slots:
@@ -399,14 +399,14 @@ slots:
 <pre><code class="language-yaml">name: EventRecordFacet
 description: '"An event record facet is a grouping of characteristics unique to something
   that happens in a digital context (e.g., operating system events)."'
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 rank: 1000
 is_a: Facet
 attributes:
   cyberAction:
     name: cyberAction
     description: '"The action taken in response to the event."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: cyberAction
     owner: EventRecordFacet
@@ -417,7 +417,7 @@ attributes:
     name: account
     description: '"Specifies the account referenced in an event log entry or used
       to run the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.85).aspx."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     exact_mappings:
     - sumo:Account
     rank: 1000
@@ -430,7 +430,7 @@ attributes:
   application:
     name: application
     description: '"The application associated with this object."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: application
     owner: EventRecordFacet
@@ -453,7 +453,7 @@ attributes:
   eventRecordDevice:
     name: eventRecordDevice
     description: '"The device on which the log entry was generated."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: eventRecordDevice
     owner: EventRecordFacet
@@ -466,7 +466,7 @@ attributes:
       was created. This time pertains to an intrinsic characteristic of the observable
       object, and would be consistent across independent characterizations or observations
       of the observable object."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: observableCreatedTime
     owner: EventRecordFacet
@@ -487,7 +487,7 @@ attributes:
   endTime:
     name: endTime
     description: The ending time of a time range.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     exact_mappings:
     - NCIT:C82573
     - SIO:000670
@@ -512,7 +512,7 @@ attributes:
   startTime:
     name: startTime
     description: The initial time of a time range.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     broad_mappings:
     - sumo:TimePoint
     rank: 1000
@@ -531,7 +531,7 @@ attributes:
     range: datetime
   eventID:
     name: eventID
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: eventID
     owner: EventRecordFacet
@@ -541,7 +541,7 @@ attributes:
   eventRecordID:
     name: eventRecordID
     description: '"The identifier of the event record."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: eventRecordID
     owner: EventRecordFacet
@@ -551,7 +551,7 @@ attributes:
   eventRecordRaw:
     name: eventRecordRaw
     description: '"The complete raw content of the event record."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: eventRecordRaw
     owner: EventRecordFacet
@@ -562,7 +562,7 @@ attributes:
     name: eventRecordServiceName
     description: '"The service that generated the event record. A single application
       can have multiple services generating event records."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: eventRecordServiceName
     owner: EventRecordFacet
@@ -572,7 +572,7 @@ attributes:
   eventRecordText:
     name: eventRecordText
     description: '"The textual representation of the event."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: eventRecordText
     owner: EventRecordFacet
@@ -583,7 +583,7 @@ attributes:
     name: eventType
     description: '"The type of the event, for example ''information'', ''warning''
       or ''error''."'
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: eventType
     owner: EventRecordFacet

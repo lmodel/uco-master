@@ -337,7 +337,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-master</li>
+<li>from schema: https://w3id.org/lmodel/uco-master</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -368,7 +368,7 @@
 <details>
 <pre><code class="language-yaml">name: ControlledVocabulary
 description: A controlled vocabulary is an explicitly constrained set of string values.
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 exact_mappings:
 - NCIT:C48697
 - wikidata:Q1469824
@@ -407,7 +407,7 @@ slot_usage:
 <details>
 <pre><code class="language-yaml">name: ControlledVocabulary
 description: A controlled vocabulary is an explicitly constrained set of string values.
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 exact_mappings:
 - NCIT:C48697
 - wikidata:Q1469824
@@ -441,7 +441,7 @@ attributes:
     description: A reference to a specification for an explicitly constrained set
       of string values. The specification may be unstructured (e.g., web page listing
       string values) or structured (e.g. RDF/OWL enumeration).
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: constrainingVocabularyReference
     owner: ControlledVocabulary
@@ -452,7 +452,7 @@ attributes:
   constrainingVocabularyName:
     name: constrainingVocabularyName
     description: The name of an explicitly constrained set of string values.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: constrainingVocabularyName
     owner: ControlledVocabulary
@@ -463,7 +463,7 @@ attributes:
   value:
     name: value
     description: A string value.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: value
     owner: ControlledVocabulary
@@ -480,7 +480,7 @@ attributes:
   createdBy:
     name: createdBy
     description: The identity that created a characterization of a concept.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     domain: IdentityAbstraction
     alias: createdBy
@@ -492,7 +492,7 @@ attributes:
   description:
     name: description
     description: A human-readable description of an entity
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     slot_uri: dcterms:description
     multivalued: true
@@ -504,7 +504,7 @@ attributes:
   externalReference:
     name: externalReference
     description: Specifies a reference to a resource outside of the UCO.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     domain: ExternalReference
     multivalued: true
@@ -520,7 +520,7 @@ attributes:
     description: Further sets of properties characterizing a concept based on the
       particular context of the class and of the particular instance of the concept
       being characterized.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     domain: Facet
     multivalued: true
@@ -538,7 +538,7 @@ attributes:
       property. Object creators MUST update the modified property when creating a
       new version of an object. The modified timestamp MUST be precise to the nearest
       millisecond (exactly three digits after the decimal place in seconds).
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: modifiedTime
@@ -556,7 +556,7 @@ attributes:
   name:
     name: name
     description: The name of a particular concept characterization.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     slot_uri: rdfs:label
     alias: name
@@ -575,7 +575,7 @@ attributes:
     name: objectMarking
     description: Marking definitions to be applied to a particular concept characterization
       in its entirety.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: objectMarking
@@ -588,7 +588,7 @@ attributes:
     description: The time at which a characterization of a concept is created. This
       time pertains to the time of creating the record object, and is not an intrinsic
       characteristic of the concept.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: objectCreatedTime
     owner: ControlledVocabulary
@@ -600,7 +600,7 @@ attributes:
     name: specVersion
     description: The version of UCO ontology or subontology specification used to
       characterize a concept.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: specVersion
     owner: ControlledVocabulary
@@ -611,7 +611,7 @@ attributes:
   tag:
     name: tag
     description: A generic tag/label.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: tag

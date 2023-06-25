@@ -345,7 +345,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-master</li>
+<li>from schema: https://w3id.org/lmodel/uco-master</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -388,7 +388,7 @@ description: '"A character device node is a UNIX filesystem special file that se
   or accepting a serial stream of output. Character device nodes are used to apply
   access rights to the devices and to direct operations on the files to the appropriate
   device drivers. [based on https://en.wikipedia.org/wiki/Unix_file_types]"'
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 exact_mappings:
 - wikidata:Q14679
 - wikidata:Q28015896
@@ -411,7 +411,7 @@ description: '"A character device node is a UNIX filesystem special file that se
   or accepting a serial stream of output. Character device nodes are used to apply
   access rights to the devices and to direct operations on the files to the appropriate
   device drivers. [based on https://en.wikipedia.org/wiki/Unix_file_types]"'
-from_schema: https://w3id.org/linkmodel/uco-master
+from_schema: https://w3id.org/lmodel/uco-master
 exact_mappings:
 - wikidata:Q14679
 - wikidata:Q28015896
@@ -426,7 +426,7 @@ is_a: FileSystemObject
 attributes:
   hasChanged:
     name: hasChanged
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: hasChanged
     owner: CharacterDeviceNode
@@ -437,7 +437,7 @@ attributes:
     name: state
     description: the particular condition that someone or something is in at a specific
       time.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     exact_mappings:
     - NCIT:C2568
     rank: 1000
@@ -449,7 +449,7 @@ attributes:
   itemOf:
     name: itemOf
     description: The link to a bag in which the item is member.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     aliases:
     - is item of
     exact_mappings:
@@ -465,7 +465,7 @@ attributes:
   createdBy:
     name: createdBy
     description: The identity that created a characterization of a concept.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     domain: IdentityAbstraction
     alias: createdBy
@@ -477,7 +477,7 @@ attributes:
   description:
     name: description
     description: A human-readable description of an entity
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     slot_uri: dcterms:description
     multivalued: true
@@ -489,7 +489,7 @@ attributes:
   externalReference:
     name: externalReference
     description: Specifies a reference to a resource outside of the UCO.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     domain: ExternalReference
     multivalued: true
@@ -505,7 +505,7 @@ attributes:
     description: Further sets of properties characterizing a concept based on the
       particular context of the class and of the particular instance of the concept
       being characterized.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     domain: Facet
     multivalued: true
@@ -523,7 +523,7 @@ attributes:
       property. Object creators MUST update the modified property when creating a
       new version of an object. The modified timestamp MUST be precise to the nearest
       millisecond (exactly three digits after the decimal place in seconds).
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: modifiedTime
@@ -541,7 +541,7 @@ attributes:
   name:
     name: name
     description: The name of a particular concept characterization.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     slot_uri: rdfs:label
     alias: name
@@ -560,7 +560,7 @@ attributes:
     name: objectMarking
     description: Marking definitions to be applied to a particular concept characterization
       in its entirety.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: objectMarking
@@ -573,7 +573,7 @@ attributes:
     description: The time at which a characterization of a concept is created. This
       time pertains to the time of creating the record object, and is not an intrinsic
       characteristic of the concept.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: objectCreatedTime
     owner: CharacterDeviceNode
@@ -585,7 +585,7 @@ attributes:
     name: specVersion
     description: The version of UCO ontology or subontology specification used to
       characterize a concept.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     alias: specVersion
     owner: CharacterDeviceNode
@@ -596,7 +596,7 @@ attributes:
   tag:
     name: tag
     description: A generic tag/label.
-    from_schema: https://w3id.org/linkmodel/uco-master
+    from_schema: https://w3id.org/lmodel/uco-master
     rank: 1000
     multivalued: true
     alias: tag
